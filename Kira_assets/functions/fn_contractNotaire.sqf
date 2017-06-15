@@ -23,7 +23,7 @@ params[
 	["_nameClient","",[""]]
 ];
 if(isNull OBJECTMAP) exitWith {hint "Contactez un administrateur, un objet mapping est manquant."};
-_obj = missionNamespace getVariable ["Clientnotain",objNull];
+_obj = missionNamespace getVariable ["Clientnotaire",objNull];
 if(isNull _obj) exitWith {hint "Veuillez recommencer la procédure.";closeDialog 0;};
 _taxe = OBJECTMAP getVariable ["taxeNotaire",0.5];
 _gouvTake = _taxe * _amount;

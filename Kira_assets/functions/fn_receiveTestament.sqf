@@ -19,7 +19,7 @@ _name = param[0,[],[[]]];
 _client = param[1,false,[false]];
 disableSerialization;
 _display = findDisplay 6000;
-if(isNull _display) then {createDialog "textNotaire";};
+if(isNull _display) then {createDialog "DOSTARA_CONTRACTNOTAIRE";};
 if(_client) then{
 	notaire = param[2,objNull,[objNull]];
 	ctrlSetText[6004,_name select 0];

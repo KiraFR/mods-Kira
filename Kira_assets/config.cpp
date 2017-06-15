@@ -61,7 +61,7 @@ class CfgFunctions
 			class initGPS;
 			class initAddConversation;
 			class initConversation;
-			class initAccRep;
+			class initCreatNotCtrt;
 			class deQui;
 			class sizePic;
 			class cfgEm;
@@ -82,6 +82,17 @@ class CfgFunctions
 			class inventoryOpened;
 			class inventoryClosed;
 			class addInBankRep;
+			
+			class contractNotaire;
+			class giveTestament;
+			class receiveTestament;
+			class waitUntilBothSign;
+			class sign;
+
+
+			class initAdsPage;
+			class publiAnnonce;
+			class showAnnonce;
 		};
 	};
 };
