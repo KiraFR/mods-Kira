@@ -27,116 +27,13 @@ class CfgPatches
 		ammo[] = {};
 	};
 };
-#include "dialog\common.hpp"
-#include "dialog\kiraCommon.hpp"
+#include "dialog\commons\common.hpp"
+#include "dialog\commons\kiraCommon.hpp"
 class RscTitles
 {
-	#include "dialog\progress.hpp"
-	#include "dialog\hud_nameTags.h"
-	class DOSTARA_GPSSTUCK
-	{
-		idd = 4780;
-		enableSimulation = true;
-		onUnLoad = "gpsclose = nil";
-		duration = 999999999;
-		fadeOut = 0;
-		fadeIn = 0;
-
-		class controlsBackground
-		{
-			class fondEcran : life_RscPicture{
-				idc = 4106;
-				colorBackground[] = {0,0,0,0.7};
-				text = "";
-				x = safeZoneX+0.01; y = safeZoneY+0.049;
-				w = 0.38; h = 0.98;
-			};
-
-			class fondOpa : Life_RscText{
-				colorBackground[] = {1,1,1,0.4};
-				text = "";
-				idc = -1;
-				x = safeZoneX+0.01; y = safeZoneY+0.049;
-				w = 0.38; h = 0.98;
-			};
-			class MainBackground : life_RscPicture{
-				idc = -1;
-				colorBackground[] = {0,0,0,0.5};
-				text = "\kira_assets\texture\BackgroundBlack-App.paa";
-				x = safeZoneX;
-				y = safeZoneY;
-				w = 0.4;
-				h = 1.1;
-			};
-		};
-		class controls {
-			class iconGPS : life_RscPicture{
-				idc = -1;
-				colorBackground[] = {0,0,0,0.7};
-				text = "\kira_assets\texture\gps.paa";
-				x = safeZoneX+0.025;
-				y = safeZoneY + 0.128;
-				w = 0.035;
-				h = 0.05;
-			};
-
-			class textIcon: Life_RscText{
-				idc = -1;
-				text = "GPS";
-				colorBackground[] = {0,0,0,0};
-				x = safeZoneX+ 0.06;
-				y = safeZoneY + 0.128;
-				sizeEx = (1/25);
-				w = 0.4;
-				h = (1/25);
-			};
-			class gps : Life_RscMapControl
-			{
-				idc = 4781;
-				type = 101;
-				style = 48;
-				moveOnEdges = 0;
-				x = (safeZoneX + 0.025); y = (safeZoneY + 0.18);
-				w = 0.348; h = 0.831;
-				onDraw = "_this call KIRA_fnc_loopPosGpsStuck";
-			};
-			class returnMouse : Life_RscButtonKiraMenu04x04 {
-				idc = 4101;
-				TextureNoShortcut = "\kira_assets\texture\returnNoMouse.paa";
-				//onMouseExit = "[[4100,4102,4104,4553],[4101,4103,4105,4554]] call KIRA_fnc_hideAllCtrl;";
-				onButtonClick = "";
-				x = safeZoneX + 0.05;
-				y = safeZoneY + 1.025;
-				text = "";
-				w = "0.05";
-				h = "0.07";
-			};
-
-			class homeMouse : Life_RscButtonKiraMenu04x04 {
-				idc = 4103;
-				TextureNoShortcut = "\kira_assets\texture\homeNoMouse.paa";
-				//onMouseExit = "[[4100,4102,4104,4553],[4101,4103,4105,4554]] call KIRA_fnc_hideAllCtrl;";
-				onButtonClick = "";
-				x = safeZoneX + (0.38/2) - 0.02;
-				y = safeZoneY + 1.022;
-				text = "";
-				w = "0.05";
-				h = "0.07";
-			};
-
-			class powerMouse : Life_RscButtonKiraMenu04x04 {
-				idc = 4105;
-				TextureNoShortcut = "\kira_assets\texture\PowerNoMouse.paa";
-				//onMouseExit = "[[4100,4102,4104,4553],[4101,4103,4105,4554]] call KIRA_fnc_hideAllCtrl;";
-				onButtonClick = "";
-				x = safeZoneX + 0.38 - (0.38/4);
-				y = safeZoneY + 1.022;
-				text = "";
-				w = "0.05";
-				h = "0.07";
-			};
-		};
-	};
+	#include "dialog\titles\progress.hpp"
+	#include "dialog\titles\hud_nameTags.h"
+	#include "dialog\titles\Kira_Titles.h"
 };
 class Attributes;
 class RscStandardDisplay;
@@ -3791,6 +3688,109 @@ class DOSTARA_AJOUTACCREP
 				y = 0.78;
 				w = 0.125;
 				h = 0.04;
+			};
+		};
+	};
+	class DOSTARA_ANNONCE
+	{
+		idd = 6100;
+		movingEnabled = true;
+		enableSimulation = true;
+		onLoad = "call KIRA_fnc_initAdsPage;";
+		onUnLoad = "xNextAds = nil;yEcartAds=nil";
+		
+		class controlsBackground{
+			class fondEcran : life_RscPicture{
+				colorBackground[] = {0,0,0,0.7};
+				text = "";
+				idc = 4106;
+				x = xtel+0.01; y = ytel+0.049;
+				w = 0.38; h = 0.98;
+			};
+			class fondOpa : Life_RscText{
+				colorBackground[] = {0,0,0,0.4};
+				text = "";
+				idc = -1;
+				x = xtel+0.01; y = ytel+0.049;
+				w = 0.38; h = 0.98;
+			};
+
+			class MainBackground : life_RscPicture{
+				colorBackground[] = {0,0,0,0.5};
+				text = "\kira_assets\texture\BackgroundBlack-app.paa";
+				idc = -1;
+				x = xtel; y = ytel;
+				w = 0.4; h = 1.1;
+				moving = 1;
+			};
+		};
+		class controls {
+			class iconMessage : life_RscPicture{
+				idc = -1;
+				colorBackground[] = {0,0,0,0.7};
+				text = "\kira_assets\texture\InternetMouse.paa";
+				x = xtel+0.025;
+				y = ytel + 0.128;
+				w = 0.035;
+				h = 0.05;
+			};
+
+			class textIcon: Life_RscText{
+				idc = -1;
+				text = "Annonces";
+				colorBackground[] = {0,0,0,0};
+				x = xtel+ 0.06;
+				y = ytel + 0.128;
+				sizeEx = (1/25);
+				w = 0.4;
+				h = (1/25);
+			};
+
+			class ListMessage: Life_RscControlsGroup {
+				idc = 6101;
+				x = (xtel + 0.025); y = (ytel + 0.18);
+				w = 0.348; h = (0.18 + 0.7 - 0.155);
+				sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+				colorBackground[] = {1,1,1,0.7};
+
+				class HScrollbar : HScrollbar {
+				height = 0;
+				};
+				class controls {		
+				};
+
+			};
+			class returnMouse : Life_RscButtonKiraMenu04x04 {
+				idc = 4101;
+				TextureNoShortcut = "\kira_assets\texture\returnNoMouse.paa";
+				onButtonClick = "CloseDialog 0";
+				x = xtel + 0.05;
+				y = ytel + 1.025;
+				text = "";
+				w = "0.05";
+				h = "0.07";
+			};
+
+			class homeMouse : Life_RscButtonKiraMenu04x04 {
+				idc = 4103;
+				TextureNoShortcut = "\kira_assets\texture\homeNoMouse.paa";
+				onButtonClick = "CloseDialog 0;[] spawn KIRA_fnc_initSmart;";
+				x = xtel + (0.38/2) - 0.02;
+				y = ytel + 1.022;
+				text = "";
+				w = "0.05";
+				h = "0.07";
+			};
+
+			class powerMouse : Life_RscButtonKiraMenu04x04 {
+				idc = 4105;
+				TextureNoShortcut = "\kira_assets\texture\PowerNoMouse.paa";
+				onButtonClick = "[] spawn KIRA_fnc_powerOFF";
+				x = xtel + 0.38 - (0.38/4);
+				y = ytel + 1.022;
+				text = "";
+				w = "0.05";
+				h = "0.07";
 			};
 		};
 	};
