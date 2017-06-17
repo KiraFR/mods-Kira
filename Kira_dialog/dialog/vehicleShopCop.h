@@ -1,6 +1,6 @@
 #define decale_droite 0.75
 #define decale_haut -0.55
-class Life_Vehicle_Shop_v2
+class Life_Vehicle_Shop_Cop
 {
 	idd = 12300;
 	name="life_vehicle_shop";
