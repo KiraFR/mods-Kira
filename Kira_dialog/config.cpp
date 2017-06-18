@@ -1456,7 +1456,7 @@ class DOSTARA_GENERAL
 			idc = 4109;
 			TextureNoShortcut = "\kira_assets\texture\InternetNoMouse.paa";
 			//onMouseExit = "[[4100,4102,4104,4106,4108,4110,4112,4114,4116,4118,4120],[4101,4103,4105,4107,4109,4111,4113,4115,4117,4119,4121]] call KIRA_fnc_hideAllCtrl;";
-			onButtonClick = "createDialog ""DOSTARA_INTERNET"";";
+			onButtonClick = "createDialog ""DOSTARA_ANNONCE"";";
 			x = xtel + (0.38/2) - 0.015;
 			y = ytel + 0.22;
 			text = "GPS";
@@ -1590,7 +1590,7 @@ class DOSTARA_GENERAL
 			w = 0.11; h = (1/25);
 		};
 		
-		class SoundBoardMouse : Life_RscButtonKiraMenu06x06 {
+		/*class SoundBoardMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4121;
 			TextureNoShortcut = "\kira_assets\texture\soundboardNoMouse.paa";
 			//onMouseExit = "[[4100,4102,4104,4106,4108,4110,4112,4114,4116,4118,4120],[4101,4103,4105,4107,4109,4111,4113,4115,4117,4119,4121]] call KIRA_fnc_hideAllCtrl;";
@@ -1611,7 +1611,7 @@ class DOSTARA_GENERAL
 			x = xtel + (0.38/2) - 0.025;
 			y = ytel + 0.56;
 			w = 0.11; h = (1/25);
-		};
+		};*/
 
 		class returnMouse : Life_RscButtonKiraMenu04x04 {
 			idc = 4101;
@@ -3572,7 +3572,7 @@ class DOSTARA_AJOUTACCREP
 
 		class controlsBackground
 		{
-			class background: RscText
+			class background: life_RscText
 			{
 				idc = -1;
 				text = "";
@@ -3583,7 +3583,7 @@ class DOSTARA_AJOUTACCREP
 				colorBackground[] = {0,0,0,0.7};
 				moving = 1;
 			};
-			class Titre: RscText
+			class Titre: life_RscText
 			{
 				idc = -1;
 				text = "Nouveau Contrat"; 
@@ -3595,7 +3595,7 @@ class DOSTARA_AJOUTACCREP
 				colorActive[] = {1,1,1,1};
 				sizeEx = 4 * GUI_GRID_H;
 			};
-			class nomeClient: RscText
+			class nomeClient: life_RscText
 			{
 				idc = -1;
 				text = "Nom du Client :"; 
@@ -3608,7 +3608,7 @@ class DOSTARA_AJOUTACCREP
 				colorActive[] = {1,1,1,1};
 				sizeEx = 1 * GUI_GRID_H;
 			};
-			class nomCl: RscText
+			class nomCl: life_RscText
 			{
 				idc = 5501;
 				text = "";
@@ -3620,7 +3620,7 @@ class DOSTARA_AJOUTACCREP
 				colorBackground[] = {0,0,0,0};
 				sizeEx = 1 * GUI_GRID_H;
 			};
-			class AmountTotal: RscText
+			class AmountTotal: life_RscText
 			{
 				idc = -1;
 				text = "Montant prix :"; 
@@ -3632,7 +3632,7 @@ class DOSTARA_AJOUTACCREP
 				colorBackground[] = {0,0,0,0};
 				sizeEx = 1 * GUI_GRID_H;
 			};
-			class description: RscText
+			class description: life_RscText
 			{
 				idc = -1;
 				text = "Description :"; 
@@ -3647,7 +3647,7 @@ class DOSTARA_AJOUTACCREP
 		};
 
 		class controls {
-			class amountTotalEdit: RscEdit
+			class amountTotalEdit: life_RscEdit
 			{
 				idc = 5502;
 				text = "";
@@ -3660,7 +3660,7 @@ class DOSTARA_AJOUTACCREP
 				sizeEx = 1 * GUI_GRID_H;
 			};
 
-			class descriptionEdit: RscEdit
+			class descriptionEdit: life_RscEdit
 			{
 				idc = 5503;
 				text = "";
@@ -3669,7 +3669,7 @@ class DOSTARA_AJOUTACCREP
 				w = 0.725;
 				h = 0.22;
 			};
-			class closeBtn: RscButtonMenu
+			class closeBtn: life_RscButtonMenu
 			{
 				idc = -1;
 				text = "Fermer";
@@ -3679,7 +3679,7 @@ class DOSTARA_AJOUTACCREP
 				w = 0.1375;
 				h = 0.04;
 			};
-			class ctnToContract: RscButtonMenu
+			class ctnToContract: life_RscButtonMenu
 			{
 				idc = -1;
 				text = "Contrat"; 
@@ -3691,8 +3691,186 @@ class DOSTARA_AJOUTACCREP
 			};
 		};
 	};
-	class DOSTARA_ANNONCE
-	{
+	class DOSTARA_NEWPUBLI{
+		idd = 6200;
+		movingEnabled = false;
+		enableSimulation = true;
+		onLoad = "call KIRA_fnc_initNewPubli;";
+
+		class controlsBackground
+		{
+			class Background: life_RscText
+			{
+				idc = -1;
+				x = 0.075;
+				y = 0.08;
+				w = 0.825;
+				h = 0.84;
+				colorBackground[] = {0,0.41,0,0.7};
+			};
+			class Title: life_RscStructuredText
+			{
+				idc = -1;
+				text = "<t align='center'> Nouvelle publication </t>"; 
+				x = 0.075;
+				y = 0.036;
+				w = 0.825;
+				h = 0.04;
+				colorText[] = {1,1,1,1};
+				colorBackground[] = {0,0,0,0.7};
+			};
+		};
+
+		class controls{
+			class titleAnnonce: life_RscText
+			{
+				idc = -1;
+				text = "Titre annonce :"; 
+				x = 0.1;
+				y = 0.12;
+				w = 0.15;
+				h = 0.04;
+				colorBackground[] = {0,0,0,0};
+			};
+			class editTitle: life_RscEdit
+			{
+				idc = 6201;
+				x = 0.2625;
+				y = 0.12;
+				w = 0.575;
+				h = 0.04;
+			};
+			class NomEntreprise: life_RscText
+			{
+				idc = -1;
+				text = "Nom entreprise :"; 
+				x = 0.1;
+				y = 0.2;
+				w = 0.1625;
+				h = 0.04;
+				colorBackground[] = {0,0,0,0};
+			};
+			class NEnterprise: life_RscEdit
+			{
+				idc = 6202;
+				x = 0.2625;
+				y = 0.2;
+				w = 0.575;
+				h = 0.04;
+			};
+			class TopPrice: life_RscText
+			{
+				idc = -1;
+				text = "Top prix :"; 
+				x = 0.1;
+				y = 0.28;
+				w = 0.1;
+				h = 0.04;
+			};
+			class topPrixText: life_RscText
+			{
+				idc = 6203;
+				text = "";
+				x = 0.2625;
+				y = 0.28;
+				w = 0.575;
+				h = 0.04;
+			};
+			class prixSurplus: life_RscText
+			{
+				idc = -1;
+				text = "Prix Surplus :"; 
+				x = 0.1;
+				y = 0.36;
+				w = 0.1375;
+				h = 0.04;
+			};
+			class editSurplus: life_RscEdit
+			{
+				idc = 6204;
+				text = "";
+				x = 0.2625;
+				y = 0.36;
+				w = 0.575;
+				h = 0.04;
+			};
+			class clrBG: life_RscText
+			{
+				idc = -1;
+				text = "Couleur fond :"; 
+				x = 0.1025;
+				y = 0.44;
+				w = 0.1375;
+				h = 0.04;
+			};
+			class ComboClrBG: life_RscCombo
+			{
+				idc = 6205;
+				text = "";
+				x = 0.2625;
+				y = 0.44;
+				w = 0.2625;
+				h = 0.04;
+			};
+			class ComboClrFont: life_RscCombo
+			{
+				idc = 6206;
+				text = "";
+				x = 0.2625;
+				y = 0.52;
+				w = 0.2625;
+				h = 0.04;
+			};
+			class clrFont: life_RscText
+			{
+				idc = -1;
+				text = "Couleur Police :"; 
+				x = 0.1025;
+				y = 0.52;
+				w = 0.15;
+				h = 0.04;
+			};
+			class msg: life_RscText
+			{
+				idc = -1;
+				text = "Message :"; 
+				x = 0.1;
+				y = 0.6;
+				w = 0.1125;
+				h = 0.04;
+			};
+			class msgEdit: life_RscEdit
+			{
+				idc = 6207;
+				text = "";
+				x = 0.1125;
+				y = 0.64;
+				w = 0.75;
+				h = 0.186993;
+				colorBackground[] = {0,0,0,0.7};
+			};
+			class close: life_RscButtonMenu
+			{
+				idc = -1;
+				text = "Fermer"; 
+				x = 0.1;
+				y = 0.86;
+				w = 0.1125;
+				h = 0.04;
+			};
+			class publi: life_RscButtonMenu
+			{
+				idc = -1;
+				text = "Publier";
+				onButtonClick = "call KIRA_fnc_publiAnnonce";
+				x = 0.75;
+				y = 0.86;
+				w = 0.1125;
+				h = 0.04;
+			};
+		};
+	};
+	class DOSTARA_ANNONCE{
 		idd = 6100;
 		movingEnabled = true;
 		enableSimulation = true;
@@ -3794,188 +3972,135 @@ class DOSTARA_AJOUTACCREP
 			};
 		};
 	};
-	class DOSTARA_NEWPUBLI
-{
-	idd = 6200;
-	movingEnabled = true;
-	enableSimulation = true;
-	onLoad = "[] spawn KIRA_fnc_initGPS";
-	movingEnable = true;
-
-	class controlsBackground
+	class DOSTARA_NEWCONTRACTNOTAIRE
 	{
-		class Background: RscText
+		idd = 5500;
+		movingEnabled = true;
+		enableSimulation = true;
+		fadeIn = 5;
+		fadeOut = 2;
+
+		class controlsBackground
 		{
-			idc = -1;
-			x = 0.075;
-			y = 0.08;
-			w = 0.825;
-			h = 0.84;
-			colorBackground[] = {0,0.41,0,0.7};
+			class background: life_RscText
+			{
+				idc = -1;
+				text = "";
+				x = 0.0999996;
+				y = 0.120001;
+				w = 0.775001;
+				h = 0.72;
+				colorBackground[] = {0,0,0,0.7};
+				moving = 1;
+			};
+			class Titre: life_RscText
+			{
+				idc = -1;
+				text = "Nouveau Contrat"; 
+				x = 0.175;
+				y = 0.14;
+				w = 0.6;
+				h = 0.14;
+				colorBackground[] = {0,0,0,0};
+				colorActive[] = {1,1,1,1};
+				sizeEx = 4 * GUI_GRID_H;
+			};
+			class nomeClient: life_RscText
+			{
+				idc = -1;
+				text = "Nom du Client :"; 
+				x = 0.1375;
+				y = 0.32;
+				w = 0.15;
+				h = 0.04;
+				colorText[] = {1,1,1,1};
+				colorBackground[] = {0,0,0,0};
+				colorActive[] = {1,1,1,1};
+				sizeEx = 1 * GUI_GRID_H;
+			};
+			class nomCl: life_RscText
+			{
+				idc = 5501;
+				text = "";
+				x = 0.3;
+				y = 0.32;
+				w = 0.5375;
+				h = 0.04;
+				colorText[] = {1,1,1,1};
+				colorBackground[] = {0,0,0,0};
+				sizeEx = 1 * GUI_GRID_H;
+			};
+			class AmountTotal: life_RscText
+			{
+				idc = -1;
+				text = "Montant prix :"; 
+				x = 0.1375;
+				y = 0.4;
+				w = 0.15;
+				h = 0.04;
+				colorText[] = {1,1,1,1};
+				colorBackground[] = {0,0,0,0};
+				sizeEx = 1 * GUI_GRID_H;
+			};
+			class description: life_RscText
+			{
+				idc = -1;
+				text = "Description :"; 
+				x = 0.1375;
+				y = 0.48;
+				w = 0.15;
+				h = 0.04;
+				colorText[] = {1,1,1,1};
+				colorBackground[] = {0,0,0,0};
+				sizeEx = 1 * GUI_GRID_H;
+			};
 		};
-		class Title: RscStructuredText
-		{
-			idc = -1;
-			text = "<t align='center'> Nouvelle publication </t>"; 
-			x = 0.075;
-			y = 0.036;
-			w = 0.825;
-			h = 0.04;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0.7};
+
+		class controls {
+			class amountTotalEdit: life_RscEdit
+			{
+				idc = 5502;
+				text = "";
+				x = 0.2875;
+				y = 0.4;
+				w = 0.55;
+				h = 0.04;
+				colorText[] = {1,1,1,1};
+				colorBackground[] = {0,0,0,0};
+				sizeEx = 1 * GUI_GRID_H;
+			};
+
+			class descriptionEdit: life_RscEdit
+			{
+				idc = 5503;
+				text = "";
+				x = 0.125;
+				y = 0.54;
+				w = 0.725;
+				h = 0.22;
+			};
+			class closeBtn: life_RscButtonMenu
+			{
+				idc = -1;
+				text = "Fermer";
+				onButtonClick = "CloseDialog 0;";
+				x = 0.125;
+				y = 0.78;
+				w = 0.1375;
+				h = 0.04;
+			};
+			class ctnToContract: life_RscButtonMenu
+			{
+				idc = -1;
+				text = "Contrat"; 
+				onButtonClick = "[ctrlText 5502,ctrlText 5503,ctrlText 5501] call KIRA_fnc_contractNotaire";
+				x = 0.725;
+				y = 0.78;
+				w = 0.125;
+				h = 0.04;
+			};
 		};
 	};
-
-	class controls{
-		class titleAnnonce: RscText
-		{
-			idc = -1;
-			text = "Titre annonce :"; 
-			x = 0.1;
-			y = 0.12;
-			w = 0.15;
-			h = 0.04;
-			colorBackground[] = {0,0,0,0};
-		};
-		class editTitle: RscEdit
-		{
-			idc = 6201;
-			x = 0.2625;
-			y = 0.12;
-			w = 0.575;
-			h = 0.04;
-		};
-		class NomEntreprise: RscText
-		{
-			idc = -1;
-			text = "Nom entreprise :"; 
-			x = 0.1;
-			y = 0.2;
-			w = 0.1625;
-			h = 0.04;
-			colorBackground[] = {0,0,0,0};
-		};
-		class NEnterprise: RscEdit
-		{
-			idc = 6202;
-			x = 0.2625;
-			y = 0.2;
-			w = 0.575;
-			h = 0.04;
-		};
-		class TopPrice: RscText
-		{
-			idc = -1;
-			text = "Top prix :"; 
-			x = 0.1;
-			y = 0.28;
-			w = 0.1;
-			h = 0.04;
-		};
-		class topPrixText: RscText
-		{
-			idc = 6203;
-			text = "";
-			x = 0.2625;
-			y = 0.28;
-			w = 0.575;
-			h = 0.04;
-		};
-		class prixSurplus: RscText
-		{
-			idc = -1;
-			text = "Prix Surplus :"; 
-			x = 0.1;
-			y = 0.36;
-			w = 0.1375;
-			h = 0.04;
-		};
-		class editSurplus: RscEdit
-		{
-			idc = 6204;
-			text = "";
-			x = 0.2625;
-			y = 0.36;
-			w = 0.575;
-			h = 0.04;
-		};
-		class clrBG: RscText
-		{
-			idc = -1;
-			text = "Couleur fond :"; 
-			x = 0.1025;
-			y = 0.44;
-			w = 0.1375;
-			h = 0.04;
-		};
-		class ComboClrBG: RscCombo
-		{
-			idc = 6205;
-			text = "";
-			x = 0.2625;
-			y = 0.44;
-			w = 0.2625;
-			h = 0.04;
-		};
-		class ComboClrFont: RscCombo
-		{
-			idc = 6206;
-			text = "";
-			x = 0.2625;
-			y = 0.52;
-			w = 0.2625;
-			h = 0.04;
-		};
-		class clrFont: RscText
-		{
-			idc = -1;
-			text = "Couleur Police :"; 
-			x = 0.1025;
-			y = 0.52;
-			w = 0.15;
-			h = 0.04;
-		};
-		class msg: RscText
-		{
-			idc = -1;
-			text = "Message :"; 
-			x = 0.1;
-			y = 0.6;
-			w = 0.1125;
-			h = 0.04;
-		};
-		class msgEdit: RscEdit
-		{
-			idc = 6207;
-			text = "";
-			x = 0.1125;
-			y = 0.64;
-			w = 0.75;
-			h = 0.186993;
-			colorBackground[] = {0,0,0,0.7};
-		};
-		class close: RscButtonMenu
-		{
-			idc = -1;
-			text = "Fermer"; 
-			x = 0.1;
-			y = 0.86;
-			w = 0.1125;
-			h = 0.04;
-		};
-		class publi: RscButtonMenu
-		{
-			idc = -1;
-			text = "Publier";
-			onButtonClick = "call KIRA_fnc_publiAnnonce";
-			x = 0.75;
-			y = 0.86;
-			w = 0.1125;
-			h = 0.04;
-		};
-	};
-};
-
 };
 
 

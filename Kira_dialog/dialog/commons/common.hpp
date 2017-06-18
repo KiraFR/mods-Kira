@@ -538,6 +538,7 @@ class Life_RscCheckbox {
 	colorDisable[] = {0.4, 0.4, 0.4, 1};
 	font = "PuristaMedium";
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+	columns = 1;
 	rows = 1;
 	5ns = 1;
 	strings[] = {UNCHECKED};

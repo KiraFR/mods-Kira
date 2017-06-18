@@ -90,6 +90,7 @@ class CfgFunctions
 			class initAdsPage;
 			class publiAnnonce;
 			class showAnnonce;
+			class sortArray;
 		};
 	};
 };

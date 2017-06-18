@@ -33,7 +33,9 @@ _price = ctrlText 0;
 _BasePrice = OBJECTMAP getVariable ["prixAnnonce",0];
 _deja = false;
 //paiement
-if(_price != "")then{
+if(!([_price] call life_fnc_isnumeric))exitWith{hint "Le prix que vous avez inscrit n'est pas un nombre ou si vous n'avez pas écrit de prix, mettez 0.";};
+_price = parseNumber _price;
+if(_price isEqualTo 0)then{
 	_price = call compile format["%1",_price];
 	_surplus = _price;
 	_price = _surplus + _BasePrice;
@@ -41,21 +43,20 @@ if(_price != "")then{
 	_surplus = 0;
 	_price = _surplus + _BasePrice;
 };
+
+
 if(life_cash < _price) then{
 	if(life_atmcash < _price) exitWith{
 		hint "Vous n'avez pas assez d'argent.";
 		closeDialog 0;
-	}else{
-		life_atmcash = life_atmcash - _price;
-		[] call SOCK_fnc_updatePartial;
 	};
+	life_atmcash = life_atmcash - _price;
+	[] call SOCK_fnc_updatePartial;
 }else{
 	life_cash = life_cash - _price;
 	[0] call SOCK_fnc_updatePartial;
 };
-/*
-	FAIRE UN ALGO DE TRI
-*/
+
 _list = OBJECTMAP getVariable ["Annonces",[]];
 _l = [_title,_nomEntreprise,_message,_colorBG,_colorFont,_surplus,player];
 if(count _list > 0) then {
@@ -65,16 +66,10 @@ if(count _list > 0) then {
 		};
 	}foreach _list;
 	if(_deja) exitWith{closeDialog 0; hint "Vous ou votre entreprise avez déjà posté une annonce.";};
-	_priceTop = (_list select 0) select 5;
-	if(_surplus > _TopAnnonce)then{
-		_newList = [_l] + _list;
-		OBJECTMAP setVariable ["Annonces",_newList];
-		hint parseText "Votre annonce a bien été pris en charge.<br> Comme vous venez de donner un surplus, votre annonce sera dans le top !";
-	}else{
-		_list pushBack _l;
-		OBJECTMAP setVariable ["Annonces",_list];
-		hint parseText "Votre annonce a bien été pris en charge.<br> Elle sera ajouté d'ici quelques secondes (voir minutes).";
-	};
+	_list pushBack _l;
+	_newList = [_list] call KIRA_fnc_sortArrayOfNumber;
+	OBJECTMAP setVariable ["Annonces",_newList,true];
+	hint parseText "Votre annonce a bien été pris en charge.<br> Comme vous venez de donner un surplus, votre annonce sera dans le top !";
 }else{
-	OBJECTMAP setVariable ["Annonces",[_l]];
+	OBJECTMAP setVariable ["Annonces",[_l],true];
 };

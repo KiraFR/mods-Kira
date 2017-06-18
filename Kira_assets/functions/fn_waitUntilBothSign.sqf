@@ -22,7 +22,7 @@ params[
 ];
 
 if(isNull _client) exitWith{diag_log "fuck you arma."};
-waitUntil {_notaireSigne & (_client getVariable ["signedPaper",false])};
+waitUntil {_notaireSigne && (_client getVariable ["signedPaper",false])};
 _client setVariable ["signedPaper",nil,true];
 
 //Envoi au serveur

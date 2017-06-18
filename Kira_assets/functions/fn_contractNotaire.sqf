@@ -33,7 +33,10 @@ _gouvTake = [_gouvTake] call life_fnc_numberText;
 _amount = [_amount] call life_fnc_numberText;
 _contratAct = missionNamespace getVariable ["contratActuel",[]];
 if not (count _contratAct > 0) exitWith{hint "Veuillez recommencer la procédure.";closeDialog 0;};
-{if(_contratAct select _forEachIndex == "") then{(_contratAct select _forEachIndex) = _x;};
+{
+	if(_contratAct select _forEachIndex == "") then{
+		_contratAct set [_forEachIndex,_x];
+	};
 }forEach [_nameClient,_amount,_realAmount,name player,_desc];
 diag_log str(_contratAct);
 missionNamespace setVariable ["contratActuel",_contratAct];
