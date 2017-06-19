@@ -15,6 +15,14 @@
 
 	CALL:
 	[STRING,STRING] call KIRA_fnc_contractNotaire
+
+	clientNotaire:
+		1. UID PLAYER
+		2. Nom
+		3. prix
+		4. prix Notaire
+		5. Nom Notaire
+		6. description
 */
 private["_contratAct","_obj"];
 params[
@@ -26,6 +34,7 @@ if(isNull OBJECTMAP) exitWith {hint "Contactez un administrateur, un objet mappi
 _obj = missionNamespace getVariable ["Clientnotaire",objNull];
 if(isNull _obj) exitWith {hint "Veuillez recommencer la procédure.";closeDialog 0;};
 _taxe = OBJECTMAP getVariable ["taxeNotaire",0.5];
+_amount = parseNumber _amount;
 _gouvTake = _taxe * _amount;
 _realAmount = _amount - _gouvTake;
 _realAmount = [_realAmount] call life_fnc_numberText;
@@ -38,7 +47,6 @@ if not (count _contratAct > 0) exitWith{hint "Veuillez recommencer la procédure
 		_contratAct set [_forEachIndex,_x];
 	};
 }forEach [_nameClient,_amount,_realAmount,name player,_desc];
-diag_log str(_contratAct);
 missionNamespace setVariable ["contratActuel",_contratAct];
 closeDialog 0;
 [[name player],true,player] remoteExecCall ["KIRA_fnc_receiveTestament",_obj];

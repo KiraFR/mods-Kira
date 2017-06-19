@@ -26,6 +26,7 @@ player Say3D "signature";
 ctrlShow[5006,false];
 ctrlSetText [5008,(name player)];
 player setVariable ["signedPaper",true,true];
+player setVariable ["destinationNotaire",_deux,true];
 if(isNil "notaire")exitWith{};
 [[name player,_deux],false] remoteExecCall ["KIRA_fnc_receiveTestament",notaire];
 notaire = nil;
