@@ -74,6 +74,9 @@ class CfgFunctions
 			class addMsg;
 			class receivedMsg;
 			class peterMalade;
+			class giveTestament;
+			class receiveTestament;
+			class sign;
 			class refreshList;
 			class inRepBank;
 			class inventoryOpened;
@@ -86,7 +89,7 @@ class CfgFunctions
 			class waitUntilBothSign;
 			class sign;
 
-
+			class initNewPubli;
 			class initAdsPage;
 			class publiAnnonce;
 			class showAnnonce;

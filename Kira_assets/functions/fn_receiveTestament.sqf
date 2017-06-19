@@ -22,6 +22,7 @@ _display = findDisplay 6000;
 if(isNull _display) then {createDialog "DOSTARA_CONTRACTNOTAIRE";};
 if(_client) then{
 	notaire = param[2,objNull,[objNull]];
+	
 	ctrlSetText[6004,_name select 0];
 	ctrlSetText[6007,_name select 0];
 }else{

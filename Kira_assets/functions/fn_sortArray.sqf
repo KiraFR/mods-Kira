@@ -18,7 +18,6 @@
 	CALL:
 	[NUMBER] call KIRA_fnc_sortArrayOfNumber
 */
-diag_log accTime;
 private["_sorted"];
 _array = param[0,[],[[]]];
 if(count _array isEqualTo 0)exitWith{_array;};
@@ -44,5 +43,3 @@ while {!_sorted} do {
 	};
 };
 _array;
-
-diag_log accTime;
