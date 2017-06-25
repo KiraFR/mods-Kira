@@ -272,7 +272,7 @@ class CfgVehicles {
                 showDisabled = 1;
                 priority = 3.2;
                 icon = QPATHTOF(UI\team\team_management_ca.paa);
-
+/*
                 class ACE_JoinTeamRed {
                     displayName = CSTRING(JoinTeamRed);
                     condition = QUOTE(true);
@@ -337,7 +337,7 @@ class CfgVehicles {
                     priority = 1.2;
                     icon = QPATHTOF(UI\team\team_management_ca.paa);
                 };
-                */
+  */
             };
 
             class ACE_Equipment {
@@ -1050,7 +1050,7 @@ class CfgVehicles {
                    {
                        displayName = "Eteindre les lumieres";
                        distance = 1;
-                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {(_target getVariable ["lightSource",ObjNull isEqualTo ObjNull])}}";
+                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {!(_target getVariable ["lightSource",ObjNull])}}";
                        statement = "[_target] spawn life_fnc_buyHouse;";
                        priority = 2;
                    };
@@ -1065,14 +1065,14 @@ class CfgVehicles {
                        class ACE_RepairBank
                        {
                            displayName = "Réparer la porte";
-                           condition = "(nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _target OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _target";
+                           condition = "(nearestObject [[16019.5,16952.9,0],""Land_Dome_Big_F""]) == _target OR (nearestObject [[16019.5,16952.9,0],""Land_Research_house_V1_F""]) == _target";
                            statement = "[_target] spawn life_fnc_repairDoor;";
                            priority = 1;
                        };
                        class ACE_CloseDoor
                        {
                            displayName = "Fermé la porte";
-                           condition = "(nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _target OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _target";
+                           condition = "(nearestObject [[16019.5,16952.9,0],""Land_Dome_Big_F""]) == _target OR (nearestObject [[16019.5,16952.9,0],""Land_Research_house_V1_F""]) == _target";
                            statement = "[_target] call life_fnc_doorAnimate;";
                            priority = 0.8;
                        };
