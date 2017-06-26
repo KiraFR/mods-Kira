@@ -1,3 +1,4 @@
+#include "..\macro.h"
 /*
 	File: fn_initAddCont.sqf
 	Auteur: J. `Kira` D.
@@ -16,8 +17,7 @@
 */
 disableSerialization;
 waitUntil {!isNull findDisplay 4250};
-_display = findDisplay 4250;
-_listColor = _display displayCtrl 4254;
+_listColor = getControl(4250,4254);
 [[4100,4102,4104,4255],[4101,4103,4105,4256]] call KIRA_fnc_hideAllCtrl;
 ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
 

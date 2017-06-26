@@ -1,3 +1,4 @@
+#include "..\macro.h"
 /*
 	File: fn_initAddConversation.sqf
 	Auteur: J. `Kira` D.
@@ -14,11 +15,9 @@
 	CALL:
 	[] spawn KIRA_fnc_initAddConversation
 */
-private["_listC"];
 disableSerialization;
 waitUntil {!isNull findDisplay 4900};
-_display = findDisplay 4900;
-_listC = _display displayCtrl 4901;
+private _listC = getControl(4900,4901);
 ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
 
 // nom,numero,color

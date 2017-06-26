@@ -1,3 +1,4 @@
+#include "..\macro.h"
 /*
 	File: fn_initNewPubli.sqf
 	Auteur: J. `Kira` D.
@@ -18,10 +19,9 @@
 private["_lbBGAdd","_lbFontAdd"];
 disableSerialization;
 createDialog "DOSTARA_NEWPUBLI";
-_display = findDisplay 6200;
-if(isNull _display)then{diag_log "nop"};
-_lbColorBG = _display displayCtrl 6205;
-_lbColorFont = _display displayCtrl 6206;
+if(isNull (findDisplay 6200))then{diag_log "nop"};
+_lbColorBG = getControl(6200,6205);
+_lbColorFont = getControl(6200,6206);
 _colorName = ["rose","bleu","vert","orange","noir","gris","jaune","blanc","rouge","violet"];
 _codeColor = [
 	[0.87,0.19,0.38,1],

@@ -1,3 +1,4 @@
+#include "..\macro.h"
 /*
 	File: fn_initCreatNotCtrt.sqf
 	Auteur: J. `Kira` D.
@@ -21,6 +22,5 @@ missionNamespace setVariable ["Clientnotaire",_this];
 missionNamespace setVariable ["contratActuel",[getPlayerUID _this,"","","",name _this,"",""]];
 disableSerialization;
 createDialog "DOSTARA_NEWCONTRACTNOTAIRE";
-_d = findDisplay 5500;
-_name = _d displayCtrl 5501;
+_name = getControl(5500,5501);
 _name ctrlSetText (name _this);

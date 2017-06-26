@@ -1,3 +1,4 @@
+#include "..\macro.h"
 /*
 	File: fn_initRepertoire.sqf
 	Auteur: J. `Kira` D.
@@ -14,11 +15,9 @@
 	CALL:
 	[] spawn KIRA_fnc_initRepertoire
 */
-private["_listC"];
 disableSerialization;
 waitUntil {!isNull findDisplay 4450};
-_display = findDisplay 4450;
-_listC = _display displayCtrl 4451;
+private _listC = getControl(4450,4451);
 ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
 
 // nom,numero,color

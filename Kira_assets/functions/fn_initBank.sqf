@@ -1,3 +1,4 @@
+#include "..\macro.h"
 /*
 	File: fn_initBank.sqf
 	Auteur: J. `Kira` D.
@@ -14,7 +15,7 @@
 	CALL:
 	[] spawn KIRA_fnc_initBank
 */
-private["_listR","_listRepertAcc","_listAccSender","_listS","_repertoireAcc","_display"];
+private["_listR","_listRepertAcc","_listAccSender","_listS","_repertoireAcc"];
 disableSerialization;
 //[nom,numeroCompte,Montant];
 _accountPerso = missionNamespace getVariable "AccountBanque";
@@ -24,9 +25,8 @@ if (isNil "_accountPerso" OR (count _accountPerso == 0))exitWith {
 	Veuillez vous rendre dans une banque pour pouvoir en créer un.";
 };
 
-_display = findDisplay 5000;
-_listRepertAcc = _display displayCtrl 5001;// compte qui reçois
-_listAccSender = _display displayCtrl 5002;// Compte qui envoi
+_listRepertAcc = getControl(5000,5001);// compte qui reçois
+_listAccSender = getControl(5000,5002);// Compte qui envoi
 ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
 //[nom,numeroCompte]
 _repertoireAcc = profileNamespace getVariable ["repertoireBanque",[]];

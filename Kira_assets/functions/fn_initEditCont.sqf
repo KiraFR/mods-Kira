@@ -1,3 +1,4 @@
+#include "..\macro.h"
 /*
 	File: fn_initEditCont.sqf
 	Auteur: J. `Kira` D.
@@ -16,9 +17,8 @@
 */
 disableSerialization;
 waitUntil {!isNull findDisplay 4550};
-_display = findDisplay 4550;
-_listColor = _display displayCtrl 4552;
-_ctrlStructuredText = _display displayCtrl 4555;
+_listColor = getControl(4550,4552);
+_ctrlStructuredText = getControl(4550,4555);
 ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
 _ctrlStructuredText ctrlSetStructuredText parseText format["<t align='center'>%1</t>",(contact select 1)];
 _color = [[1,0,0,1],[0.45,0.09,0.56,1],[1,1,1,1],[0,0.91,0.88,1],[1,0,1,1],[1,1,0,1]];
