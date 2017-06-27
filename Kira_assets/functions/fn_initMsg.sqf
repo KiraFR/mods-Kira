@@ -25,10 +25,10 @@ waitUntil {!isNull findDisplay 4150};
 _display = findDisplay 4150;
 _listC = _display displayCtrl 4901;
 
-ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
+ctrlSetText[4106,varProfile("imageBackground")];
 ctrlSetText[4155,format["Mes messages(%1)",number]];
 // [number,[conversation]]
-_listconversations = profileNamespace getVariable "conversations";
+_listconversations = varProfile("conversations");
 
 lbClear _listC;
 {

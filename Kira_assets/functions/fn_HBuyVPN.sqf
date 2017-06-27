@@ -20,6 +20,6 @@ if(_nbr == 0)exitWith{Terminal_fulltext = Terminal_fulltext + "Probleme d'achat 
 if(life_atmCash < ((life_prixVPN)*_nbr)) exitWith{Terminal_fulltext = Terminal_fulltext + "Probleme d'achat de VPN... <br/>";};
 life_atmCash = life_atmCash - ((life_prixVPN)*_nbr);
 Terminal_fulltext = Terminal_fulltext + format["Vous venez d'acheter %1 vpn.<br/>",_nbr];
-missionNamespace setVariable ["VPNHACK",(missionNamespace getVariable "VPNHACK")+_nbr];
+setVarMission("VPNHACK",(varMission("VPNHACK"))+_nbr);
 // sauvegarde
 // blabla

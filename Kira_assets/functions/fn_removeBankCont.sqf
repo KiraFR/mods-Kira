@@ -18,8 +18,8 @@ private["_repertoireBanque","_bankContact","_myAcc"];
 _data = param[0,"",[""]];
 _indexL = param[1,0,[0]];
 _bankContact = call compile format["%1",_data];
-_repertoireBanque = profileNamespace getVariable "repertoireBanque";
-_accountPerso = missionNamespace getVariable "AccountBanque";
+_repertoireBanque = varProfile("repertoireBanque");
+_accountPerso = varMission("AccountBanque");
 {_num = _x select 1;if((_bankContact select 1) == _num)exitWith{_myAcc = true;};}foreach _accountPerso; // un de mes comptes ?
 if(!(isNil "_myAcc"))exitWith { hint "Vous ne pouvez pas supprimer votre compte de ce repertoire.";[9] call SOCK_fnc_updatePartial;};
 _index = _repertoireBanque find _bankContact;

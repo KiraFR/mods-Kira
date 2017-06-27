@@ -16,7 +16,7 @@
 	[] call KIRA_fnc_initImpot
 */
 _private["_amount","_max"];
-_listBankAccount = missionNamespace getVariable "compteBanque"; // pas le bon nom
+_listBankAccount = varMission("compteBanque"); // pas le bon nom
 _amount = 0;
 _max = [];
 {
@@ -33,7 +33,7 @@ _indexMax = _max find _maxAmount;
 _maxAmount = _maxAmount - (_amount * 0.02);
 
 (_listBankAccount select _indexMax) select 1 = _maxAmount;
-missionNamespace setVariable ["compteBanque",_listBankAccount];
+setVarMission("compteBanque",_listBankAccount);
 
 [9] call SOCK_fnc_updatePartial;
 [getPlayerUID player] remoteExecCall ["KIRASERVER_fnc_impotPaye",2];

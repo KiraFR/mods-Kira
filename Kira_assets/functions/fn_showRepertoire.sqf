@@ -19,7 +19,7 @@ disableSerialization;
 _display = findDisplay 4450;
 _listC = _display displayCtrl 4451;
 // nom,numero,color
-_listRepertoire = profileNamespace getVariable "repertoire";
+_listRepertoire = varProfile("repertoire");
 
 lbClear _listC;
 {

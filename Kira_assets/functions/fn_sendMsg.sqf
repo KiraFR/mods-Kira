@@ -26,7 +26,7 @@ _display = findDisplay 4920;
 waitUntil {!isNull _display};
 _controlGrp = _display displayCtrl 4921;
 _titleConv = _display displayCtrl 4922;
-_listconversations = profileNamespace getVariable "conversations";
+_listconversations = varProfile("conversations");
 
 {
 	_num = (_x select 0);
@@ -39,13 +39,13 @@ if(!(isNil "_listMsg")) then{
 	_numero = _listMsg select 0;
 	(_listMsg select 1) pushBack [1,_msg];
 	_listconversations set [_i,_listMsg];
-	profileNamespace setVariable ["conversations",_listconversations];
+	setVarProfile("conversations",_listconversations);
 }else{
 	_msg = ctrlText 4939;
 	_numero = (conversationTarget select 1);
 	_listMsg = [(conversationTarget select 1),[[1,_msg]]];
 	_listconversations pushBack _listMsg;
-	profileNamespace setVariable ["conversations",_listconversations];
+	setVarProfile("conversations",_listconversations);
 };
 _color = [_numero] call KIRA_fnc_getColorContact;
 [_msg,1,_color] spawn KIRA_fnc_addMsg;

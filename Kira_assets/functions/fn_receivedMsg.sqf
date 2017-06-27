@@ -26,7 +26,7 @@ params[
 	["_msg","",[""]],
 	["_number","",[""]]
 ];
-_listconversations = profileNamespace getVariable "conversations";
+_listconversations = varProfile("conversations");
 
 {
 	_num = (_x select 0);
@@ -39,11 +39,11 @@ _listconversations = profileNamespace getVariable "conversations";
 if(!(isNil "_listMsg")) then{
 	(_listMsg select 1) pushBack [0,_msg];
 	_listconversations set [_i,_listMsg];
-	profileNamespace setVariable ["conversations",_listconversations];
+	setVarProfile("conversations",_listconversations);
 }else{
 	_listMsg = [_number,[[0,_msg]]];
 	_listconversations pushBack _listMsg;
-	profileNamespace setVariable ["conversations",_listconversations];
+	setVarProfile("conversations",_listconversations);
 };
 if((!isNull findDisplay 4150) && !(isNil "conversationTarget")) then {
 	if((conversationTarget select 1) != _num) then{

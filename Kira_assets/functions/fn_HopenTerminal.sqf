@@ -21,7 +21,7 @@ _text = _display displayCtrl 6901;
 _title = _display displayCtrl 6903;
 _title ctrlSetStructuredText parseText "<t align='center'>Terminal KIRAER</t>";
 
-if(!(missionNamespace getVariable "closeWell")) then {// Bad KIRAer
+if(!(varMission("closeWell"))) then {// Bad KIRAer
 	Terminal_fulltext= "<t align='center'>Il semble que vous avez mal fermé le terminal...<br/>
 			   .:. REDEMARRAGE EN COURS .:.</t><br/>";
 	_text ctrlSetStructuredText parseText Terminal_fulltext;
@@ -32,7 +32,7 @@ if(!(missionNamespace getVariable "closeWell")) then {// Bad KIRAer
 	_text ctrlSetStructuredText parseText Terminal_fulltext;
 	_timeDemarrage = 10;
 };
-missionNamespace setVariable ["closeWell",false];
+setVarMission("closeWell",false);
 
 _points = ".";
 _y = 0;

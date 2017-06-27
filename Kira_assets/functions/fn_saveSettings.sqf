@@ -15,8 +15,8 @@
 	CALL:
 	call KIRA_fnc_saveSettings
 */
-profileNamespace setVariable ["imageBackground",thisBackground];
-profileNamespace setVariable ["anonyme",thisAnonyme];
+setVarProfile("imageBackground",thisBackground);
+setVarProfile("anonyme",thisAnonyme);
 _account = call compile format["%1",lbData[4656,(lbCurSel 4656)]];
 _dft = _account select 2;
 if(_dft) then {

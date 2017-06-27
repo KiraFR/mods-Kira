@@ -48,7 +48,7 @@ switch(_commande) do {
 			else{
 				_handle = [_param1] spawn KIRA_fnc_HScanAnim;
 				waitUntil {scriptDone _handle};
-				missionNamespace setVariable ["listNear",[]];
+				setVarMission("listNear",[]);
 				[_param1] remoteExecCall ["KIRA_fnc_HCheckNear",2];
 			};
 		};
@@ -72,10 +72,10 @@ switch(_commande) do {
 		_param1 = _listSentence select 1;
 		if(isNil "_param1")then{
 			Terminal_fulltext = Terminal_fulltext + "Aucun paramètre..<br/>";
-		}else{missionNamespace setVariable ["lockphonenum",_param1];};
+		}else{setVarMission("lockphonenum",_param1);};
 	};
 	case "attackphone": {
-		_param1 = missionNamespace getVariable "lockphonenum";
+		_param1 = varMission("lockphonenum");
 		if(isNil "_param1") then {
 			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
 		}else{
@@ -85,7 +85,7 @@ switch(_commande) do {
 		};
 	};
 	case "sendmsg": {
-		_param1 = missionNamespace getVariable "lockphonenum";
+		_param1 = varMission("lockphonenum");
 		if(isNil "_param1") then {
 			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
 		}else{
@@ -95,7 +95,7 @@ switch(_commande) do {
 		};
 	};
 	case "fetchrepertoire": {
-		_param1 = missionNamespace getVariable "lockphonenum";
+		_param1 = varMission("lockphonenum");
 		if(isNil "_param1") then {
 			Terminal_fulltext = Terminal_fulltext + "Aucune numéro de telephone enregistré..<br/>";
 		}else{
@@ -114,15 +114,15 @@ switch(_commande) do {
 		if(isNil "_param1") then {
 			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
 		}else{
-			missionNamespace setVariable["accNumberLocked",_param1];
+			setVarMission("accNumberLocked",_param1);
 		};
 	};
 	case "unlockaccnumber": {
-		_param1 = missionNamespace getVariable"accNumberLocked";
+		_param1 = varMission("accNumberLocked");
 		if(isNil "_param1") then {
 			Terminal_fulltext = Terminal_fulltext + "Aucune numéro de compte en banque enregistré..<br/>";
 		}else{
-			missionNamespace setVariable["accNumberLocked",nil];
+			setVarMission("accNumberLocked",nil);
 		};
 	};
 	case "ping": {

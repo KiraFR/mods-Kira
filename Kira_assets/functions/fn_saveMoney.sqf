@@ -16,7 +16,7 @@
 */
 private["_i","_account","_accID","_total","_accountPerso"];
 params[["_amount",0,[0]],["_numAcc","",[""]],["_total",false,[false]],["_sender",objNull,[objNull]]];
-_accountPerso = missionNamespace getVariable "AccountBanque";
+_accountPerso = varMission("AccountBanque");
 {
 	_accID = _x select 1;
 	if(typeName _accID == "SCALAR")then{_accID = str(_accID);};
@@ -31,6 +31,6 @@ _accountPerso = missionNamespace getVariable "AccountBanque";
 	};
 }foreach _accountPerso;
 
-missionNamespace setVariable ["AccountBanque",_accountPerso];
+setVarMission("AccountBanque",_accountPerso);
 [9] call SOCK_fnc_updatePartial;
 _sender setVariable ["transaction",false,true];

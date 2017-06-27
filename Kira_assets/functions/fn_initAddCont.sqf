@@ -19,7 +19,7 @@ disableSerialization;
 waitUntil {!isNull findDisplay 4250};
 _listColor = getControl(4250,4254);
 [[4100,4102,4104,4255],[4101,4103,4105,4256]] call KIRA_fnc_hideAllCtrl;
-ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
+ctrlSetText[4106,varProfile("imageBackground")];
 
 _color = [[1,0,0,1],[0.45,0.09,0.56,1],[1,1,1,1],[0,0.91,0.88,1],[1,0,1,1],[1,1,0,1]];
 _colorText = ["Rouge","Violet","Blanche","Cyan","Rose","Jaune"];

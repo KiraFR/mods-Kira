@@ -16,7 +16,7 @@
 */
 private["_listRepertoire","_index"];
 // nom,numero,color
-_listRepertoire = profileNamespace getVariable "repertoire";
+_listRepertoire = varProfile("repertoire");
 //_contact = [contact select 0,contact select 1,contact select 2];
 _index = _listRepertoire find contact;
 if(_index != -1) then {
@@ -24,7 +24,7 @@ if(_index != -1) then {
 		_result = ["Êtes-vous sur de vouloir supprimer ce contact ?", "Êtes vous sur ?", true, true] call BIS_fnc_GUImessage;
 		if(_result) then {
 			_listRepertoire deleteAt (_this select 0);
-			profileNamespace setVariable ["repertoire",_listRepertoire];
+			setVarProfile("repertoire",_listRepertoire);
 			call KIRA_fnc_showRepertoire;
 		};
 	};

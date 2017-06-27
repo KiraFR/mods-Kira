@@ -19,7 +19,7 @@ _nom = ctrlText 4551;
 _color = call compile format["%1",lbData[4552,(lbCurSel 4552)]];
 
 // nom,numero,color
-_listRepertoire = profileNamespace getVariable "repertoire";
+_listRepertoire = varProfile("repertoire");
 
 {
 	if((contact select 1) == (_x select 1)) then {
@@ -27,6 +27,6 @@ _listRepertoire = profileNamespace getVariable "repertoire";
 		_listRepertoire pushBack [_nom,(_x select 1),_color];
 	};
 }foreach _listRepertoire;
-profileNamespace setVariable ["repertoire",_listRepertoire];
+setVarProfile("repertoire",_listRepertoire);
 closeDialog 0;
 call KIRA_fnc_showRepertoire;

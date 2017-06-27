@@ -15,7 +15,7 @@
 	call KIRA_fnc_HCallFlics
 */
 
-if(isNil {missionNamespace getVariable "VPNHACK"})exitWith {};
+if(isNil {varMission("VPNHACK")})exitWith {};
 _antiHacker = call KIRA_fnc_antiHacker;
 if(count _antiHacker > 0) then {
   {

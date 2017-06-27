@@ -15,10 +15,10 @@
 	call KIRA_fnc_HCloseTerminal
 */
 Terminal_fulltext = Terminal_fulltext + "Eteindre le terminal ? Oui[y], Non[n]<br/>";
-missionNamespace setVariable ["AttenteYorN",true];
-if(isNil {missionNamespace getVariable "AttenteReponseYorN"}) then {
-	if(missionNamespace getVariable "AttenteReponseYorN") then {
-		missionNamespace setVariable ["closeWell",true];
+setVarMission("AttenteYorN",true);
+if(isNil {varMission("AttenteReponseYorN")}) then {
+	if(varMission("AttenteReponseYorN")) then {
+		setVarMission("closeWell",true);
 		closeDialog 0;
 	};
 };

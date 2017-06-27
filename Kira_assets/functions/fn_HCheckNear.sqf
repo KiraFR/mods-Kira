@@ -16,16 +16,16 @@
 */
 private["_text"];
 _listNear = param[0,[],[[]]];
-if(count _listNear == 0) exitWith{missionNamespace setVariable ["listNear",nil];Terminal_fulltext = "Problème lors du scan... <br/>";};
-if((missionNamespace getVariable "VPNHACK") == 0) then{
+if(count _listNear == 0) exitWith{setVarMission("listNear",nil);Terminal_fulltext = "Problème lors du scan... <br/>";};
+if((varMission("VPNHACK")) == 0) then{
 	call KIRA_fnc_HCallFlics;
 }else{
-	_chance = (missionNamespace getVariable "VPNHACK")*(life_chanceHACKER);
+	_chance = (varMission("VPNHACK"))*(life_chanceHACKER);
 	_random = floor(random(100));
 	if(_random < _chance)then{
 		call KIRA_fnc_HCallFlics;
 	};
-	missionNamespace setVariable ["VPNHACK",(missionNamespace getVariable "VPNHACK")-1];
+	setVarMission("VPNHACK",(varMission("VPNHACK"))-1);
 };
 //[[ID ,NUMERO, NAME, NUMERO_COMPTE_ACC, MONTANT_ACC],...];
-missionNamespace setVariable ["listNear",_listNear];
+setVarMission("listNear",_listNear);

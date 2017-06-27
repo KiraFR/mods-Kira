@@ -17,7 +17,7 @@
 */
 private["_color"];
 _numero = param[0,"",[""]];
-_repertoire = profileNamespace getVariable "repertoire";
+_repertoire = varProfile("repertoire");
 {
 	_numCont = (_x select 1);
 	if(_numero == _numCont)exitWith{_color = _x select 2;};

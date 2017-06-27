@@ -20,12 +20,12 @@ params[
   ["_posH",[],[[]]],
   ["_ahConnecté",false,[false]]
 ];
-if(isNil {missionNamespace getVariable "KIRAerSpotted"}) then {
-  missionNamespace setVariable ["KIRAerSpotted",0,true];
+if(isNil {varMission("hackerSpotted")}) then {
+  setVarMission("hackerSpotted",0,true);
 }else{
-  missionNamespace setVariable ["KIRAerSpotted",(missionNamespace getVariable "KIRAerSpotted")+1,true];
+  setVarMission("hackerSpotted",(varMission("hackerSpotted"))+1,true);
 };
-_nbr = (missionNamespace getVariable "KIRAerSpotted");
+_nbr = (varMission("hackerSpotted"));
 hint parseText format["<t color='#FF0000' size='1.5'>Un KIRAer a été aperçu.<br/>
 					   Voici les coordonnées [%1,%2]",_posH select 0, _posH select 1];
 _markerKIRAer = createMarkerLocal [format["KIRAer%1Spotted",_nbr],_posH];

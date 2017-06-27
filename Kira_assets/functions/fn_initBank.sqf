@@ -15,10 +15,10 @@
 	CALL:
 	[] spawn KIRA_fnc_initBank
 */
-private["_listR","_listRepertAcc","_listAccSender","_listS","_repertoireAcc"];
+private["_listR","_listRepertAcc","_listAccSender","_listS","_repertoireAcc","_display"];
 disableSerialization;
-//[nom,numeroCompte,Montant];
-_accountPerso = missionNamespace getVariable "AccountBanque";
+//[nom,numeroCompte,Montant,defaut];
+_accountPerso = varMission("AccountBanque");
 if (isNil "_accountPerso" OR (count _accountPerso == 0))exitWith {
 	if(dialog)then{closeDialog 0;};
 	hint parseText "Vous n'avez pas de compte en banque...</br>
@@ -27,7 +27,7 @@ if (isNil "_accountPerso" OR (count _accountPerso == 0))exitWith {
 
 _listRepertAcc = getControl(5000,5001);// compte qui reçois
 _listAccSender = getControl(5000,5002);// Compte qui envoi
-ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
+ctrlSetText[4106,varProfile("imageBackground")];
 //[nom,numeroCompte]
 _repertoireAcc = profileNamespace getVariable ["repertoireBanque",[]];
 _reperShow = (_repertoireAcc + _accountPerso);

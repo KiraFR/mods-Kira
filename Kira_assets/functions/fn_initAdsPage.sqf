@@ -20,7 +20,7 @@ disableSerialization;
 createDialog "DOSTARA_ANNONCE";
 _display = findDisplay 6100;
 if(isNull _display)exitWith{};
-ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
+ctrlSetText[4106,varProfile("imageBackground")];
 xNextAds = 0;
 
 if(count _list > 0) then {

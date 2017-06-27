@@ -27,7 +27,7 @@ switch (_control) do {
 		{
 		  _listR = _list lbAdd format["%1(%2)",_x select 0, _x select 1];
 		  _listR lbSetData [_forEachIndex+1,str(_x select 1)];
-		}foreach ((profileNamespace getVariable "repertoireBanque") + (missionNamespace getVariable "AccountBanque"));
+		}foreach ((varProfile("repertoireBanque")) + (varMission("AccountBanque")));
 	};
 	case 5002 : {
 		{

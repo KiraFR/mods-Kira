@@ -20,7 +20,7 @@ disableSerialization;
 waitUntil {!isNull findDisplay 4920};
 _controlGrp = getControl(4920,4921);
 _titleConv = getControl(4920,4922);
-ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
+ctrlSetText[4106,varProfile("imageBackground")];
 if((conversationTarget select 0) == "") then{
 	_titleConv ctrlSetText format["%1",conversationTarget select 1];
 }else{
@@ -39,7 +39,7 @@ ctrlshow[4924,false];
 	2.MESSAGE(PARSETEXT)
 */
 
-_listconversations = profileNamespace getVariable "conversations";;
+_listconversations = varProfile("conversations");
 {
 	_num = (_x select 0);
 	if((conversationTarget select 1) == _num) exitWith{

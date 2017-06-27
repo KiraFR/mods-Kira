@@ -37,7 +37,7 @@ while{_notaireSigne && (_client getVariable ["signedPaper",false])} do {
 _client setVariable ["signedPaper",nil,true];
 _dest = _client getVariable ["destinationNotaire",""];
 if(_dest == "")exitWith{hint "Veuillez recommencer la procédure."};
-_contratAct = missionNamespace getVariable ["contratActuel",[]];
+_contratAct = varMissionDft("contratActuel",[]);
 _contratAct pushBack player;
 _contratAct pushBack _dest;
 _contratAct remoteExecCall ["KIRA_fnc_SaveTestament",2];

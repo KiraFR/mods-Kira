@@ -18,10 +18,10 @@
 disableSerialization;
 waitUntil {!isNull findDisplay 4900};
 private _listC = getControl(4900,4901);
-ctrlSetText[4106,(profileNamespace getVariable "imageBackground")];
+ctrlSetText[4106,varProfile("imageBackground")];
 
 // nom,numero,color
-_listRepertoire = profileNamespace getVariable "repertoire";
+_listRepertoire = varProfile("repertoire");
 
 lbClear _listC;
 {

@@ -22,7 +22,7 @@
 
 private["_ret","_phoneNumber"];
 _phoneNumber = param[0,"",[""]];
-_listRepertoire = profileNamespace getVariable "repertoire";
+_listRepertoire = varProfile("repertoire");
 
 {
 	if((_x select 1) == _phoneNumber) exitWith{
