@@ -16,12 +16,20 @@
 */
 private["_points","_text","_display","_percent","_timeDemarrage"];
 disableSerialization;
+
+_license = switch (playerSide) do { 
+	case civilian : {license_civ_hacker}; 
+	case west : {license_cop_hacker; 
+};
+if(!_license)exitWith{} // précaution
+
+
 _display = findDisplay 6900;
 _text = _display displayCtrl 6901;
 _title = _display displayCtrl 6903;
-_title ctrlSetStructuredText parseText "<t align='center'>Terminal KIRAER</t>";
+_title ctrlSetStructuredText parseText "<t align='center'>Terminal Hacker</t>";
 
-if(!(varMission("closeWell"))) then {// Bad KIRAer
+if(!(varMission("closeWell"))) then {// Bad Hacker
 	Terminal_fulltext= "<t align='center'>Il semble que vous avez mal fermé le terminal...<br/>
 			   .:. REDEMARRAGE EN COURS .:.</t><br/>";
 	_text ctrlSetStructuredText parseText Terminal_fulltext;

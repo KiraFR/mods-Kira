@@ -6,7 +6,7 @@
 	voir message phone
 	
 	PARAMETRES:
-	1. OBJECT(KIRAer)
+	1. OBJECT(Hacker)
 	
 	RETURNS: 
 	NONE 

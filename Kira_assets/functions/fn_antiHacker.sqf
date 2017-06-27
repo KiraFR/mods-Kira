@@ -3,13 +3,13 @@
 	Auteur: J. `Kira` D.
 
 	Description:
-	Recuperer la liste des anti_KIRAers
+	Recuperer la liste des anti_Hackers
 
 	PARAMETRES:
 	NONE
 
 	RETURNS:
-	1. ARRAY(anti KIRAers)
+	1. ARRAY(anti Hackers)
 
 	CALL:
 	call KIRA_fnc_antiHacker
@@ -18,7 +18,7 @@
 private["_listAH"];
 _listAH = [];
 {
-  if(_x getVariable "AntiKIRAer") then {
+  if(_x getVariable "AntiHacker") then {
       _listAH pushBack _x;
   };
 }foreach allUnits;

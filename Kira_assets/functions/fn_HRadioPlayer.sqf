@@ -6,7 +6,7 @@
 	plus de radio
 	
 	PARAMETRES:
-	1. OBJECT(KIRAer)
+	1. OBJECT(Hacker)
 	
 	RETURNS: 
 	NONE 
@@ -16,9 +16,9 @@
 */
 
 private["_pos"];
-_KIRAer = _this select 0;
+_Hacker = _this select 0;
 
-while{(_KIRAer distance player) < KIRA_distance} do {
+while{(_Hacker distance player) < KIRA_distance} do {
 	if((player getVariable ["tf_sendingDistanceMultiplicator",1]) != 0) then {
 		player setVariable ["tf_sendingDistanceMultiplicator",0,true];
 	};

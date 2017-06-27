@@ -14,7 +14,7 @@
 	CALL: 
 	[STRING] spawn KIRA_fnc_command
 	
-	Recensement commande KIRAer:
+	Recensement commande Hacker:
 	- checknear NUMBER: scan dans un rayon NUMBER
 	- listnear: Lister les personnes scanné sous forme de "NUMERO - NOM - NUMEROCOMPTEBANCAIRE - MONTANTCOMPTEBANCAIRE"
 	- listhelp: Lister les commandes

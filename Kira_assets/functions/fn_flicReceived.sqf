@@ -6,8 +6,8 @@
 	Les flics reçoivent l'appel
 
 	PARAMETRES:
-	1. ARRAY OF NUMBER(Position GPS du KIRAer)
-  2. BOOLEAN(TRUE: Anti_KIRAer connecté, FALSE: Anti_KIRAer déconnecté)
+	1. ARRAY OF NUMBER(Position GPS du Hacker)
+  2. BOOLEAN(TRUE: Anti_Hacker connecté, FALSE: Anti_Hacker déconnecté)
 
 	RETURNS:
 	NONE
@@ -26,11 +26,11 @@ if(isNil {varMission("hackerSpotted")}) then {
   setVarMission("hackerSpotted",(varMission("hackerSpotted"))+1,true);
 };
 _nbr = (varMission("hackerSpotted"));
-hint parseText format["<t color='#FF0000' size='1.5'>Un KIRAer a été aperçu.<br/>
+hint parseText format["<t color='#FF0000' size='1.5'>Un Hacker a été aperçu.<br/>
 					   Voici les coordonnées [%1,%2]",_posH select 0, _posH select 1];
-_markerKIRAer = createMarkerLocal [format["KIRAer%1Spotted",_nbr],_posH];
-_markerKIRAer setMarkerColorLocal "BLACK";
-_markerKIRAer setMarkerTextLocal format["KIRAer numero: %1",_nbr];
+_markerHacker = createMarkerLocal [format["Hacker%1Spotted",_nbr],_posH];
+_markerHacker setMarkerColorLocal "BLACK";
+_markerHacker setMarkerTextLocal format["Hacker numero: %1",_nbr];
 
 sleep 60;
-deleteMarkerLocal format["KIRAer%1Spotted",_nbr];
+deleteMarkerLocal format["Hacker%1Spotted",_nbr];
