@@ -2346,6 +2346,15 @@ class DOSTARA_PARAMETRE
 			w = 0.4; h = (1/25);
 		};
 
+		class textColor: Life_RscText{
+			idc = -1;
+			text = "Compte par Defaut";
+			type = CT_STATIC;
+			style = ST_CENTER;
+			colorBackground[] = {0,0,0,0.7};
+			x = xtel; y = (ytel + (0.755 - (1/25) - 0.01));
+			w = 0.4; h = (1/25);
+		};
 		class MainBackground : life_RscPicture{
 			idc = -1;
 			colorBackground[] = {0,0,0,0.5};
@@ -2399,7 +2408,15 @@ class DOSTARA_PARAMETRE
 			x = ((0.38 - (0.38 * 0.8)) / 2)+0.01; y = (ytel + 0.355);
 			w = (0.38 * 0.8); h = (1/25);
 		};
-
+		class lbBankAccounts: Life_RscCombo{
+			idc = 4656;
+			text = "";
+			type = CT_COMBO;
+			style = ST_CENTER;
+			colorBackground[] = {0,0,0,0.7};
+			x = ((0.38 - (0.38 * 0.8)) / 2)+0.01; y = (ytel + 0.755);
+			w = (0.38 * 0.8); h = (1/25);
+		};
 		//bouton save
 		class saveNoMouse : Life_RscButtonKiraMenu03x03 {
 			idc = 4653;
@@ -3803,7 +3820,7 @@ class DOSTARA_ANNONCE{
 		class ListMessage: Life_RscControlsGroup {
 			idc = 6101;
 			x = (xtel + 0.025); y = (ytel + 0.18);
-			w = 0.348; h = (0.18 + 0.7 - 0.155);
+			w = 0.348; h = (0.8);
 			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			colorBackground[] = {1,1,1,0.7};
 
@@ -4000,7 +4017,6 @@ class DOSTARA_NEWCONTRACTNOTAIRE
 #include "dialog\dynmarket_prices.hpp"
 #include "dialog\impot.hpp"
 #include "dialog\banque.hpp"
-#include "dialog\gestionAccount.hpp"
 #include "dialog\fuelStat.hpp"
 #include "dialog\ListMurder.hpp"
 #include "dialog\FormulaireAssasin.hpp"

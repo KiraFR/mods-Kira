@@ -37,15 +37,12 @@ if(!([_price] call life_fnc_isnumeric))exitWith{hint "Le prix que vous avez insc
 if(count (_message splitString "") > 90)exitWith{hint "Vous ne pouvez pas écrire plus de 90 caractères."};
 
 _price = parseNumber _price;
-diag_log str(_price);
 if not(_price isEqualTo 0)then{
 	_surplus = _price;
 	_price = _surplus + _BasePrice;
-	diag_log (str(_surplus) + "pas 0");
 }else{
 	_surplus = 0;
 	_price = _surplus + _BasePrice;
-	diag_log (str(_surplus) + "= 0");
 };
 
 
@@ -60,9 +57,9 @@ if(life_cash < _price) then{
 	life_cash = life_cash - _price;
 	[0] call SOCK_fnc_updatePartial;
 };
-diag_log str(_surplus);
+
 _p = [_title,_nomEntreprise,_message,_colorBG,_colorFont,_surplus,player];
-[_p,_nomEntreprise] spawn {
+[_p,_nomEntreprise,_price] spawn {
 	_result = ["Êtes-vous sur de vouloir poster cette annonce ? elle sera definitive et non modifiable.", "Êtes vous sur ?",localize "STR_Global_Yes",localize "STR_Global_No"] call BIS_fnc_GUImessage;
 	if(_result) then {
 		private ["_cpt"];
@@ -70,11 +67,12 @@ _p = [_title,_nomEntreprise,_message,_colorBG,_colorFont,_surplus,player];
 		_list = OBJECTMAP getVariable ["Annonces",[]];
 		_l = _this select 0;
 		_nE = _this select 1;
+		_price = _this select 2;
 		if(count _list > 0) then {
 			_check = _list;
 			_cpt = 0;
 			{
-				if(/*((getPlayerUID (_x select 6)) == (getPlayerUID player)) OR */(_x select 1 == _nE))then{
+				if(((getPlayerUID (_x select 6)) == (getPlayerUID player)) OR (_x select 1 == _nE))then{
 					_cpt = _cpt+1;
 				};
 			}foreach _list;
@@ -83,10 +81,12 @@ _p = [_title,_nomEntreprise,_message,_colorBG,_colorFont,_surplus,player];
 			_newList = [_list] call KIRA_fnc_sortArray;
 			OBJECTMAP setVariable ["Annonces",_newList,true];
 			hint parseText "Votre annonce a bien été pris en charge.\n Votre l'annonce sera placé en fonction du surplus donné.";
+			[_price] remoteExecCall ["KIRA_fnc_bankGouv",2];
 			closeDialog 0;
 		}else{
 			OBJECTMAP setVariable ["Annonces",[_l],true];
 			hint parseText "Votre annonce a bien été pris en charge.\n Votre l'annonce sera placé en fonction du surplus donné.";
+			[_price] remoteExecCall ["KIRA_fnc_bankGouv",2];
 			closeDialog 0;
 		};
 	};
