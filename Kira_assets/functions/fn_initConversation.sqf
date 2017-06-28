@@ -52,6 +52,7 @@ xNext = 0;
 yEcart = 0.01;
 if(isNil "_listMsg")exitWith{};
 {
+	_display = findDisplay 4920;
 	_size = [(_x select 1)] call KIRA_fnc_sizePic;
 	_msg = [(_x select 1)] call KIRA_fnc_strToPic;
 	_pic = _display ctrlCreate ["RscPicture", -1,_controlGrp];

@@ -16,7 +16,7 @@
 	[] call KIRA_fnc_transfert
 */
 private["_check","_numAcc","_amount","_amountSender","_taxes"];
-if(Player getVariable "transaction")exitWith{hint "Vous devez attendre que la précédente transaction soit terminé."};
+if(player getVariable ["transaction",false])exitWith{hint "Vous devez attendre que la précédente transaction soit terminé."};
 player setVariable ["transaction",true,true];
 _numAccText = ctrlText 5003;
 _numAcc = call compile format["%1",lbData[5001,(lbCurSel 5001)]];
