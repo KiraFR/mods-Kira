@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HCheckNear.sqf
+	File:  fn_HCheckNear.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HRadioPlayer.sqf
+	File:  fn_HRadioPlayer.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

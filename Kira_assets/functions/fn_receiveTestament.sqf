@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_receiveTestament.sqf
+	File:  fn_receiveTestament.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

@@ -1,6 +1,6 @@
 #include <macro.h>
 /*
-	File: fn_initMsg.sqf
+	File:  fn_initMsg.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

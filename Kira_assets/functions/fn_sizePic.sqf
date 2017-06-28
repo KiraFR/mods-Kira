@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_sizePic.sqf
+	File:  fn_sizePic.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

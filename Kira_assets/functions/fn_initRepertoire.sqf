@@ -1,6 +1,6 @@
-#include "..\macro.h"
+#include <macro.h>
 /*
-	File: fn_initRepertoire.sqf
+	File:  fn_initRepertoire.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

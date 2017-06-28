@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_Hcommand.sqf
+	File:  fn_Hcommand.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

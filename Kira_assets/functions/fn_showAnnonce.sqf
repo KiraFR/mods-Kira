@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_showAnnonce.sqf
+	File:  fn_showAnnonce.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

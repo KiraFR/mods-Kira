@@ -1,6 +1,6 @@
-#include "..\macro.h"
+#include <macro.h>
 /*
-	File: fn_initAddCont.sqf
+	File:  fn_initAddCont.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_publiAnnonce.sqf
+	File:  fn_publiAnnonce.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

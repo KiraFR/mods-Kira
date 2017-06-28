@@ -1,6 +1,6 @@
-#include "..\macro.h"
+#include <macro.h>
 /*
-	File: fn_initSetting.sqf
+	File:  fn_initSetting.sqf
 	Auteur: J. `Kira` D.
 
 	Description:
@@ -15,7 +15,7 @@
 	CALL:
 	[] spawn KIRA_fnc_initSetting
 */
-private["_listB","_listA"];
+private["_listB","_listA","_listBackground","_listAnonyme"];
 disableSerialization;
 waitUntil {!isNull findDisplay 4650};
 _listB = getControl(4650,4652);

@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_showRepertoire.sqf
+	File:  fn_showRepertoire.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

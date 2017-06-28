@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_editBankContact.sqf
+	File:  fn_editBankContact.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

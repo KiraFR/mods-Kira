@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_initAdsPage.sqf
+	File:  fn_initAdsPage.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

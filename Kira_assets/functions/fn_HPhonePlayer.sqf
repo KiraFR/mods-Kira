@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HPhonePlayer.sqf
+	File:  fn_HPhonePlayer.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

@@ -1,6 +1,6 @@
 #include <macro.h>
 /*
-	File: fn_receivedMsg.sqf
+	File:  fn_receivedMsg.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

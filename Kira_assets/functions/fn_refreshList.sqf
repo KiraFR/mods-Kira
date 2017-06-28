@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_refreshList.sqf
+	File:  fn_refreshList.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

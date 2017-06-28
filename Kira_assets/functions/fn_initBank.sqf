@@ -1,6 +1,6 @@
-#include "..\macro.h"
+#include <macro.h>
 /*
-	File: fn_initBank.sqf
+	File:  fn_initBank.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

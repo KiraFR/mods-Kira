@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_peterMalade.sqf
+	File:  fn_peterMalade.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

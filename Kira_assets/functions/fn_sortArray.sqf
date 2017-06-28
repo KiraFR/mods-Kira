@@ -1,8 +1,9 @@
 #define SELPrix(var1,var2) (var1 select var2) select 5
 #define SEL(var1,var2) var1 select var2
 #define REP(var1,var2,var3) var1 set [var2,(var1 select var3)]
+#include <macro.h>
 /*
-	File: fn_sortArrayOfNumber.sqf
+	File:  fn_sortArrayOfNumber.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

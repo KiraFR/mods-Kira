@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HChanceDetect.sqf
+	File:  fn_HChanceDetect.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

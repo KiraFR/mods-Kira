@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_deQui.sqf
+	File:  fn_deQui.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

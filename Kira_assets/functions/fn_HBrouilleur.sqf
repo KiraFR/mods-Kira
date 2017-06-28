@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HBrouilleur.sqf
+	File:  fn_HBrouilleur.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

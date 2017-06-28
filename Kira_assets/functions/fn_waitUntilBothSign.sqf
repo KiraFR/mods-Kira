@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_waitUntilBothSign.sqf
+	File:  fn_waitUntilBothSign.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

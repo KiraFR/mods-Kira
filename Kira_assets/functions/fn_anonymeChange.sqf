@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_anonymeChange.sqf
+	File:  fn_anonymeChange.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

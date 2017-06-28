@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_initImpot.sqf
+	File:  fn_initImpot.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

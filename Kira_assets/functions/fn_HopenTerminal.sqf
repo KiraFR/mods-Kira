@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HopenTerminal.sqf
+	File:  fn_HopenTerminal.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

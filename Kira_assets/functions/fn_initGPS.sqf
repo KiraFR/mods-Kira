@@ -1,4 +1,4 @@
-#include "..\macro.h"
+#include <macro.h>
 
 disableSerialization;
 ctrlSetText[4106,varProfile("imageBackground")];

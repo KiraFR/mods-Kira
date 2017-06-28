@@ -1,6 +1,6 @@
 #include <macro.h>
 /*
-	File: fn_sendMsg.sqf
+	File:  fn_sendMsg.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

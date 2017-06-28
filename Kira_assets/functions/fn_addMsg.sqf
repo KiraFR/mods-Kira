@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_addMsg.sqf
+	File:  fn_addMsg.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

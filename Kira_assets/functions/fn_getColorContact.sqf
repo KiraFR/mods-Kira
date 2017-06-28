@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_getColorContact.sqf
+	File:  fn_getColorContact.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

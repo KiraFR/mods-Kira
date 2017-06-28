@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HCloseTerminal.sqf
+	File:  fn_HCloseTerminal.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

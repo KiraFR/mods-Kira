@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_antiHacker.sqf
+	File:  fn_antiHacker.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

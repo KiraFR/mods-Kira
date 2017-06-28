@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HPosGPS.sqf
+	File:  fn_HPosGPS.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

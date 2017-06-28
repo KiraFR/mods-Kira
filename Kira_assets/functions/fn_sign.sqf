@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_sign.sqf
+	File:  fn_sign.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

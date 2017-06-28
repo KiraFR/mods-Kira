@@ -1,21 +1,21 @@
-#include "..\macro.h"
+#include <macro.h>
 closeGPS = false;
 _check = [] spawn KIRA_fnc_checkGpsClosed;
 waitUntil {scriptDone _check};
 if(!closeGPS)exitWith{closeGPS = nil;};
 closeGPS = nil;
 createDialog "DOSTARA_GENERAL";
-_num = number;
 
-if(isNil {})then{ctrlShow[4107,false];ctrlShow[4197,false];};
-if(isNil {varProfile("imageBackground")})then{setVarProfile("imageBackground","\kira_assets\texture\background\defaultBG.paa");};
+if(isNil {number})then{ctrlShow[4107,false];ctrlShow[4197,false];};
+if(isNil {varProfile("imageBackground")})then{
+	setVarProfile("imageBackground","\kira_assets\texture\background\defaultBG.paa");
+};
 if(isNil {varProfile("anonyme")})then{setVarProfile("anonyme",false);};
 if(isNil {varProfile("repertoire")})then{setVarProfile("repertoire",[]);};
 if(isNil {varProfile("conversations")})then{setVarProfile("conversations",[]);};
-ctrlSetText[4106,(varProfile("imageBackground"))];
+ctrlSetText[4106,varProfile("imageBackground")];
 if(isNil {varMission("listBackground")}) then{
-	setVarMission("listBackground",
-		[
+	_listBG=[
 			["Par default","\kira_assets\texture\background\defaultBG.paa"],
 		   	["Miku Miku","\kira_assets\texture\background\mikumiku.paa"],
 		   	["boule Pixel","\kira_assets\texture\background\boulePixel.paa"],
@@ -45,7 +45,7 @@ if(isNil {varMission("listBackground")}) then{
 		   	["Bleu déchiré","\kira_assets\texture\background\bleuDechire.paa"],
 		   	["Coding Grey","\kira_assets\texture\background\coding.paa"],
 		   	["Grumpy cat","\kira_assets\texture\background\grumpyCat.paa"]
-		]
-	);
+	];
+	setVarMission("listBackground",_listBG);
 };
 if(isNil {varMission("AccountBanque")})then{ctrlShow[4113,false];};

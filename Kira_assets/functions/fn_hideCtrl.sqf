@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_hideCtrl.sqf
+	File:  fn_hideCtrl.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_inventoryOpened.sqf
+	File:  fn_inventoryOpened.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

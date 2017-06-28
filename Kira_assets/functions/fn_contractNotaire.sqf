@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_contractNotaire.sqf
+	File:  fn_contractNotaire.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

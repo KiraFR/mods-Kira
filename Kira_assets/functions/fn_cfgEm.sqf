@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_cfgEm.sqf
+	File:  fn_cfgEm.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

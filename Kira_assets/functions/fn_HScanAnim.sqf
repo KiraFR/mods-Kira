@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HScanAnim.sqf
+	File:  fn_HScanAnim.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_inRepBank.sqf
+	File:  fn_inRepBank.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

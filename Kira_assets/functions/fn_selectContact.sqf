@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_selectContact.sqf
+	File:  fn_selectContact.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

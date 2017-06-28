@@ -1,6 +1,6 @@
-#include "..\macro.h"
+#include <macro.h>
 /*
-	File: fn_initNewPubli.sqf
+	File:  fn_initNewPubli.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

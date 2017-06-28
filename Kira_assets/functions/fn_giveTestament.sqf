@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_giveTestament.sqf
+	File:  fn_giveTestament.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

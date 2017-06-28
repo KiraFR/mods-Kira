@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_saveContact.sqf
+	File:  fn_saveContact.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

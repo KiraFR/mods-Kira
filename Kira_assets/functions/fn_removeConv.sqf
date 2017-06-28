@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_removeConv.sqf
+	File:  fn_removeConv.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

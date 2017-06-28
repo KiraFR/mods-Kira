@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_strToPic.sqf
+	File:  fn_strToPic.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

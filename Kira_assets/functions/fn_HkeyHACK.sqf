@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HkeyKIRA.sqf
+	File:  fn_HkeyKIRA.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

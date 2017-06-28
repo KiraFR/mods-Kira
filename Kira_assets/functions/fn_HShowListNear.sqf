@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HShowListNear.sqf
+	File:  fn_HShowListNear.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:

@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_removeContact.sqf
+	File:  fn_removeContact.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

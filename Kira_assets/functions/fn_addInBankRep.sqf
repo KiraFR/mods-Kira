@@ -1,6 +1,6 @@
-#include "..\macro.h"
+#include <macro.h>
 /*
-	File: fn_addInBankRep.sqf
+	File:  fn_addInBankRep.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

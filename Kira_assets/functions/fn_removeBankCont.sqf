@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_removeBankCont.sqf
+	File:  fn_removeBankCont.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

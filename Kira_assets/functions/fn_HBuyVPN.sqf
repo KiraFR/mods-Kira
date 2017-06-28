@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HBuyVPN.sqf
+	File:  fn_HBuyVPN.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

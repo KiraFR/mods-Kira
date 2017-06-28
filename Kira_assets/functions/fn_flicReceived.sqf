@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_flicReceived.sqf
+	File:  fn_flicReceived.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

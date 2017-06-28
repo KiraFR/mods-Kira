@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_HSelectPlayer.sqf
+	File:  fn_HSelectPlayer.sqf
 	Auteur: J. `Kira` D.
 	
 	Description:
@@ -20,7 +21,7 @@ _list = _display displayCtrl 9301;
 if((varMission("VPNHACK")) == 0) then{
 	call KIRA_fnc_HCallFlics;
 }else{
-	_chance = (varMission("VPNHACK")*(life_chanceHACKER);
+	_chance = (varMission("VPNHACK")*(life_chanceHACKER));
 	_random = floor(random(100));
 	if(_random < _chance)then{
 		call KIRA_fnc_HCallFlics;

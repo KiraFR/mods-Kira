@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_previewBG.sqf
+	File:  fn_previewBG.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

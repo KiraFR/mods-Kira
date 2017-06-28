@@ -1,6 +1,6 @@
-#include "..\macro.h"
+#include <macro.h>
 /*
-	File: fn_initConversation.sqf
+	File:  fn_initConversation.sqf
 	Auteur: J. `Kira` D.
 
 	Description:

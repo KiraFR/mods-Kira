@@ -1,5 +1,6 @@
+#include <macro.h>
 /*
-	File: fn_fetchRepertoire.sqf
+	File:  fn_fetchRepertoire.sqf
 	Auteur: J. `Kira` D.
 
 	Description:
