@@ -38,68 +38,68 @@ class Life_atm_management {
 			};
 		};
 		
-class controls {
-			class CashMenu: Life_RscStructuredText
-			{
-				idc = 2701;
-				x = 0.4125;
-				y = 0.16;
-				w = 0.2625;
-				h = 0.2;
-			};
-			class MoneyEdit: Life_RscEdit
-			{
-				idc = 2702;
-				x = 0.4125;
-				y = 0.4;
-				w = 0.2625;
-				h = 0.04;
-			};
-			class Deposit: Life_RscText
-			{
-				idc = -1;
-				text = "DEPOSER"; 
-				x = 0.4125;
-				y = 0.48;
-				w = 0.125;
-				h = 0.04;
-				colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-			};
-			class Witdrawn: Life_RscText
-			{
-				idc = -1;
-				text = "RETIRER"; 
-				x = 0.5625;
-				y = 0.48;
-				w = 0.125;
-				h = 0.04;
-				colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-			};
-			class ListAccount: Life_RscListbox
-			{
-				idc = 2780;
-				x = 0.4;
-				y = 0.66;
-				w = 0.2875;
-				h = 0.04;
-			};
-			class NumAccount: Life_RscEdit
-			{
-				idc = 2750;
-				x = 0.4;
-				y = 0.74;
-				w = 0.2875;
-				h = 0.04;
-			};
-			class Transfert: Life_RscText
-			{
-				idc = -1;
-				text = "TRANSFERT"; 
-				x = 0.4875;
-				y = 0.82;
-				w = 0.1125;
-				h = 0.04;
-				colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-			};
-			
+	class controls {
+		class CashMenu: Life_RscStructuredText
+		{
+			idc = 2701;
+			x = 0.4125;
+			y = 0.16;
+			w = 0.2625;
+			h = 0.2;
+		};
+		class MoneyEdit: Life_RscEdit
+		{
+			idc = 2702;
+			x = 0.4125;
+			y = 0.4;
+			w = 0.2625;
+			h = 0.04;
+		};
+		class Deposit: Life_RscText
+		{
+			idc = -1;
+			text = "DEPOSER"; 
+			x = 0.4125;
+			y = 0.48;
+			w = 0.125;
+			h = 0.04;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+		};
+		class Witdrawn: Life_RscText
+		{
+			idc = -1;
+			text = "RETIRER"; 
+			x = 0.5625;
+			y = 0.48;
+			w = 0.125;
+			h = 0.04;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+		};
+		class ListAccount: Life_RscListbox
+		{
+			idc = 2780;
+			x = 0.4;
+			y = 0.66;
+			w = 0.2875;
+			h = 0.04;
+		};
+		class NumAccount: Life_RscEdit
+		{
+			idc = 2750;
+			x = 0.4;
+			y = 0.74;
+			w = 0.2875;
+			h = 0.04;
+		};
+		class Transfert: Life_RscText
+		{
+			idc = -1;
+			text = "TRANSFERT"; 
+			x = 0.4875;
+			y = 0.82;
+			w = 0.1125;
+			h = 0.04;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
+		};
 	};
+};
