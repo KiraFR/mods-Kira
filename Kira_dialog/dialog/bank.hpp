@@ -37,7 +37,7 @@ class Life_atm_management {
 				colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			};
 		};
-		
+
 	class controls {
 		class CashMenu: Life_RscStructuredText
 		{
@@ -58,21 +58,23 @@ class Life_atm_management {
 		class Deposit: Life_RscText
 		{
 			idc = -1;
-			text = "DEPOSER"; 
+			text = "$STR_ATM_Deposit";
 			x = 0.4125;
 			y = 0.48;
 			w = 0.125;
 			h = 0.04;
+      onButtonClick = "[] call life_fnc_bankDeposit";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
 		};
 		class Witdrawn: Life_RscText
 		{
 			idc = -1;
-			text = "RETIRER"; 
+			text = "$STR_ATM_Withdraw";
 			x = 0.5625;
 			y = 0.48;
 			w = 0.125;
 			h = 0.04;
+      onButtonClick = "[] call life_fnc_bankWithdraw";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
 		};
 		class ListAccount: Life_RscListbox
@@ -94,11 +96,12 @@ class Life_atm_management {
 		class Transfert: Life_RscText
 		{
 			idc = -1;
-			text = "TRANSFERT"; 
+			text = "$STR_ATM_Transfer";
 			x = 0.4875;
 			y = 0.82;
 			w = 0.1125;
 			h = 0.04;
+      onButtonClick = "[] call life_fnc_bankTransfer";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
 		};
 	};
