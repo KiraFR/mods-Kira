@@ -21,7 +21,7 @@
 	[] call KIRA_fnc_receivedMsg
 */
 
-private["_listMsg","_i","_msg","_number","_listconversations","_num"];
+private["_listMsg","_i","_msg","_number","_listconversations","_num","_findisplay"];
 params[
 	["_msg","",[""]],
 	["_number","",[""]]
@@ -45,9 +45,14 @@ if(!(isNil "_listMsg")) then{
 	_listconversations pushBack _listMsg;
 	setVarProfile("conversations",_listconversations);
 };
-if((!isNull findDisplay 4150) && !(isNil "conversationTarget")) then {
-	if((conversationTarget select 1) != _num) then{
-		_color = [conversationTarget select 1] call KIRA_fnc_getColorContact;
+
+if(dialog)then{_findisplay = findDisplay 4150;};
+diag_log format["%1",_findisplay];
+if((!(isNull _findisplay)) && !(isNil "conversationTarget")) then {
+	diag_log format["%1",conversationTarget];
+	_target = (conversationTarget select 1);
+	if(_target != _num) then{
+		_color = [_target] call KIRA_fnc_getColorContact;
 		[_msg,0,_color] spawn KIRA_fnc_addMsg;
 	};
 };
