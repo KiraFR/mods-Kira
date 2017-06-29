@@ -1172,7 +1172,7 @@ class RscDisplayInventory
 			w = "1 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
-class licenceStruct: Life_RscStructuredText
+		class licenceStruct: Life_RscStructuredText
 		{
 			idc = 2014;
 			x = xDecale-0.55;

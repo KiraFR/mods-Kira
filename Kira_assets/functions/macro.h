@@ -10,6 +10,7 @@
 #define varMission(var1) (missionNamespace getVariable var1)
 #define varMissionDft(var1,var2) (missionNamespace getVariable [var1,var2])
 #define varProfile(var1) (profileNamespace getVariable var1)
+#define varProfileDft(var1,var2) (profileNamespace getVariable [var1,var2])
 
 //setVariable
 #define setVarProfile(var1,var2) (profileNamespace setVariable [var1,var2])

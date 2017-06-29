@@ -29,7 +29,7 @@ _listRepertAcc = getControl(5000,5001);// compte qui reçois
 _listAccSender = getControl(5000,5002);// Compte qui envoi
 ctrlSetText[4106,varProfile("imageBackground")];
 //[nom,numeroCompte]
-_repertoireAcc = profileNamespace getVariable ["repertoireBanque",[]];
+_repertoireAcc = varProfileDft("repertoireBanque",[]);
 _reperShow = (_repertoireAcc + _accountPerso);
 {
   	_listRepertAcc lbAdd format["%1(%2)",_x select 0, _x select 1];
