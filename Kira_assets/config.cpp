@@ -111,7 +111,7 @@ class CfgMarkers{
 		name = "Contact";
 		icon = "\Kira_assets\markers\contact.pac";
 		color[] = {1,1,1,1};
-		size = 64;
+		size = 32;
 		scope = 2;
 		scopeCurator = 2;
 		shadow = 1;
