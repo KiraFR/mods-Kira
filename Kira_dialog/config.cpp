@@ -131,8 +131,6 @@ class RscDisplayInventory
 	onUnload = "[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');";
 	idd = 602;
 	enableSimulation = 1;
-
-	onLoad="";
 	class Colors 
 	{
 		dragValidBgr[] = {
