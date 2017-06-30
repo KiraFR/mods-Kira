@@ -79,7 +79,7 @@ class Life_atm_management {
       onButtonClick = "[] call life_fnc_bankWithdraw";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
 		};
-		class ListAccount: Life_RscListbox
+		class ListAccount: Life_RscCombo
 		{
 			idc = 2780;
 			colorBackground[] = {0,0,0,0.7};
