@@ -82,7 +82,7 @@ class Life_atm_management {
 		class ListAccount: Life_RscListbox
 		{
 			idc = 2780;
-			colorBackground = {0,0,0,0.7};
+			colorBackground[] = {0,0,0,0.7};
 			x = 0.4;
 			y = 0.66 - 0.07;
 			w = 0.2875;
