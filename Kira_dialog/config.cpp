@@ -3993,6 +3993,113 @@ class DOSTARA_NEWCONTRACTNOTAIRE
 	};
 };
 
+class DOSTARA_BOURSE
+{
+	idd = 5600;
+	movingEnabled = true;
+	enableSimulation = true;
+	onLoad = "[] spawn KIRA_fnc_initBourse";
+	
+	class controlsBackground
+	{	
+		class fondEcran : life_RscPicture
+		{
+			colorBackground[] = {0,0,0,0.7};
+			text = "";
+			idc = 4106;
+			x = xtel+0.01; y = ytel+0.049;
+			w = 0.38; h = 0.98;
+		};
+		class fondOpa : Life_RscText
+		{
+			colorBackground[] = {0,0,0,0.4};
+			text = "";
+			idc = -1;
+			x = xtel+0.01; y = ytel+0.049;
+			w = 0.38; h = 0.98;
+		};
+
+		class MainBackground : life_RscPicture{
+			colorBackground[] = {0,0,0,0.5};
+			text = "\kira_assets\texture\BackgroundBlack-app.paa";
+			idc = -1;
+			x = xtel; y = ytel;
+			w = 0.4; h = 1.1;
+			moving = 1;
+		};
+	};
+	class controls {
+
+		class iconBourse : life_RscPicture{
+			idc = -1;
+			colorBackground[] = {0,0,0,0.7};
+			text = "\kira_assets\texture\marketMouse.paa";
+			x = xtel+0.025;
+			y = ytel + 0.128;
+			w = 0.035;
+			h = 0.05;
+		};
+
+		class textIcon: Life_RscText{
+			idc = 5601;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			x = xtel+ 0.06;
+			y = ytel + 0.128;
+			sizeEx = (1/25);
+			w = 0.4;
+			h = (1/25);
+		};
+
+		class bourse: Life_RscListNBox {
+			idc = 5602;
+			type = CT_LISTBOX;
+			style = ST_CENTER;
+			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+			onLBSelChanged = "call KIRA_fnc_selectConv";
+			x = (xtel + 0.025); y = (ytel + 0.18);
+			w = 0.348; h = 0.83;
+			colorBackground[] = {0,0,0,0.7};
+		};
+
+		class returnMouse : Life_RscButtonKiraMenu04x04 {
+			idc = 4101;
+			TextureNoShortcut = "\kira_assets\texture\returnNoMouse.paa";
+			//onMouseExit = "[[4152,4100,4102,4104],[4153,4101,4103,4105]] call KIRA_fnc_hideAllCtrl";
+			onButtonClick = "CloseDialog 0";
+			x = xtel + 0.05;
+			y = ytel + 1.025;
+			text = "return";
+			w = "0.05";
+			h = "0.07";
+		};
+
+		class homeMouse : Life_RscButtonKiraMenu04x04 {
+			idc = 4103;
+			TextureNoShortcut = "\kira_assets\texture\homeNoMouse.paa";
+			//onMouseExit = "[[4152,4100,4102,4104],[4153,4101,4103,4105]] call KIRA_fnc_hideAllCtrl";
+			onButtonClick = "CloseDialog 0;[] spawn KIRA_fnc_initSmart;";
+			x = xtel + (0.38/2) - 0.02;
+			y = ytel + 1.022;
+			text = "return";
+			w = "0.05";
+			h = "0.07";
+		};
+
+		class powerMouse : Life_RscButtonKiraMenu04x04 {
+			idc = 4105;
+			TextureNoShortcut = "\kira_assets\texture\PowerNoMouse.paa";
+			//onMouseExit = "[[4152,4100,4102,4104],[4153,4101,4103,4105]] call KIRA_fnc_hideAllCtrl";
+			onButtonClick = "[] spawn KIRA_fnc_powerOFF";
+			x = xtel + 0.38 - (0.38/4);
+			y = ytel + 1.022;
+			text = "return";
+			w = "0.05";
+			h = "0.07";
+		};
+
+	};
+};
 #include "dialog\shop_items.hpp"
 #include "dialog\gang.hpp"
 #include "dialog\key_chain.hpp"
