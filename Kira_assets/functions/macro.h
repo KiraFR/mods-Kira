@@ -1,6 +1,7 @@
-
-#define taxeTransfert 0.95
 #define life_chanceHACKER 0.25
+
+#define CASH life_cash
+#define BANK life_atmcash
 
 //Variable Macros
 #define number (player getVariable "phoneNumber")
