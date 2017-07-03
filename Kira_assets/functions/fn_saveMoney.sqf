@@ -17,9 +17,9 @@
 */
 private["_i","_account","_accID","_total","_accountPerso","_delAdd"];
 params[
-	["_amount","",[""]],
+	["_amount",0,[0]],
 	["_numAcc","",[""]],
-	["_taxe","",[""]],
+	["_taxe",0,[0]],
 	["_delAdd",false,[false]] // true : addition; false : soustraction
 ];
 
@@ -47,7 +47,7 @@ _accountPerso = varMission("AccountBanque");
 		_accountPerso set[_forEachIndex,_account];
 	};
 }foreach _accountPerso;
-[CASH,BANK,_amount,_taxe,"Virement"] remoteExecCall ["KIRA_fnc_taxes",2];
+[CASH,BANK,_amount,_taxe,"Virement",getPlayerUID player] remoteExecCall ["KIRA_fnc_taxes",2];
 setVarMission("AccountBanque",_accountPerso);
 call SOCK_fnc_updateBanque;
 [9] call SOCK_fnc_updatePartial;
