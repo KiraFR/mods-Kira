@@ -43,7 +43,6 @@ class Life_atm_management {
 		{
 			idc = 2701;
 			x = 0.4125;
-			text = "";
 			y = 0.16;
 			w = 0.2625;
 			h = 0.2;
@@ -59,7 +58,7 @@ class Life_atm_management {
 		};
 		class Deposit: Life_RscButtonMenu
 		{
-			idc = -1;
+			idc = 2741;
 			text = "Deposer";
 			x = 0.4125;
 			y = 0.48 - 0.07;
@@ -70,7 +69,7 @@ class Life_atm_management {
 		};
 		class Witdrawn: Life_RscButtonMenu
 		{
-			idc = -1;
+			idc = 2742;
 			text = "Retirer";
 			x = 0.5625;
 			y = 0.48 - 0.07;
@@ -92,7 +91,6 @@ class Life_atm_management {
 		class NumAccount: Life_RscEdit
 		{
 			idc = 2750;
-			text = "";
 			x = 0.4;
 			y = 0.74 - 0.07;
 			w = 0.2875;
@@ -100,7 +98,7 @@ class Life_atm_management {
 		};
 		class Transfert: Life_RscButtonMenu
 		{
-			idc = -1;
+			idc = 2740;
 			text = "Transferer";
 			x = 0.375 + ((0.3375/2) - (0.17/2));
 			y = 0.82 - 0.07;

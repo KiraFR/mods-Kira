@@ -41,6 +41,7 @@ class controls {
 		{
 			idc = 11007;
 			x = 0.1125;
+			text = "";
 			y = 0.26;
 			w = 0.7625;
 			h = 0.04;
@@ -58,7 +59,7 @@ class controls {
 		class Rules: Life_RscStructuredText
 		{
 			idc = 11001;
-			text = "Si , vous devez créer un compte entreprise vous devez avoir été autoriser par les administrations , si ce n'est pas le cas tout votre argent présent sur ce compte lors de la mise en arrêt , sera gard et transféré dans un compte gouvernemental , de plus un procès verbal sera engagé , avec l'obligation de payer une amende avec le montant qu'il y avait sur le compte .";
+			text = "Si , vous devez creer un compte entreprise vous devez avoir ete autoriser par les administrations , si ce n est pas le cas tout votre argent présent sur ce compte lors de la mise en arret , sera gard et transfere dans un compte gouvernemental , de plus un proces verbal sera engage , avec l'obligation de payer une amende avec le montant qu'il y avait sur le compte .";
 			y = 0.34;
 			w = 0.7625;
 			h = 0.22;

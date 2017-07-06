@@ -39,7 +39,8 @@ lbClear _listA;
 
 
 lbClear _listcompte;
-_accountPerso = varMissionDft("AccountBanque",[]);
+_accountPerso = missionNamespace getvariable "AccountBanque";
+//_accountPerso = varMissionDft("AccountBanque",[]);
 {
 	_dflt = _x select 3;
 	if(_dflt) then {
