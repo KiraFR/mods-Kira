@@ -18,6 +18,7 @@
 private["_repert"];
 _numero = ctrlText 5022;
 _nom = ctrlText 5021;
+
 if([_numero] call KIRA_fnc_inRepBank)exitWith{hint "Ce numéro existe déjà dans votre repertoire bancaire.";};
 if(_nom == "" OR _numero == "")exitWith{hint "Veuillez completer le formulaire..";};
 _repert = varProfile("repertoireBanque");
