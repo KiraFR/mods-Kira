@@ -42,11 +42,24 @@ lbClear _listcompte;
 _accountPerso = missionNamespace getvariable "AccountBanque";
 //_accountPerso = varMissionDft("AccountBanque",[]);
 {
-	_dflt = _x select 3;
-	if(_dflt) then {
-    	_listcompte lbAdd format["%1 - Montant: %2 [DEFAUT]",_x select 0,_x select 2];
+	//_dflt = _x select 3;
+	if (!(isNil _x select 3)) then{
+
+ 		_dflt = _x select 3;
+
+		if(_dflt) then {
+				_listcompte lbAdd format["%1 - Montant: %2 [DEFAUT]",_x select 0,_x select 2];
+		}else{
+	    	_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
+		};
+
 	}else{
-    	_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
+			_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
 	};
+//if(_dflt) then {
+    	//_listcompte lbAdd format["%1 - Montant: %2 [DEFAUT]",_x select 0,_x select 2];
+	//}else{
+    	//_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
+	//};
     lbSetData [4656,lbSize _listcompte, str([_x select 1,_x select 2,_x select 3])];
 } forEach _accountPerso;
