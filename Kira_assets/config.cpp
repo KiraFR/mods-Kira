@@ -74,15 +74,12 @@ class CfgFunctions
 			class addMsg;
 			class receivedMsg;
 			class peterMalade;
-			class giveTestament;
-			class receiveTestament;
-			class sign;
 			class refreshList;
 			class inRepBank;
 			class inventoryOpened;
 			class inventoryClosed;
 			class addInBankRep;
-			
+
 			class contractNotaire;
 			class giveTestament;
 			class receiveTestament;
