@@ -59,9 +59,10 @@ class controls {
 		{
 			idc = 11001;
 			text = "Si , vous devez creer un compte entreprise vous devez avoir ete autoriser par les administrations , si ce n'est pas le cas tout votre argent present sur ce compte lors de la mise en arret , sera garder et transfere dans un compte gouvernemental , de plus un proces verbal sera engage , avec l'obligation de payer une amende avec le montant qu'il y avait sur le compte .";
-			y = 0.54;
+			x = 0.1125;
+			y = 0.35;
 			w = 0.7625;
-			h = 0.22;
+			h = 0.25;
 			colorBackground[] = {-1,-1,-1,1};
 		};
 		class TextCheckB: Life_RscText
@@ -70,7 +71,7 @@ class controls {
 			text = "Entreprise";
 			x = 0.15;
 			y = 0.64;
-			w = 0.1;
+			w = 0.12;
 			h = 0.04;
 		};
 		class ButtonSum: Life_RscButtonMenu
