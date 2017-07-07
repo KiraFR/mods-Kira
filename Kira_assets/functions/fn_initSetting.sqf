@@ -15,7 +15,7 @@
 	CALL:
 	[] spawn KIRA_fnc_initSetting
 */
-private["_listB","_listA","_listBackground","_listAnonyme"];
+private ["_listB","_listA","_listBackground","_listAnonyme"];
 disableSerialization;
 waitUntil {!isNull findDisplay 4650};
 _listB = getControl(4650,4652);
@@ -29,17 +29,17 @@ lbClear _listB;
 {
 	_listB lbAdd (_x select 0);
 	_listB lbSetData [lbSize(_listB)-1,str (_x select 1)];
-}foreach _listBackground;
+}forEach _listBackground;
 lbSort [_listB, "ASC"];
 lbClear _listA;
 {
 	_listA lbAdd (_x select 0);
 	_listA lbSetData [lbSize(_listA)-1,str(_x select 1)];
-}foreach _listAnonyme;
+}forEach _listAnonyme;
 
 
 lbClear _listcompte;
-_accountPerso = missionNamespace getvariable "AccountBanque";
+_accountPerso = missionNamespace getVariable "AccountBanque";
 //_accountPerso = varMissionDft("AccountBanque",[]);
 {
 _dflt = _x select 3;

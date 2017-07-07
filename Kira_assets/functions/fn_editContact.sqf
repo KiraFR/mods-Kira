@@ -27,7 +27,7 @@ _listRepertoire = varProfile("repertoire");
 		_listRepertoire = _listRepertoire - [_x];
 		_listRepertoire pushBack [_nom,(_x select 1),_color];
 	};
-}foreach _listRepertoire;
+}forEach _listRepertoire;
 setVarProfile("repertoire",_listRepertoire);
 closeDialog 0;
 call KIRA_fnc_showRepertoire;

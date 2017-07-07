@@ -23,6 +23,6 @@ _repertoireBanque = varProfile("repertoireBanque");
 		_repertoireBanque = _repertoireBanque - [_x];
 		_repertoireBanque pushBack [_nom,(_x select 1)];
 	};
-}foreach _repertoireBanque;
+}forEach _repertoireBanque;
 setVarProfile("repertoireBanque",_repertoireBanque);
 closeDialog 0;

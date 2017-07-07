@@ -23,7 +23,7 @@ _dft = _account select 2;
 if(_dft) then {
 	hint "Ce compte est deja votre compte par defaut.";
 }else{
-	life_atmcash = parsenumber(_account select 1);
+	life_atmcash = parseNumber(_account select 1);
 	[getPlayerUID player,_account select 0] remoteExecCall ["BQKS_fnc_SetDefaultAccount",2];
 };
 hint parseText "Parametres enregistrés.<br/>Veuillez Redemarrer votre telephone pour que les changements s'appliquent.";

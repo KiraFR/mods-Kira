@@ -18,8 +18,8 @@
 */
 private["_list","_listR"];
 params[["_display",displayNull,[displayNull]],["_control",0,[0]]];
-if((isNull _display) OR (_control isEqualTo 0))exitWith{};
-lbclear _control;
+if((isNull _display) or (_control isEqualTo 0))exitWith{};
+lbClear _control;
 _list = _display displayCtrl _control;// compte qui reçois
 switch (_control) do { 
 	case 5001 : {
@@ -28,7 +28,7 @@ switch (_control) do {
 		{
 		  _listR = _list lbAdd format["%1(%2)",_x select 0, _x select 1];
 		  _listR lbSetData [_forEachIndex+1,str(_x select 1)];
-		}foreach ((varProfile("repertoireBanque")) + (varMission("AccountBanque")));
+		}forEach ((varProfile("repertoireBanque")) + (missionNamespace getVariable ("AccountBanque")));
 	};
 	case 5002 : {
 		{
