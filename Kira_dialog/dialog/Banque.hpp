@@ -44,6 +44,7 @@ class controls {
 			y = 0.26;
 			w = 0.7625;
 			h = 0.04;
+			text = "";
 			colorBackground[] = {-1,-1,-1,1};
 			colorActive[] = {-1,-1,-1,1};
 		};

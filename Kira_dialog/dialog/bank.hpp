@@ -24,25 +24,6 @@ class Life_atm_management {
             w = 0.3;
             h = 0.652 - (22 / 250);
         };
-        class BackgroundTransferTitle: Life_RscText
-        {
-            idc = 1000;
-            text = "Transfer Menu";
-            x = 0.075;
-            y = 0.2;
-            w = 0.3;
-            h = 0.04;
-            colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-        };
-        class BackgroundTransfer: Life_RscText
-        {
-            idc = 1001;
-            x = 0.075;
-            y = 0.24;
-            w = 0.3;
-            h = 0.44;
-            colorBackground[] = {-1,-1,-1,0.7};
-        };
     };
 
     class controls {
@@ -105,88 +86,6 @@ class Life_atm_management {
             y = 0.812;
             w = (6.25 / 40);
             h = (1 / 25);
-        };
-
-        class ListAccount: Life_RscListbox
-        {
-            idc = 2780;
-            x = 0.1;
-            y = 0.28;
-            w = 0.25;
-            h = 0.36;
-        };
-        class AddAccount: Life_RscButtonMenu
-        {
-            style = ST_CENTER;
-            onButtonClick = "[]spawn life_add_TAccount";
-            animTextureNormal = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureDisabled = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureOver = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureFocused = "#(argb,8,8,3)color(1,1,1,0)";
-            animTexturePressed = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureDefault = "#(argb,8,8,3)color(1,1,1,0)";
-            colorBackground2[] = {1, 1, 1, 0};
-            color[] = {1, 1, 1, 0};
-            color2[] = {1, 1, 1, 0};
-            colorText[] = {1, 1, 1, 0};
-            colorDisabled[] = {1, 1, 1, 0};
-            idc = 2710;
-            x = 0.0375;
-            y = 0.24;
-            w = 0.0375;
-            h = 0.04;
-        };
-        class EditAccount: Life_RscButtonMenu
-        {
-            style = ST_CENTER;
-            onButtonClick = "";
-            animTextureNormal = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureDisabled = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureOver = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureFocused = "#(argb,8,8,3)color(1,1,1,0)";
-            animTexturePressed = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureDefault = "#(argb,8,8,3)color(1,1,1,0)";
-            colorBackground2[] = {1, 1, 1, 0};
-            color[] = {1, 1, 1, 0};
-            color2[] = {1, 1, 1, 0};
-            colorText[] = {1, 1, 1, 0};
-            colorDisabled[] = {1, 1, 1, 0};
-            idc = 2711;
-            x = 0.0375;
-            y = 0.285809;
-            w = 0.0375;
-            h = 0.04;
-        };
-        class DelAccount: Life_RscButtonMenu
-        {
-            style = ST_CENTER;
-            onButtonClick = "";
-            animTextureNormal = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureDisabled = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureOver = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureFocused = "#(argb,8,8,3)color(1,1,1,0)";
-            animTexturePressed = "#(argb,8,8,3)color(1,1,1,0)";
-            animTextureDefault = "#(argb,8,8,3)color(1,1,1,0)";
-            colorBackground2[] = {1, 1, 1, 0};
-            color[] = {1, 1, 1, 0};
-            color2[] = {1, 1, 1, 0};
-            colorText[] = {1, 1, 1, 0};
-            colorDisabled[] = {1, 1, 1, 0};
-            idc = 2712;
-            x = 0.0372252;
-            y = 0.328638;
-            w = 0.0375;
-            h = 0.04;
-        };
-        class TransferButton: Life_RscButtonMenu {
-            idc = -1;
-            text = "$STR_ATM_Transfer";
-            colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.7};
-            onButtonClick = "[] call life_fnc_bankTransfer";
-            x = 0.125;
-            y = 0.68;
-            w = 0.2;
-            h = 0.04;
         };
 
     };
