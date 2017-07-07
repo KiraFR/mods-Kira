@@ -27,7 +27,7 @@ if(_nom == "" or _numero == "")exitWith{hint "Veuillez completer le formulaire..
 _repert = varProfile("repertoireBanque");
 _repert pushBack [_nom,_numero];
 setVarProfile("repertoireBanque",_repert);
-[] spawn KIRA_fnc_initBank
+[] spawn KIRA_fnc_initBank;
 closeDialog 0;
 /* A REVOIR
 [(findDisplay 5000),5001] call KIRA_fnc_refreshList;
