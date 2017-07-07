@@ -3375,7 +3375,7 @@ class DOSTARA_BANK
 			TextureNoShortcut = "\kira_assets\texture\TransfertMouse.paa";
 			//onMouseExit = "[[4100,4102,4104,4255],[4101,4103,4105,4256]] call KIRA_fnc_hideAllCtrl;";
 			onMouseExit = "ctrlshow[5005,true];ctrlshow[5006,false];";
-			onButtonClick = "call KIRA_fnc_transfert";
+			onButtonClick = "[] call KIRA_fnc_transfert";
 			x = xtel + 0.34;
 			y = ytel + 0.127;
 			text = "Transfert";
