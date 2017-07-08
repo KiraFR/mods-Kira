@@ -1,1 +1,6 @@
 \.idea/
+*.pbo
+
+Kira_assets\.pbo\.dostara\.bisign
+
+*.bisign
