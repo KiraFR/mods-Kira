@@ -20,6 +20,7 @@ private["_account"];
 
 setVarProfile("imageBackground",thisBackground);
 setVarProfile("anonyme",thisAnonyme);
+_account = call compile format["%1",_this select 0];
 diag_log format["%1",_account];
 _dflt = _account select 2;
 
