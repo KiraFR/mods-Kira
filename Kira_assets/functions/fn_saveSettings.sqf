@@ -16,12 +16,13 @@
 	CALL:
 	call KIRA_fnc_saveSettings
 */
-private["_account","_dflt","_number","_listcompte","_accountPerso"];
+private["_account","_dflt"];
 setVarProfile("imageBackground",thisBackground);
 setVarProfile("anonyme",thisAnonyme);
 _account = call compile format["%1",lbData[4656,lbCurSel (4656)]];
 _dflt = _account select 2;
 _number = _account select 0;
+diag_log format["%1 , %2",_dflt,_number];
 if(_dflt) then {
 	hint "Ce compte est deja votre compte par defaut.";
 }else{
@@ -36,10 +37,12 @@ if(_dflt) then {
         	_listcompte lbAdd format["%1 - Montant: %2 [DEFAUT]",_x select 0,_x select 2];
             _accountPerso set [_forEachIndex,[_x sleep 0,_x select 1,_x select 2,true]];
             lbSetData [4656,_forEachIndex, str([_x select 1,_x select 2,true])];
+            diag_log format["%1 - Montant: %2 %3 : Index %4",_x select 1,_x select 2,true,_forEachIndex];
     	}else{
         	_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
         	_accountPerso set [_forEachIndex,[_x sleep 0,_x select 1,_x select 2,false]];
         	lbSetData [4656,_forEachIndex, str([_x select 1,_x select 2,false])];
+        	diag_log format["%1 - Montant: %2 %3 : Index %4",_x select 1,_x select 2,false,_forEachIndex];
     	};
     } forEach _accountPerso;
 
