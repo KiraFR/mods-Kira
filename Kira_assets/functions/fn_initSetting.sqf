@@ -15,7 +15,7 @@
 	CALL:
 	[] spawn KIRA_fnc_initSetting
 */
-private ["_listB","_listA","_listBackground","_listAnonyme","_listcompte"];
+private ["_listB","_listA","_listBackground","_listAnonyme","_listcompte","_accountPero"];
 disableSerialization;
 waitUntil {!isNull findDisplay 4650};
 _listB = getControl(4650,4652);
@@ -48,5 +48,6 @@ _dflt = _x select 3;
 	}else{
     	_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
 	};
-    lbSetData [4656,lbSize _listcompte, str([_x select 1,_x select 2,_x select 3])];
+    //lbSetData [4656,lbSize _listcompte, str([_x select 1,_x select 2,_x select 3])];
+    _listcompte lbSetData [(lbSize _listcompte), str([_x select 1,_x select 2,_x select 3])];
 } forEach _accountPerso;
