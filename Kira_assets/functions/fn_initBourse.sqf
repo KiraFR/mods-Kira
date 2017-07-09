@@ -26,4 +26,4 @@ _bourseObject = Bourse_Object getVariable ["Bourse",[]];
 	_virtName = [(_x select 0),0] call life_fnc_varHandle;
   	_bourse lbAdd format["%1 - (%2%3)",([_virtName] call life_fnc_varToStr),(_x select 1),"€"];
   	//lbSetData [5602,lbSize(_bourse),str(_x select 1)]; // pas besoin
-}foreach _bourseObject;
+}forEach _bourseObject;

@@ -26,13 +26,13 @@ class SettingsMenu
 			w = 0.5;
 			h = 0.43 - (22 / 250);
 		};
-		
+
 		class PlayerTagsHeader : Life_RscText
 		{
 			idc = -1;
 			text = "$STR_SM_PlayerTags";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			
+
 			x = 0.30;
 			y = 0.43;
 			w = 0.35;
@@ -162,7 +162,7 @@ class SettingsMenu
 			x = 0.70; y = 0.36;
 			w = 0.275; h = 0.04;
 		};
-		
+
 		class PlayerTagsONOFF : Life_RscActiveText
 		{
 			text = "ON";

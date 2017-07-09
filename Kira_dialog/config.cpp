@@ -1587,7 +1587,51 @@ class DOSTARA_GENERAL
 			y = ytel + 0.56;
 			w = 0.11; h = (1/25);
 		};
-		
+
+		class clefsMouse : Life_RscButtonKiraMenu06x06 {
+        	idc = 4119;
+        	TextureNoShortcut = "\kira_assets\texture\CarClefs.paa";
+        	//onMouseExit = "[[4100,4102,4104,4106,4108,4110,4112,4114,4116,4118,4120],[4101,4103,4105,4107,4109,4111,4113,4115,4117,4119,4121]] call KIRA_fnc_hideAllCtrl;";
+        	onButtonClick = "createDialog ""Life_key_management"";";
+        	x = xtel + (0.38/2) - 0.016;
+        	y = ytel + 0.48;
+        	text = "Clefs";
+        	w = "0.06";
+        	h = "0.08";
+        };
+
+        class textclefsMouse: Life_RscText{
+        	idc = -1;
+        	text = "Clefs";
+        	type = CT_STATIC;
+        	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
+        	color[] = {0,0,0,0.7};
+        	x = xtel + (0.38/2) - 0.016;
+        	y = ytel + 0.56;
+        	w = 0.11; h = (1/25);
+        };
+        class ReglageVueMouse : Life_RscButtonKiraMenu06x06 {
+            idc = 4119;
+            TextureNoShortcut = "\kira_assets\texture\ReglaVue.paa";
+             //onMouseExit = "[[4100,4102,4104,4106,4108,4110,4112,4114,4116,4118,4120],[4101,4103,4105,4107,4109,4111,4113,4115,4117,4119,4121]] call KIRA_fnc_hideAllCtrl;";
+             onButtonClick = "createDialog ""SettingsMenu"";";
+             x = xtel + 0.38 - (0.38/4);
+             y = ytel + 0.48;
+             text = "Clefs";
+             w = "0.06";
+             h = "0.08";
+        };
+
+         class textReglageVueMouse: Life_RscText{
+             idc = -1;
+             text = "Réglages";
+             type = CT_STATIC;
+             sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
+             color[] = {0,0,0,0.7};
+             x = xtel + 0.38 - (0.38/4) - 0.015;
+             y = ytel + 0.56;
+             w = 0.11; h = (1/25);
+         };
 		/*class SoundBoardMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4121;
 			TextureNoShortcut = "\kira_assets\texture\soundboardNoMouse.paa";
@@ -2432,7 +2476,7 @@ class DOSTARA_PARAMETRE
 			TextureNoShortcut = "\kira_assets\texture\saveMouse.paa";
 			//onMouseExit = "[[4100,4102,4104,4553],[4101,4103,4105,4554]] call KIRA_fnc_hideAllCtrl;";
 			onMouseExit = "ctrlshow[4553,true];ctrlshow[4554,false];";
-			onButtonClick = "call KIRA_fnc_saveSettings";
+			onButtonClick = "[lbData[4656,(lbCurSel 4656)]]call KIRA_fnc_saveSettings";
 			x = xtel + 0.34;
 			y = ytel + 0.127;
 			text = "";
@@ -4127,3 +4171,4 @@ class DOSTARA_BOURSE
 #include "dialog\FormulaireAssasin.hpp"
 #include "dialog\RequestMenu.hpp"
 #include "dialog\call.hpp"
+#include "dialog\gestionAccount.hpp"
