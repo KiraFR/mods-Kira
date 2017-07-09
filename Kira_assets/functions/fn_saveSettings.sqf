@@ -18,6 +18,7 @@
 */
 private["_account"];
 
+diag_log format["%1", str lbData[4656,lbCurSel (4656)]];
 
 setVarProfile("imageBackground",thisBackground);
 setVarProfile("anonyme",thisAnonyme);
