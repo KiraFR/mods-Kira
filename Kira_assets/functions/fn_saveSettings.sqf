@@ -34,21 +34,12 @@ if(_dflt) then {
 
 	lbClear _listcompte;
     _accountPerso = varMissionDft("AccountBanque",[]);
-    diag_log format["%1",_accountPerso];
     {
-
-    if ((_x select 1) == _number) then {
-        diag_log format["%1",_x];
-        diag_log "True";
-        diag_log format["%1",([(_x select 0),(_x select 1),(_x select 2),(true),(_x select 4)])];
-        _accountPerso set [_forEachIndex,([(_x select 0),(_x select 1),(_x select 2),(true),(_x select 4)])];
-    }else{
-        diag_log format["%1",_x];
-        diag_log "False";
-        diag_log format["%1",([(_x select 0),(_x select 1),(_x select 2),(false),(_x select 4)])];
-        _accountPerso set [_forEachIndex,([(_x select 0),(_x select 1),(_x select 2),(false),(_x select 4)])];
-    };
-
+        if ((_x select 1) == _number) then {
+            _accountPerso set [_forEachIndex,([(_x select 0),(_x select 1),(_x select 2),(true),(_x select 4)])];
+        }else{
+            _accountPerso set [_forEachIndex,([(_x select 0),(_x select 1),(_x select 2),(false),(_x select 4)])];
+        };
     }forEach _accountPerso;
 
 	hint parseText "Parametres enregistrés.<br/>Veuillez Redemarrer votre telephone pour que les changements s'appliquent.";
