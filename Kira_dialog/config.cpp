@@ -2476,7 +2476,7 @@ class DOSTARA_PARAMETRE
 			TextureNoShortcut = "\kira_assets\texture\saveMouse.paa";
 			//onMouseExit = "[[4100,4102,4104,4553],[4101,4103,4105,4554]] call KIRA_fnc_hideAllCtrl;";
 			onMouseExit = "ctrlshow[4553,true];ctrlshow[4554,false];";
-			onButtonClick = "[] call KIRA_fnc_saveSettings;diag_log ""Save""";
+			onButtonClick = "[] call KIRA_fnc_saveSettings";
 			x = xtel + 0.34;
 			y = ytel + 0.127;
 			text = "";

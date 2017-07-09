@@ -17,6 +17,7 @@
 	call KIRA_fnc_saveSettings
 */
 private["_account","_dflt","_number","_listcompte","_accountPerso"];
+
 setVarProfile("imageBackground",thisBackground);
 setVarProfile("anonyme",thisAnonyme);
 _account = call compile format["%1",lbData[4656,lbCurSel (4656)]];
@@ -30,25 +31,25 @@ if(_dflt) then {
 	_value = format["%1",(_account select 1)];
     _value = parseNumber(_value);
 	BANK = _value;
+
+	lbClear _listcompte;
+    _accountPerso = varMissionDft("AccountBanque",[]);
+    diag_log format["%1",_accountPerso];
+    {
+
+    if ((_x select 1) == _number) then {
+        diag_log format["%1",_x];
+        diag_log "True";
+        diag_log format["%1",([(_x select 0),(_x select 1),(_x select 2),(true),(_x select 4)])];
+        _accountPerso set [_forEachIndex,([(_x select 0),(_x select 1),(_x select 2),(true),(_x select 4)])];
+    }else{
+        diag_log format["%1",_x];
+        diag_log "False";
+        diag_log format["%1",([(_x select 0),(_x select 1),(_x select 2),(false),(_x select 4)])];
+        _accountPerso set [_forEachIndex,([(_x select 0),(_x select 1),(_x select 2),(false),(_x select 4)])];
+    };
+
+    }forEach _accountPerso;
+
 	hint parseText "Parametres enregistrés.<br/>Veuillez Redemarrer votre telephone pour que les changements s'appliquent.";
 };
-
-lbClear _listcompte;
-_accountPerso = varMissionDft("AccountBanque",[]);
-
-{
-_dflt = _x select 3;
-	if(_number == (_x select 0) ) then {
-    	_listcompte lbAdd format["%1 - Montant: %2 [DEFAUT]",_x select 0,_x select 2];
-        _accountPerso set [_forEachIndex,[_x sleep 0,_x select 1,_x select 2,true]];
-        lbSetData [4656,_forEachIndex, str([_x select 1,_x select 2,true])];
-        diag_log format["%1 - Montant: %2 %3 : Index %4",_x select 1,_x select 2,true,_forEachIndex];
-	}else{
-    	_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
-    	_accountPerso set [_forEachIndex,[_x sleep 0,_x select 1,_x select 2,false]];
-    	lbSetData [4656,_forEachIndex, str([_x select 1,_x select 2,false])];
-    	diag_log format["%1 - Montant: %2 %3 : Index %4",_x select 1,_x select 2,false,_forEachIndex];
-	};
-} forEach _accountPerso;
-
-setVarProfile("AccountBanque",_accountPerso);
