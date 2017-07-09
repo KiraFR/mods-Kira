@@ -37,7 +37,6 @@ lbClear _listA;
 	_listA lbSetData [lbSize(_listA)-1,str(_x select 1)];
 }forEach _listAnonyme;
 
-
 lbClear _listcompte;
 _accountPerso = varMissionDft("AccountBanque",[]);
 
