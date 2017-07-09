@@ -16,16 +16,12 @@
 	CALL:
 	call KIRA_fnc_saveSettings
 */
-//private["_account"];
-params["_parms"];
+private["_account"];
 
-diag_log format["%1" typeName _parms];
-diag_log format["%1" str _parms];
 
-/*
 setVarProfile("imageBackground",thisBackground);
 setVarProfile("anonyme",thisAnonyme);
-_account = call compile format["%1",_this select 0];
+_account = call compile format["%1",lbData[4656,lbCurSel (4656)]];
 diag_log format["%1",_account];
 _dflt = _account select 2;
 
@@ -36,4 +32,3 @@ if(_dflt == 1) then {
 	life_atmcash = parseNumber(_account select 1);
 };
 hint parseText "Parametres enregistrés.<br/>Veuillez Redemarrer votre telephone pour que les changements s'appliquent.";
-*/

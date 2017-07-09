@@ -48,6 +48,6 @@ _dflt = _x select 3;
 	}else{
     	_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
 	};
-    //lbSetData [4656,lbSize _listcompte, str([_x select 1,_x select 2,_x select 3])];
-    _listcompte lbSetData [(lbSize _listcompte), str([_x select 1,_x select 2,_x select 3])];
+    lbSetData [4656,lbSize _listcompte, str([_x select 1,_x select 2,_x select 3])];
+    //_listcompte lbSetData [(lbSize _listcompte), str([_x select 1,_x select 2,_x select 3])];
 } forEach _accountPerso;
