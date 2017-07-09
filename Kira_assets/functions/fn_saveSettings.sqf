@@ -17,11 +17,10 @@
 	call KIRA_fnc_saveSettings
 */
 //private["_account"];
+params["_parms"];
 
-diag_log format["%1" typeName _this];
-diag_log format["%1" str _this];
-diag_log format["%1" typeName _this select 0];
-diag_log format["%1" str _this select 0];
+diag_log format["%1" typeName _parms];
+diag_log format["%1" str _parms];
 
 /*
 setVarProfile("imageBackground",thisBackground);
