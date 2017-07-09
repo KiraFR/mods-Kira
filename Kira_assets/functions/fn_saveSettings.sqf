@@ -21,7 +21,7 @@ setVarProfile("imageBackground",thisBackground);
 setVarProfile("anonyme",thisAnonyme);
 _account = call compile format["%1",lbData[4656,lbCurSel (4656)]];
 _dflt = _account select 2;
-_number = _account select 0
+_number = _account select 0;
 if(_dflt) then {
 	hint "Ce compte est deja votre compte par defaut.";
 }else{
