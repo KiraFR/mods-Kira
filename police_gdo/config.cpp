@@ -286,6 +286,22 @@ class cfgWeapons
 			"\POLICE_GDO\textures\POLICE_Helmet.paa"
 		};
 	};
+	class KronosD_Casque_NFLOL: H_CrewHelmetHeli_B
+	{
+		_generalMacro="H_HelmetB_light_black";
+		scope=2;
+		weaponPoolAvailable=1;
+		displayName="Casque De Pilote de Police 2";
+		picture="\POLICE_GDO\data\ico.paa";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\POLICE_GDO\textures\POLICE_NFLOL.paa"
+		};
+	};
 	class H_HelmetB_light;
 	class KronosD_Casque_GDO_01: H_HelmetB_light
 	{
