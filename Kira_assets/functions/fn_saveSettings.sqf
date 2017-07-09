@@ -26,26 +26,27 @@ if(_dflt) then {
 	hint "Ce compte est deja votre compte par defaut.";
 }else{
 	[getPlayerUID player,_account select 0] remoteExecCall ["BQKS_fnc_SetDefaultAccount",2];
+
+	lbClear _listcompte;
+    _accountPerso = varMissionDft("AccountBanque",[]);
+
+    {
+    _dflt = _x select 3;
+    	if(_number == (_x select 0) ) then {
+        	_listcompte lbAdd format["%1 - Montant: %2 [DEFAUT]",_x select 0,_x select 2];
+            _accountPerso set [_forEachIndex,[_x sleep 0,_x select 1,_x select 2,true]];
+            lbSetData [4656,_forEachIndex, str([_x select 1,_x select 2,true])];
+    	}else{
+        	_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
+        	_accountPerso set [_forEachIndex,[_x sleep 0,_x select 1,_x select 2,false]];
+        	lbSetData [4656,_forEachIndex, str([_x select 1,_x select 2,false])];
+    	};
+    } forEach _accountPerso;
+
+    setVarProfile("AccountBanque",_accountPerso);
+
 	_value = format["%1",(_account select 1)];
     _value = parseNumber(_value);
 	BANK = _value;
 	hint parseText "Parametres enregistrés.<br/>Veuillez Redemarrer votre telephone pour que les changements s'appliquent.";
 };
-
-lbClear _listcompte;
-_accountPerso = varMissionDft("AccountBanque",[]);
-
-{
-_dflt = _x select 3;
-	if(_number == (_x select 0) ) then {
-    	_listcompte lbAdd format["%1 - Montant: %2 [DEFAUT]",_x select 0,_x select 2];
-        _accountPerso set [_forEachIndex,[_x sleep 0,_x select 1,_x select 2,true]];
-        lbSetData [4656,_forEachIndex, str([_x select 1,_x select 2,true])];
-	}else{
-    	_listcompte lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
-    	_accountPerso set [_forEachIndex,[_x sleep 0,_x select 1,_x select 2,false]];
-    	lbSetData [4656,_forEachIndex, str([_x select 1,_x select 2,false])];
-	};
-} forEach _accountPerso;
-
-setVarProfile("AccountBanque",_accountPerso);
