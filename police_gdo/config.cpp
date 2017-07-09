@@ -291,7 +291,7 @@ class cfgWeapons
 		_generalMacro="H_HelmetB_light_black";
 		scope=2;
 		weaponPoolAvailable=1;
-		displayName="Casque De Pilote de Police";
+		displayName="Casque De Pilote de Police 2";
 		picture="\POLICE_GDO\data\ico.paa";
 		hiddenSelections[]=
 		{
