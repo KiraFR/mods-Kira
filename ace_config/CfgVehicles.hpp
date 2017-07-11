@@ -189,7 +189,7 @@ class CfgVehicles {
                     class ACE_CopArrest 
                     { 
                         displayName = "$STR_pInAct_Arrest"; 
-                        condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'} && {(_target getVariable['ACE_Captives_isHandcuffed',false])} && {playerSide == west} && {side _target in [civilian,east]} && ((player distance (getMarkerPos ""police_hq_1"") < 30) OR (player distance (getMarkerPos ""police_hq_2"") < 30) OR (player distance (getMarkerPos ""cop_spawn_1"") < 30) OR (player distance (getMarkerPos ""cop_spawn_2"") < 30) OR (player distance (getMarkerPos ""cop_spawn_3"") < 30) OR...(line truncated)... 
+                        condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'} && {(_target getVariable['ACE_Captives_isHandcuffed',false])} && {playerSide == west} && {side _target in [civilian,east]} && ((player distance (getMarkerPos ""police_hq_1"") < 30) OR (player distance (getMarkerPos ""police_hq_2"") < 30) OR (player distance (getMarkerPos ""cop_spawn_1"") < 30) OR (player distance (getMarkerPos ""cop_spawn_2"") < 30) OR (player distance (getMarkerPos ""cop_spawn_3"") < 30)"
                         statement = "[_target] call life_fnc_arrestAction"; 
                         priority = 0.2; 
                     }; 

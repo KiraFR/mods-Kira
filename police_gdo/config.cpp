@@ -215,60 +215,6 @@ class cfgWeapons
 			"\POLICE_GDO\textures\Vest_Loudre_GDO.paa"
 		};
     };
-    class Vest_Camo_Base;
-	class KronosD_POLICE_vest_01: Vest_Camo_Base
-	{
-		_generalMacro="V_PlateCarrier1_blk";
-		scope=2;
-		displayName="Gilet Et Ceinture";
-		picture="\POLICE_GDO\data\ico.paa";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\POLICE_GDO\data\TextureGilet.paa"
-		};
-		model="\POLICE_GDO\Vest";
-		class ItemInfo: VestItem
-		{
-			uniformModel="\POLICE_GDO\Vest";
-			containerClass="Supply120";
-			LOAD(40,100)
-			hiddenSelections[]=
-			{
-				"camo"
-			};
-		class HitpointsProtectionInfo
-			{
-				class Chest
-				{
-					HitpointName="HitChest";
-					armor=50;
-					PassThrough=0.1;
-				};
-				class Diaphragm
-				{
-					HitpointName="HitDiaphragm";
-					armor=30;
-					PassThrough=0.1;
-				};
-				class Abdomen
-				{
-					hitpointName="HitAbdomen";
-					armor=50;
-					passThrough=0.1;
-				};
-				class Body
-				{
-					hitpointName="HitBody";
-					armor=30;
-					passThrough=0.1;
-				};
-			};
-		};
-	};
 	class H_CrewHelmetHeli_B;
 	class KronosD_Casque_Police_Pilote: H_CrewHelmetHeli_B
 	{
@@ -429,7 +375,7 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\POLICE_GDO\textures\Captain.paa"
+			"\POLICE_GDO\textures\TenueCapitaine.paa"
 		};
 		displayName="Uniforme Officier de Police";
 		author="KronosD";
@@ -486,7 +432,7 @@ class CfgVehicles
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\POLICE_GDO\textures\Commisaire.paa"
+			"\POLICE_GDO\textures\Comissaire.paa"
 		};
 		displayName="Uniforme Officier de Police";
 		author="KronosD";
