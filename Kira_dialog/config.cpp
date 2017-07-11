@@ -4159,6 +4159,7 @@ class DOSTARA_BOURSE
 #include "dialog\pInteraction.h"
 #include "dialog\deathScreen.h"
 #include "dialog\vehicleShop.h"
+#include "dialog\vehicleShopCop.h"
 #include "dialog\settings.h"
 #include "dialog\federalReserve.h"
 #include "dialog\fourriere.hpp"
