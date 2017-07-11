@@ -4148,6 +4148,7 @@ class DOSTARA_BOURSE
 #include "dialog\gang.hpp"
 #include "dialog\key_chain.hpp"
 #include "dialog\impound.hpp"
+#include "dialog\impoundcop.hpp"
 #include "dialog\bank.hpp"
 #include "dialog\veh_shop.hpp"
 #include "dialog\shops.hpp"
