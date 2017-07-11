@@ -4042,7 +4042,7 @@ class DOSTARA_BOURSE
 	idd = 5600;
 	movingEnabled = true;
 	enableSimulation = true;
-	onLoad = "[] spawn KIRA_fnc_initBourse";
+	onLoad = "[] call KIRA_fnc_initBourse";
 	
 	class controlsBackground
 	{	
