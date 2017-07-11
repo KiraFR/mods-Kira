@@ -168,6 +168,22 @@ class cfgWeapons
 
 		};
 	};
+	class V_TacVest_blk;
+    class KronosD_POLICE_vest_01: V_TacVest_blk
+    	{
+    		_generalMacro="V_TacVest_blk";
+    		scope=2;
+    		displayName="Veste Legere de Police";
+    		picture="\POLICE_GDO\data\ico.paa";
+    		hiddenSelections[]=
+    		{
+    			"camo"
+    		};
+    		hiddenSelectionsTextures[]=
+    		{
+    			"\POLICE_GDO\textures\VestePoliceLegere.paa"
+    		};
+        };
 	class V_PlateCarrier1_blk;
 	class KronosD_GDO_vest_01: V_PlateCarrier1_blk
 	{
