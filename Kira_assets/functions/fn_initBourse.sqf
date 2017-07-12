@@ -15,18 +15,6 @@
 	CALL:
 	[] spawn KIRA_fnc_initBourse
 */
-
-private["_bourse","_bourseObject","_virtName"];
-disableSerialization;
-
-_bourse = getControl(5600,5602);// compte qui reçois
-ctrlSetText[4106,varProfile("imageBackground")];
-
-_bourseObject = Bourse_Object getVariable ["Bourse",[]];
-diag_log format["%1",_bourseObject];
-diag_log format["%1",vehicleVarName Bourse_Object];
-{
-	_virtName = [(_x select 0),0] call life_fnc_varHandle;
-  	_bourse lbAdd format["%1 - (%2%3)",([_virtName] call life_fnc_varToStr),(_x select 1),"€"];
-  	//lbSetData [5602,lbSize(_bourse),str(_x select 1)]; // pas besoin
-}forEach _bourseObject;
+private["_sender"];
+_sender = player;
+[_sender] remoteExecCall ["Bourse_fnc_ReturnBourse",2];

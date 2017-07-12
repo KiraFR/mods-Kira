@@ -91,6 +91,9 @@ class CfgFunctions
 			class publiAnnonce;
 			class showAnnonce;
 			class sortArray;
+
+			class initBourse;
+			class initBourse_Recive;
 		};
 	};
 };
