@@ -12,7 +12,7 @@
 	RETURNS:
 	NONE
 
-  Prix VPN pour Hacker: 70 000€
+  Prix VPN pour Hacker: 70 000$
 	CALL:
 	[NUMBER] spawn KIRA_fnc_HBuyVPN
 */
