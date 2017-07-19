@@ -1610,28 +1610,28 @@ class DOSTARA_GENERAL
         	y = ytel + 0.56;
         	w = 0.11; h = (1/25);
         };
-        class ReglageVueMouse : Life_RscButtonKiraMenu06x06 {
-            idc = 4119;
-            TextureNoShortcut = "\kira_assets\texture\ReglaVue.paa";
-             //onMouseExit = "[[4100,4102,4104,4106,4108,4110,4112,4114,4116,4118,4120],[4101,4103,4105,4107,4109,4111,4113,4115,4117,4119,4121]] call KIRA_fnc_hideAllCtrl;";
-             onButtonClick = "createDialog ""SettingsMenu"";";
-             x = xtel + 0.38 - (0.38/4);
-             y = ytel + 0.48;
-             text = "Clefs";
-             w = "0.06";
-             h = "0.08";
-        };
+        //class ReglageVueMouse : Life_RscButtonKiraMenu06x06 {
+        //    idc = 4119;
+        //    TextureNoShortcut = "\kira_assets\texture\ReglaVue.paa";
+        //     //onMouseExit = "[[4100,4102,4104,4106,4108,4110,4112,4114,4116,4118,4120],[4101,4103,4105,4107,4109,4111,4113,4115,4117,4119,4121]] call KIRA_fnc_hideAllCtrl;";
+        //     onButtonClick = "createDialog ""SettingsMenu"";";
+        //     x = xtel + 0.38 - (0.38/4);
+        //     y = ytel + 0.48;
+        //     text = "Clefs";
+        //     w = "0.06";
+        //     h = "0.08";
+        //};
 
-         class textReglageVueMouse: Life_RscText{
-             idc = -1;
-             text = "Réglages";
-             type = CT_STATIC;
-             sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
-             color[] = {0,0,0,0.7};
-             x = xtel + 0.38 - (0.38/4) - 0.015;
-             y = ytel + 0.56;
-             w = 0.11; h = (1/25);
-         };
+        //class textReglageVueMouse: Life_RscText{
+        //    idc = -1;
+        //    text = "Réglages";
+        //    type = CT_STATIC;
+        //    sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
+        //    color[] = {0,0,0,0.7};
+        //    x = xtel + 0.38 - (0.38/4) - 0.015;
+        //    y = ytel + 0.56;
+        //    w = 0.11; h = (1/25);
+        //};
 		/*class SoundBoardMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4121;
 			TextureNoShortcut = "\kira_assets\texture\soundboardNoMouse.paa";
@@ -3389,9 +3389,9 @@ class DOSTARA_BANK
 			y = ytel + 0.62;
 			w = "0.06";
 			h = "0.08";
-			onButtonClick = "[lbData[5003,(lbCurSel 5003)],lbCurSel 5003] call KIRA_fnc_removeBankCont";
+			onButtonClick = "[] call KIRA_fnc_removeBankCont;";
 		};
-
+        //lbData[5003,(lbCurSel 5003)],lbCurSel 5003
 		class textPrix: Life_RscEdit
 		{
 			idc = 5004;
@@ -3419,7 +3419,7 @@ class DOSTARA_BANK
 			TextureNoShortcut = "\kira_assets\texture\TransfertMouse.paa";
 			//onMouseExit = "[[4100,4102,4104,4255],[4101,4103,4105,4256]] call KIRA_fnc_hideAllCtrl;";
 			onMouseExit = "ctrlshow[5005,true];ctrlshow[5006,false];";
-			onButtonClick = "[] call KIRA_fnc_transfert";
+			onButtonClick = "[] call KIRA_fnc_transfert;";
 			x = xtel + 0.34;
 			y = ytel + 0.127;
 			text = "Transfert";

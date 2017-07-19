@@ -15,7 +15,7 @@
 	CALL:
 	[] call KIRA_fnc_transfert
 */
-private["_check","_numAcc","_amount","_amountSender","_taxes"];
+private ["_check","_numAcc","_amount","_amountSender","_taxes","_numSender","_Sender","_numAccText","_numSender","_Sender","_numSender","_Sender","_numAccText"];
 if(player getVariable ["transaction",false])exitWith{hint "Vous devez attendre que la précédente transaction soit terminé."};
 player setVariable ["transaction",true,true];
 
