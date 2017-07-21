@@ -15,15 +15,11 @@
 	CALL:
 	[] call KIRA_fnc_removeBankCont
 */
-diag_log format["Test"];
 private["_repertoireBanque","_bankContact","_myAcc","_indexL","_data","_accountPerso","_index","_num"];
 
-diag_log format["RemoveBankCont ==> Start"];
 _myAcc = false;
 _data = (lbData[5003,(lbCurSel 5003)]);
 _indexL = (lbCurSel 5003);
-
-diag_log format["RemoveBankCont ==> Param ==> Data : %1 | IndexL : %2",_data,_indexL];
 
 _bankContact = call compile format["%1",_data];
 _repertoireBanque = varProfile("repertoireBanque");
@@ -31,15 +27,9 @@ _accountPerso = varMission("AccountBanque");
 
 {_num = _x select 1;if((_bankContact select 1) == _num)exitWith{_myAcc = true;};}forEach _accountPerso; // un de mes comptes ?
 
-diag_log format["RemoveBankCont ==> Info ==> Num : %1",_num];
-
 if(_myAcc == true)exitWith { hint "Vous ne pouvez pas supprimer votre compte de ce repertoire.";};
 
 _index = _repertoireBanque find _bankContact;
-
-diag_log format["RemoveBankCont ==> Info ==> RepertoireBanque : %1",_repertoireBanque];
-diag_log format["RemoveBankCont ==> Info ==> BankContact : %1",_bankContact];
-diag_log format["RemoveBankCont ==> Info ==> Index : %1",_index];
 
 if(_index == -1)exitWith{hint "Un Probleme est survenue, veuillez fermer votre telephone et le rallumer."}; //ça devrait pas arriver -_- fuck you arma
 

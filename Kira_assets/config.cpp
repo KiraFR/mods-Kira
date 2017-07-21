@@ -94,6 +94,9 @@ class CfgFunctions
 
 			class initBourse;
 			class initBourse_Recive;
+
+			class removeBankCont;
+			class transfert;
 		};
 	};
 };
