@@ -93,7 +93,7 @@ class CfgFunctions
 			class sortArray;
 
 			class initBourse;
-			class initBourse_Recive;
+			class initBourse_Receive;
 
 			class removeBankCont;
 			class transfert;
