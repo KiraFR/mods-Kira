@@ -17,4 +17,4 @@
 */
 private["_sender"];
 _sender = player;
-[_sender,"KIRA_fnc_initBourse_Recive"] remoteExecCall ["Bourse_fnc_ReturnBourse",2];
+[_sender,"KIRA_fnc_initBourse_Receive"] remoteExecCall ["Bourse_fnc_ReturnBourse",2];
