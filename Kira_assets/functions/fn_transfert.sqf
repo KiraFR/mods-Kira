@@ -31,7 +31,7 @@ if(_numAcc == "") exitWith{hint "Veuillez selectionner le numero du destinataire
 _amountSender = _Sender select 1;
 if(typeName _amountSender == "STRING")then{_amountSender = parseNumber(_amountSender);};
 if(typeName _amount == "STRING")then{_amount = parseNumber(_amount);};
-_taxes = _amount * [3,_numAcc] call life_fnc_taxes;
+_taxes = [3,_numAcc] call life_fnc_taxes;
 if(_taxes == 0)exitWith{hint "Vous ne pouvez pas faire de virement sur ce compte"};
 _taxes = _amount * _taxes;
 _amount = _amount - _taxes;
