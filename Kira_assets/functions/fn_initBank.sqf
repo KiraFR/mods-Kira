@@ -35,7 +35,8 @@ if (_repertoireAcc isEqualTo _default) then {
     setVarProfile("repertoireBanque",[]);
     _repertoireAcc = varProfile("repertoireBanque");
 };
-
+lbClear 5001;
+lbClear 5002;
 _reperShow = (_repertoireAcc + _accountPerso);
 {
   	_listRepertAcc lbAdd format["%1(%2)",_x select 0, _x select 1];
