@@ -27,7 +27,7 @@ _accountPerso = varMission("AccountBanque");
 
 {_num = _x select 1;if((_bankContact select 1) == _num)exitWith{_myAcc = true;};}forEach _accountPerso; // un de mes comptes ?
 
-if(_myAcc == true)exitWith { hint "Vous ne pouvez pas supprimer votre compte de ce repertoire.";};
+if(_myAcc)exitWith { hint "Vous ne pouvez pas supprimer votre compte de ce repertoire.";};
 
 _index = _repertoireBanque find _bankContact;
 
