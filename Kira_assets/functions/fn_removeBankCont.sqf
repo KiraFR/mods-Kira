@@ -18,8 +18,8 @@
 private["_repertoireBanque","_bankContact","_myAcc","_indexL","_data","_accountPerso","_index","_num"];
 
 _myAcc = false;
-_data = (lbData[5003,(lbCurSel 5003)]);
-_indexL = (lbCurSel 5003);
+_data = (lbData[5001,(lbCurSel 5001)]);
+_indexL = (lbCurSel 5001);
 diag_log format["%1",_data];
 diag_log format["%1",_indexL];
 _bankContact = call compile format["%1",_data];
