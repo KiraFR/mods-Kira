@@ -79,24 +79,22 @@ class CfgFunctions
 			class inventoryOpened;
 			class inventoryClosed;
 			class addInBankRep;
-
 			class contractNotaire;
 			class giveTestament;
 			class receiveTestament;
 			class waitUntilBothSign;
 			class sign;
-
 			class initNewPubli;
 			class initAdsPage;
 			class publiAnnonce;
 			class showAnnonce;
 			class sortArray;
-
 			class initBourse;
 			class initBourse_Receive;
-
 			class removeBankCont;
 			class transfert;
+			class saveMoney;
+			class rembourser;
 		};
 	};
 };

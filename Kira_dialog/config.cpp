@@ -2850,12 +2850,12 @@ class DOSTARA_CONVERSATION
 		class ListMessage: Life_RscControlsGroup {
 			idc = 4921;
 			x = (xtel + 0.025); y = (ytel + 0.18);
-			w = 0.348; h = (0.18 + 0.7 - 0.155);
+			w = 0.36; h = (0.18 + 0.7 - 0.155) - 0.1;
 			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			colorBackground[] = {1,1,1,0.7};
 
 			class HScrollbar : HScrollbar {
-			height = 0;
+				height = 0;
 			};
 			
 			
@@ -2875,7 +2875,6 @@ class DOSTARA_CONVERSATION
 			text = "";
 			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			colorBackground[] = {0,0,0,0.7};
-
 		};
 
 		class sendMsg : Life_RscButtonKiraMenu03x04 {
@@ -3470,7 +3469,7 @@ class DOSTARA_AJOUTACCREP
 	idd = 5020;
 	movingEnabled = true;
 	enableSimulation = true;
-	onLoad = "[] call KIRA_fnc_initAddRep";
+	onLoad = "ctrlSetText[4106,(profilenamespace getvariable ""imageBackground"")];";
 	onUnload = "";
 
 	class controlsBackground
