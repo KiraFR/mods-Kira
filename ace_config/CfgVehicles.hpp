@@ -148,14 +148,14 @@ class CfgVehicles {
                     priority = 2.6; 
                 }; 
                 */ 
-                class ACE_Revive 
-                { 
-                    displayName = "Réanimer"; 
-                    distance = 1; 
-                    condition = "_target isKindOf 'Man' && {!alive _target} && {playerSide in [independent]} && {'Medikit' in (items player)}"; 
-                    statement = "[_target] spawn life_fnc_revivePlayer"; 
-                    exceptions[] = {"isNotSwimming"}; 
-                    priority = 2; 
+                class ACE_Revive
+                {
+                    displayName = "Réanimer";
+                    distance = 1;
+                    condition = "_target isKindOf 'Man' && {!alive _target} && {playerSide in [independent]}";//&& {'Medikit' in (items player)}
+                    statement = "[_target] spawn life_fnc_revivePlayer";
+                    exceptions[] = {"isNotSwimming"};
+                    priority = 2;
                 }; 
                 class ACE_CopInteraction 
                 { 
@@ -194,8 +194,7 @@ class CfgVehicles {
                         priority = 0.2; 
                     }; 
                 }; 
-            }; 
- 
+            };
             class ACE_Torso { 
                 displayName = CSTRING(Torso); 
                 selection = "spine3"; 
@@ -272,7 +271,7 @@ class CfgVehicles {
                 showDisabled = 1; 
                 priority = 3.2; 
                 icon = QPATHTOF(UI\team\team_management_ca.paa); 
-/* 
+ 
                 class ACE_JoinTeamRed { 
                     displayName = CSTRING(JoinTeamRed); 
                     condition = QUOTE(true); 
@@ -337,9 +336,8 @@ class CfgVehicles {
                     priority = 1.2; 
                     icon = QPATHTOF(UI\team\team_management_ca.paa); 
                 }; 
-  */ 
-            }; 
- 
+                */
+            };
             class ACE_Equipment { 
                 displayName = CSTRING(Equipment); 
                 condition = QUOTE(true); 
@@ -981,130 +979,131 @@ class CfgVehicles {
             }; 
         }; 
     }; 
-   class House_F; 
-   class Maison: House_F { 
-           class ACE_Actions { 
-               class ACE_MainActions { 
-                   displayName = CSTRING(MainAction); 
-                   distance = 4; 
-                   condition = QUOTE(true); 
+    class House_F; 
+    class Maison: House_F { 
+        class ACE_Actions { 
+            class ACE_MainActions { 
+               displayName = CSTRING(MainAction); 
+               distance = 4; 
+               condition = QUOTE(true); 
+               statement = ""; 
+               icon = "\a3\ui_f\data\IGUI\Cfg\Actions\eject_ca.paa"; 
+               class ACE_BuyHouse 
+               { 
+                   displayName = "Acheter"; 
+                   distance = 1; 
+                   condition = "_target isKindOf 'House_F' && {isNil {_curTarget getVariable ""house_owner""}} && {playerSide in [civilian]}"; 
+                   statement = "[_target] spawn life_fnc_buyHouse;"; 
+                   priority = 2; 
+               }; 
+               class ACE_SellHouse 
+               { 
+                   displayName = "Vendre"; 
+                   distance = 1; 
+                   condition = "((_target getVariable ""house_owner"") select 0) == (getPlayerUID player))"; 
+                   statement = "[_target] spawn life_fnc_sellHouse;"; 
+                   priority = 2; 
+               }; 
+               class ACE_AccesGarage 
+               { 
+                   displayName = "Garage"; 
+                   distance = 1; 
+                   condition = "((_target getVariable ""house_owner"") select 0) == (getPlayerUID player) && {(typeOf _target) in [""Land_i_Garage_V1_F"",""Land_i_Garage_V2_F""]}"; 
+                   statement = "[_target,""Car""] spawn life_fnc_vehicleGarage;"; 
+                   priority = 2; 
+               }; 
+               class ACE_StoreVehicle 
+               { 
+                   displayName = "Ranger Vehicule"; 
+                   distance = 1; 
+                   condition = "((_target getVariable ""house_owner"") select 0) == (getPlayerUID player) && {(typeOf _target) in [""Land_i_Garage_V1_F"",""Land_i_Garage_V2_F""]}"; 
+                   statement = "[_target,player] spawn life_fnc_storeVehicle;"; 
+                   priority = 2; 
+               }; 
+               class ACE_UnlockStorage 
+               { 
+                   displayName = "Deverouiller Coffre"; 
+                   distance = 1; 
+                   condition = "((_target getVariable ""house_owner"") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {(_target getVariable [""locked"",false])}}"; 
+                   statement = "[_target] spawn life_fnc_buyHouse;"; 
+                   priority = 2; 
+               }; 
+               class ACE_LockStorage 
+               { 
+                   displayName = "Verouiller Coffre"; 
+                   distance = 1; 
+                   condition = "((_target getVariable ""house_owner"") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {(_target getVariable [""locked"",true])}}"; 
+                   statement = "[_target] spawn life_fnc_buyHouse;"; 
+                   priority = 2; 
+               }; 
+               class ACE_LightHouseOn 
+               { 
+                   displayName = "Allumer les lumieres"; 
+                   distance = 1; 
+                   condition = "((_target getVariable ""house_owner"") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {(_target getVariable [""lightSource"",ObjNull])}}"; 
+                   statement = "[_target] spawn life_fnc_buyHouse;"; 
+                   priority = 2; 
+               }; 
+               class ACE_LightHouseOff 
+               { 
+                   displayName = "Eteindre les lumieres"; 
+                   distance = 1; 
+                   condition = "((_target getVariable ""house_owner"") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {!(_target getVariable [""lightSource"",ObjNull])}}"; 
+                   statement = "[_target] spawn life_fnc_buyHouse;"; 
+                   priority = 2; 
+               }; 
+               class ACE_CopInteraction 
+               { 
+                   displayName = "Interaction Police"; 
+                   distance = 2; 
+                   condition = "_target isKindOf 'House_F' && playerSide in [west]}"; 
                    statement = ""; 
-                   icon = "\a3\ui_f\data\IGUI\Cfg\Actions\eject_ca.paa"; 
-                   class ACE_BuyHouse 
+                   priority = 2.2; 
+
+                   class ACE_RepairBank 
                    { 
-                       displayName = "Acheter"; 
-                       distance = 1; 
-                       condition = "_target isKindOf 'House_F' && {isNil {_curTarget getVariable "house_owner"}} && {playerSide in [civilian]}"; 
-                       statement = "[_target] spawn life_fnc_buyHouse;"; 
-                       priority = 2; 
+                       displayName = "Réparer la porte"; 
+                       condition = "(nearestObject [[16019.5,16952.9,0],""Land_Dome_Big_F""]) == _target OR (nearestObject [[16019.5,16952.9,0],""Land_Research_house_V1_F""]) == _target"; 
+                       statement = "[_target] spawn life_fnc_repairDoor;"; 
+                       priority = 1; 
                    }; 
-                   class ACE_SellHouse 
+                   class ACE_CloseDoor 
                    { 
-                       displayName = "Vendre"; 
-                       distance = 1; 
-                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player))"; 
-                       statement = "[_target] spawn life_fnc_sellHouse;"; 
-                       priority = 2; 
+                       displayName = "Fermé la porte"; 
+                       condition = "(nearestObject [[16019.5,16952.9,0],""Land_Dome_Big_F""]) == _target OR (nearestObject [[16019.5,16952.9,0],""Land_Research_house_V1_F""]) == _target"; 
+                       statement = "[_target] call life_fnc_doorAnimate;"; 
+                       priority = 0.8; 
                    }; 
-                   class ACE_AccesGarage 
+                   class ACE_RaidHouse 
                    { 
-                       displayName = "Garage"; 
-                       distance = 1; 
-                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player) && {(typeOf _target) in ["Land_i_Garage_V1_F","Land_i_Garage_V2_F"]}"; 
-                       statement = "[_target,""Car""] spawn life_fnc_vehicleGarage;"; 
-                       priority = 2; 
+                       displayName = "Propriétaire"; 
+                       condition = "_target getVariable ""house_owner"""; 
+                       statement = "[_target] call life_fnc_copHouseOwner;"; 
+                       priority = 0.6; 
                    }; 
-                   class ACE_StoreVehicle 
+                   class ACE_BreakDoor 
                    { 
-                       displayName = "Ranger Vehicule"; 
-                       distance = 1; 
-                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player) && {(typeOf _target) in ["Land_i_Garage_V1_F","Land_i_Garage_V2_F"]}"; 
-                       statement = "[_target,player] spawn life_fnc_storeVehicle;"; 
-                       priority = 2; 
+                       displayName = "Raid la maison"; 
+                       condition = "_target getVariable ""house_owner"""; 
+                       statement = "[_target] spawn life_fnc_copBreakDoor;"; 
+                       priority = 0.3; 
                    }; 
-                   class ACE_UnlockStorage 
+                   class ACE_SearchDrug 
                    { 
-                       displayName = "Deverouiller Coffre"; 
-                       distance = 1; 
-                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {(_target getVariable ["locked",false])}}"; 
-                       statement = "[_target] spawn life_fnc_buyHouse;"; 
-                       priority = 2; 
+                       displayName = "Fouiller"; 
+                       condition = "_target getVariable ""house_owner"""; 
+                       statement = "[_target] spawn life_fnc_raidHouse;"; 
+                       priority = 0.2; 
                    }; 
-                   class ACE_LockStorage 
+                   class ACE_ClosePrivDoor 
                    { 
-                       displayName = "Verouiller Coffre"; 
-                       distance = 1; 
-                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {(_target getVariable ["locked",true])}}"; 
-                       statement = "[_target] spawn life_fnc_buyHouse;"; 
-                       priority = 2; 
-                   }; 
-                   class ACE_LightHouseOn 
-                   { 
-                       displayName = "Allumer les lumieres"; 
-                       distance = 1; 
-                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {(_target getVariable ["lightSource",ObjNull])}}"; 
-                       statement = "[_target] spawn life_fnc_buyHouse;"; 
-                       priority = 2; 
-                   }; 
-                   class ACE_LightHouseOff 
-                   { 
-                       displayName = "Eteindre les lumieres"; 
-                       distance = 1; 
-                       condition = "((_target getVariable "house_owner") select 0) == (getPlayerUID player) && {playerSide in [civilian]} && {!(_target getVariable ["lightSource",ObjNull])}}"; 
-                       statement = "[_target] spawn life_fnc_buyHouse;"; 
-                       priority = 2; 
-                   }; 
-                   class ACE_CopInteraction 
-                   { 
-                       displayName = "Interaction Police"; 
-                       distance = 2; 
-                       condition = "_target isKindOf 'House_F' && playerSide in [west]}"; 
-                       statement = ""; 
-                       priority = 2.2; 
- 
-                       class ACE_RepairBank 
-                       { 
-                           displayName = "Réparer la porte"; 
-                           condition = "(nearestObject [[16019.5,16952.9,0],""Land_Dome_Big_F""]) == _target OR (nearestObject [[16019.5,16952.9,0],""Land_Research_house_V1_F""]) == _target"; 
-                           statement = "[_target] spawn life_fnc_repairDoor;"; 
-                           priority = 1; 
-                       }; 
-                       class ACE_CloseDoor 
-                       { 
-                           displayName = "Fermé la porte"; 
-                           condition = "(nearestObject [[16019.5,16952.9,0],""Land_Dome_Big_F""]) == _target OR (nearestObject [[16019.5,16952.9,0],""Land_Research_house_V1_F""]) == _target"; 
-                           statement = "[_target] call life_fnc_doorAnimate;"; 
-                           priority = 0.8; 
-                       }; 
-                       class ACE_RaidHouse 
-                       { 
-                           displayName = "Propriétaire"; 
-                           condition = "_target getVariable "house_owner""; 
-                           statement = "[_target] call life_fnc_copHouseOwner;"; 
-                           priority = 0.6; 
-                       }; 
-                       class ACE_BreakDoor 
-                       { 
-                           displayName = "Raid la maison"; 
-                           condition = "_target getVariable "house_owner""; 
-                           statement = "[_target] spawn life_fnc_copBreakDoor;"; 
-                           priority = 0.3; 
-                       }; 
-                       class ACE_SearchDrug 
-                       { 
-                           displayName = "Fouiller"; 
-                           condition = "_target getVariable "house_owner""; 
-                           statement = "[_target] spawn life_fnc_raidHouse;"; 
-                           priority = 0.2; 
-                       }; 
-                       class ACE_ClosePrivDoor 
-                       { 
-                           displayName = "Fermé la maison"; 
-                           condition = "_target getVariable "house_owner""; 
-                           statement = "[_target] spawn life_fnc_lockupHouse;"; 
-                           priority = 0.1; 
-                       }; 
+                       displayName = "Fermé la maison"; 
+                       condition = "_target getVariable ""house_owner"""; 
+                       statement = "[_target] spawn life_fnc_lockupHouse;"; 
+                       priority = 0.1; 
                    }; 
                }; 
-   }; 
+            };
+        };
+    }; 
 };
