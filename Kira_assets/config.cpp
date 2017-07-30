@@ -95,6 +95,11 @@ class CfgFunctions
 			class transfert;
 			class saveMoney;
 			class rembourser;
+
+
+			class notification;
+			class numToName;
+			class setNonLu;
 		};
 	};
 };

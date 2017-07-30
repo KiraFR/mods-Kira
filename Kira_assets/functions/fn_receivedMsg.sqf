@@ -39,18 +39,18 @@ _listconversations = varProfile("conversations");
 }foreach _listconversations;
 if(!(isNil "_listMsg")) then{
 	(_listMsg select 1) pushBack [0,_msg];
+	_listMsg set[2,true];
 	_listconversations set [_i,_listMsg];
 	setVarProfile("conversations",_listconversations);
 }else{
-	_listMsg = [_number,[[0,_msg]]];
+	_listMsg = [_number,[[0,_msg]],true];
 	_listconversations pushBack _listMsg;
 	setVarProfile("conversations",_listconversations);
 };
-
+[] spawn KIRA_fnc_notification;
 _display = findDisplay 4150;
 if !(isNull _display) then {
 	_target = (conversationTarget select 1);
-	diag_log format["%1",conversationTarget];
 	if(_target == _num) then{
 		_color = [_target] call KIRA_fnc_getColorContact;
 		[_msg,0,_color] spawn KIRA_fnc_addMsg;

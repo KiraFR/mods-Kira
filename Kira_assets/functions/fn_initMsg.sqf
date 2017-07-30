@@ -32,11 +32,19 @@ _listconversations = varProfile("conversations");
 
 lbClear _listC;
 {
+	_bool = _x param[2,false];
+	_ico = if(_bool)then{
+		"\Kira_assets\texture\notification\SMSnonLu.paa";
+	}else{
+		"\Kira_assets\texture\notification\SMSLu.paa";
+	};
 	_contact = [(_x select 0)] call KIRA_fnc_fetchRepertoire;
 	if((_contact select 0) == "")then {_listC lbAdd (_contact select 1);}else{_listC lbAdd (_contact select 0);};
-	_listC lbSetTooltip [lbSize(_listC)-1,str(_contact select 1)];
-	_listC lbSetColor [lbSize(_listC)-1,_contact select 2];
-	_listC lbSetData [lbSize(_listC)-1,str(_contact)];
+	_size = lbSize(_listC)-1;
+	_listC lbSetTooltip [_size,str(_contact select 1)];
+	_listC lbSetColor [_size,_contact select 2];
+	_listC lbSetData [_size,str(_contact)];
+	_listC lbSetPicture [_size,_ico];
 }foreach _listconversations;
 lbSort [_listC, "ASC"];
 ctrlEnable[4154,false];

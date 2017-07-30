@@ -174,4 +174,9 @@ class CfgSounds
 		sound[] = {"\Kira_sound\sound\1468.ogg", 1, 1, 100};
 		titles[] = {};
 	};
+	class vibreur{
+		name = "vibreur";
+		sound[] = {"\Kira_sound\sound\vibreur.ogg", 1, 1, 100};
+		titles[] = {};
+	};
 };

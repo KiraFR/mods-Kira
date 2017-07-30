@@ -127,3 +127,24 @@ class DOSTARA_FONT
 		};
 	};
 };
+
+
+class DOSTARA_Notification {
+	name = "DOSTARA_Notification";
+	idd = 6300;
+	movingEnable = true;
+	enableSimulation = true;
+	duration = 2;
+    onLoad = "uiNamespace setVariable ['DOSTARA_Notification',_this select 0];nbNotif = nbNotif + 1;";
+	class controlsBackground {
+		class Notification: Life_RscStructuredText
+		{
+			idc = 6301;
+			x = (0.82049 * safezoneW + safezoneX) + (0.180922 * safezoneW);
+			y = 0.147899 * safezoneH + safezoneY;
+			w = 0.180922 * safezoneW;
+			h = 0.0440126 * safezoneH;
+			colorBackground[] = {0,0,0,0.7};
+		};
+	};
+};

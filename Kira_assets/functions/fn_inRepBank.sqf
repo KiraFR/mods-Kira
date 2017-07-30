@@ -13,6 +13,6 @@
 	1.BOOLEAN
 
 	CALL:
-	_boolean = [STRING] call KIRA_fnc_refreshList
+	[STRING] call KIRA_fnc_inRepBank
 */
 _num = param[0,"",""];

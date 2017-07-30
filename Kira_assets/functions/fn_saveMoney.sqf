@@ -17,12 +17,12 @@
 */
 private["_i","_account","_accID","_total","_accountPerso","_delAdd"];
 disableSerialization;
-params[
-	["_amount",0,[0]],
-	["_numAcc","",[""]],
-	["_taxe",0,[0]],
-	["_delAdd",false,[false]] // true : addition; false : soustraction
-];
+_amount = param[0,0,[0]];
+_numAcc = param[1,"",[""]];
+_taxe = param[2,0,[0]];
+_delAdd = param[3,false,[false]]; // true : addition; false : soustraction
+_receiver = param[4,false,[false]]; // true : receiver; false : sender
+
 diag_log format["KIRA_fnc_saveMoney 1 : %1 %2",_amount,_delAdd];
 _accountPerso = varMission("AccountBanque");
 {
@@ -39,7 +39,11 @@ _accountPerso = varMission("AccountBanque");
 		_accountPerso set[_forEachIndex,_account];
 	};
 }foreach _accountPerso;
-
+if(_receiver)then{
+	_numeroSender = param[5,"",[""]];
+	_messages = format["Bonjour,</br>Vous venez de recevoir un virement, le numero %1 a envoyé %2 Dostar sur le compte ayant %3.",_numeroSender,_amount,_numAcc];
+	[_messages,"Dostara Banque"] call KIRA_fnc_receivedMsg;
+};
 [CASH,BANK,_amount,_taxe,"Virement",getPlayerUID player] remoteExecCall ["KIRA_fnc_taxes",2];
 setVarMission("AccountBanque",_accountPerso);
 call SOCK_fnc_updateBanque;

@@ -1751,10 +1751,9 @@ class DOSTARA_MESSAGE
 			h = (1/25);
 		};
 
-		class contacts: Life_RscListNBox {
+		class contacts: Life_RscListBox {
 			idc = 4901;
 			type = CT_LISTBOX;
-			style = ST_CENTER;
 			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			onLBSelChanged = "call KIRA_fnc_selectConv";
 			x = (xtel + 0.025); y = (ytel + 0.18);
@@ -2669,6 +2668,7 @@ class DOSTARA_ADDCONV
 	movingEnabled = true;
 	enableSimulation = true;
 	onLoad = "[] spawn KIRA_fnc_initAddConversation;ctrlshow[4903,false]";
+	onUnload = "[] spawn KIRA_fnc_initMsg;";
 	
 	class controlsBackground
 	{	
@@ -2794,7 +2794,7 @@ class DOSTARA_CONVERSATION
 	movingEnabled = true;
 	enableSimulation = true;
 	onLoad = "[] spawn KIRA_fnc_initConversation";
-	onUnLoad = "xNext = nil;yEcart=nil";
+	onUnLoad = "xNext = nil;yEcart=nil;[] spawn KIRA_fnc_initMsg;";
 	
 	class controlsBackground
 	{	

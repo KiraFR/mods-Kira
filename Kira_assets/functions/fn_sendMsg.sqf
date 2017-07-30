@@ -38,12 +38,13 @@ if(!(isNil "_listMsg")) then{
 	_msg = ctrlText 4939;
 	_numero = _listMsg select 0;
 	(_listMsg select 1) pushBack [1,_msg];
+	_listMsg pushBack [2,false];
 	_listconversations set [_i,_listMsg];
 	setVarProfile("conversations",_listconversations);
 }else{
 	_msg = ctrlText 4939;
 	_numero = (conversationTarget select 1);
-	_listMsg = [(conversationTarget select 1),[[1,_msg]]];
+	_listMsg = [(conversationTarget select 1),[[1,_msg]],false];
 	_listconversations pushBack _listMsg;
 	setVarProfile("conversations",_listconversations);
 };
