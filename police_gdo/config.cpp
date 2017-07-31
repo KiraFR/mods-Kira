@@ -295,7 +295,56 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\POLICE_GDO\textures\CPOLICE.paa"
+			"\POLICE_GDO\textures\Casquette_police_Noire.paa"
+		};
+	};
+	class KronosD_Police_cap_02: H_Cap_police
+	{
+		_generalMacro="H_Cap_blk";
+		scope=2;
+		weaponPoolAvailable=1;
+		displayName="Casquette de Police";
+		picture="\POLICE_GDO\data\ico.paa";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\POLICE_GDO\textures\Cap_Noir_police.paa"
+		};
+	};
+	class H_MilCap_blue;
+	class KronosD_Police_01: H_MilCap_blue
+	{
+		_generalMacro="H_MilCap_blue";
+		scope=2;
+		weaponPoolAvailable=1;
+		displayName="Cap de Police";
+		picture="\POLICE_GDO\data\ico.paa";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\POLICE_GDO\textures\Casquette_police_Noire.paa"
+		};
+	};
+	class KronosD_Police_02: H_Cap_police
+	{
+		_generalMacro="H_Cap_blk";
+		scope=2;
+		weaponPoolAvailable=1;
+		displayName="Cap de Police";
+		picture="\POLICE_GDO\data\ico.paa";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\POLICE_GDO\textures\Cap_blanc_police.paa"
 		};
 	};
 };
