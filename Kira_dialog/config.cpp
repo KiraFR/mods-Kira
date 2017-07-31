@@ -4173,3 +4173,4 @@ class DOSTARA_BOURSE
 #include "dialog\RequestMenu.hpp"
 #include "dialog\call.hpp"
 #include "dialog\gestionAccount.hpp"
+#include "dialog\GestionEntreprise2.hpp"
