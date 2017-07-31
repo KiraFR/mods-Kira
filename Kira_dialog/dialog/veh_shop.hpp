@@ -67,7 +67,7 @@ class Life_vehicle_shop {
 			h = (1 / 25);
 		};
 		
-		class GetCar : life_RscButtonMenu {
+/*		class GetCar : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Buy";
 			onButtonClick = "[] spawn life_fnc_vehicleShopBuy";
@@ -76,7 +76,7 @@ class Life_vehicle_shop {
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+		*/
 		class GetCarGarage : life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_BuyPerm";
