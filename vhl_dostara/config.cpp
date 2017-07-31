@@ -98,6 +98,87 @@ class CfgVehicles
 			"VHL_Dostara\Police\M3\M3_windScreen_2.paa"
 		};
 	};
+	class ivory_m3;
+  class M3_SpeedStar: ivory_m3
+	{
+		author="Nefron Maverick";
+		displayName="BMW M3 E92 SPEED STAR";
+		_generalMacro="M3_SpeedStar";
+		uniformClass="M3_SpeedStar";
+		hiddenSelectionsTextures[]=
+		{
+			"\VHL_Dostara\Civil\BMW_Speedstar_0.paa",
+			"VHL_Dostara\Civil\BMW_Speedstar_1.paa",
+			"VHL_Dostara\Civil\BMW_Speedstar_2.paa"
+		};
+	};
+  class M3_StreetRacer: ivory_m3
+	{
+		author="Nefron Maverick";
+		displayName="BMW M3 E92 SPEED STAR";
+		_generalMacro="M3_StreetRacer";
+		uniformClass="M3_StreetRacer";
+		hiddenSelectionsTextures[]=
+		{
+			"\VHL_Dostara\Civil\BMW_StreetRacer_0.paa",
+			"VHL_Dostara\Civil\BMW_StreetRacer_1.paa",
+			"VHL_Dostara\Civil\BMW_StreetRacer_2.paa"
+		};
+	};
+  class ivory_rs4;
+  class RS4_Thunder: ivory_rs4
+	{
+		author="Nefron Maverick";
+		displayName="RS4 THUNDER";
+		_generalMacro="RS4_Thunder";
+		uniformClass="RS4_Thunder";
+		hiddenSelectionsTextures[]=
+		{
+			"\VHL_Dostara\Civil\RS4_Thunder_0.paa",
+			"VHL_Dostara\Civil\RS4_Thunder_1.paa",
+			"VHL_Dostara\Civil\RS4_Thunder_2.paa"
+		};
+	};
+  class ivory_evox;
+  class EVO_BlackLine: ivory_evox
+	{
+		author="Nefron Maverick";
+		displayName="Mistubishi Evo Blackline";
+		_generalMacro="EVO_BlackLine";
+		uniformClass="EVO_BlackLine";
+		hiddenSelectionsTextures[]=
+		{
+			"\VHL_Dostara\Civil\EVO_Blackline_0.paa",
+			"VHL_Dostara\Civil\EVO_Blackline_1.paa",
+			"VHL_Dostara\Civil\EVO_Blackline_2.paa"
+		};
+	};
+  class ivory_gt500;
+  class GT500_ElectricBlue: ivory_gt500
+  {
+    author="Nefron Maverick";
+    displayName="Mistubishi Evo Blackline";
+    _generalMacro="GT500_ElectricBlue";
+    uniformClass="GT500_ElectricBlue";
+    hiddenSelectionsTextures[]=
+    {
+      "\VHL_Dostara\Civil\GT500_ElectricBlue.paa"
+    };
+  };
+  class ivory_wrx;
+  class WRX_Subaru_Blue: ivory_wrx
+	{
+		author="Nefron Maverick";
+		displayName="Subaru Rallye";
+		_generalMacro="WRX_Subaru_Blue";
+		uniformClass="WRX_Subaru_Blue";
+		hiddenSelectionsTextures[]=
+		{
+			"\VHL_Dostara\Civil\Subaru_Rally_0.paa",
+			"VHL_Dostara\Civil\Subaru_Rally_1.paa",
+			"VHL_Dostara\Civil\Subaru_Rally_2.paa"
+		};
+	};
 	class ReammoBox;
 	class ThingX;
 	class Box_NATO_Wps_F;
