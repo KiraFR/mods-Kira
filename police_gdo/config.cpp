@@ -320,7 +320,7 @@ class cfgWeapons
 		_generalMacro="H_MilCap_blue";
 		scope=2;
 		weaponPoolAvailable=1;
-		displayName="Cap de Police";
+		displayName="Cap de Police Noir";
 		picture="\POLICE_GDO\data\ico.paa";
 		hiddenSelections[]=
 		{
@@ -331,12 +331,12 @@ class cfgWeapons
 			"\POLICE_GDO\textures\Casquette_police_Noire.paa"
 		};
 	};
-	class KronosD_Police_02: H_Cap_police
+	class KronosD_Police_02: H_MilCap_blue
 	{
 		_generalMacro="H_Cap_blk";
 		scope=2;
 		weaponPoolAvailable=1;
-		displayName="Cap de Police";
+		displayName="Cap de Police blanche";
 		picture="\POLICE_GDO\data\ico.paa";
 		hiddenSelections[]=
 		{
