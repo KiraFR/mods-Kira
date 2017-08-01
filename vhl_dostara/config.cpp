@@ -115,7 +115,7 @@ class CfgVehicles
   class M3_StreetRacer: ivory_m3
 	{
 		author="Nefron Maverick";
-		displayName="BMW M3 E92 SPEED STAR";
+		displayName="BMW M3 E92 Street Racer";
 		_generalMacro="M3_StreetRacer";
 		uniformClass="M3_StreetRacer";
 		hiddenSelectionsTextures[]=
@@ -157,7 +157,7 @@ class CfgVehicles
   class GT500_ElectricBlue: ivory_gt500
   {
     author="Nefron Maverick";
-    displayName="Mistubishi Evo Blackline";
+    displayName="GT500 Electric Blue";
     _generalMacro="GT500_ElectricBlue";
     uniformClass="GT500_ElectricBlue";
     hiddenSelectionsTextures[]=
