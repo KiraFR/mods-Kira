@@ -311,11 +311,11 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\POLICE_GDO\textures\Cap_Noir_police.paa"
+			"\POLICE_GDO\textures\Casquette_police_Blanche.paa"
 		};
 	};
 	class H_MilCap_blue;
-	class KronosD_Police_01: H_MilCap_blue
+	class KronosD_Police_MilCap_Noir: H_MilCap_blue
 	{
 		_generalMacro="H_MilCap_blue";
 		scope=2;
@@ -328,10 +328,10 @@ class cfgWeapons
 		};
 		hiddenSelectionsTextures[]=
 		{
-			"\POLICE_GDO\textures\Casquette_police_Noire.paa"
+			"\POLICE_GDO\textures\Cap_Noir_police.paa"
 		};
 	};
-	class KronosD_Police_02: H_MilCap_blue
+	class KronosD_Police_MilCap_Blanc: H_MilCap_blue
 	{
 		_generalMacro="H_Cap_blk";
 		scope=2;
