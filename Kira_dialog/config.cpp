@@ -91,10 +91,10 @@ class RscButtonTextOnly;
 class RscPictureButton: RscActivePicture
 {
 
-	class controls 
+	class controls
 	{
 
-		class DlcBg 
+		class DlcBg
 		{
 			idc = 101;
 			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayInventory\InventoryStripe_ca.paa";
@@ -107,7 +107,7 @@ class RscPictureButton: RscActivePicture
 			h = "1.8 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
 
-		class DlcIcon 
+		class DlcIcon
 		{
 			idc = 100;
 			text = "";
@@ -121,7 +121,7 @@ class RscPictureButton: RscActivePicture
 		};
 	};
 };
-class RscDisplayInventory 
+class RscDisplayInventory
 {
 	scriptName = "RscDisplayInventory";
 	//name="RscDisplayInventory";
@@ -131,7 +131,7 @@ class RscDisplayInventory
 	onUnload = "[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');";
 	idd = 602;
 	enableSimulation = 1;
-	class Colors 
+	class Colors
 	{
 		dragValidBgr[] = {
 				"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])", "(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])", "(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])", 0.500000
@@ -157,7 +157,7 @@ class RscDisplayInventory
 	};
 
 	class controlsBackground {
-		class foodHIcon : life_RscPicture 
+		class foodHIcon : life_RscPicture
 		{
 			idc = 23540;
 			text = "\kira_assets\hud\faim.paa";
@@ -165,8 +165,8 @@ class RscDisplayInventory
 			w = 0.05; h = 0.06;
 			colorBackground[] = COLOR_HALF_BLACK;
 		};
-			
-		class waterHIcon : life_RscPicture 
+
+		class waterHIcon : life_RscPicture
 		{
 			idc = 23545;
 			text = "\kira_assets\hud\soif.paa";
@@ -174,7 +174,7 @@ class RscDisplayInventory
 			w = 0.05; h = 0.06;
 			colorBackground[] = COLOR_HALF_BLACK;
 		};
-			
+
 		class healthHIcon : life_RscPicture
 		{
 			idc = 23550;
@@ -204,7 +204,7 @@ class RscDisplayInventory
 		};
 	};
 
-	class controls 
+	class controls
 	{
 
 		delete Background;
@@ -1331,7 +1331,7 @@ class RscDisplayInventory
 			shadow=true;
 			text="";
 		};
-			
+
 		class watertext
 		{
 			type=0;
@@ -1349,7 +1349,7 @@ class RscDisplayInventory
 			shadow=true;
 			text="";
 		};
-			
+
 		class healthtext
 		{
 			type=0;
@@ -1395,9 +1395,9 @@ class DOSTARA_GENERAL
 	enableSimulation = true;
 	onLoad = "";
 	onUnLoad = "thisBackground = nil;thisAnonyme = nil;";
-	
+
 	class controlsBackground
-	{	
+	{
 		class fondEcran : life_RscPicture
 		{
 			idc = 4106;
@@ -1427,7 +1427,7 @@ class DOSTARA_GENERAL
 		};
 	};
 	class controls{
-		
+
 		class MessageMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4107;
 			TextureNoShortcut = "\kira_assets\texture\MessageNoMouse.paa";
@@ -1449,7 +1449,7 @@ class DOSTARA_GENERAL
 			y = ytel + 0.3;
 			w = 0.11; h = (1/25);
 		};
-		
+
 		class InternetMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4109;
 			TextureNoShortcut = "\kira_assets\texture\InternetNoMouse.paa";
@@ -1472,7 +1472,7 @@ class DOSTARA_GENERAL
 			y = ytel + 0.3;
 			w = 0.1; h = (1/25);
 		};
-		
+
 		class contactMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4111;
 			TextureNoShortcut = "\kira_assets\texture\contactNoMouse.paa";
@@ -1495,7 +1495,7 @@ class DOSTARA_GENERAL
 			y = ytel + 0.3;
 			w = 0.1; h = (1/25);
 		};
-		
+
 		class bankMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4113;
 			TextureNoShortcut = "\kira_assets\texture\bankNoMouse.paa";
@@ -1517,7 +1517,7 @@ class DOSTARA_GENERAL
 			y = ytel + 0.44;
 			w = 0.11; h = (1/25);
 		};
-		
+
 		class gpsMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4115;
 			TextureNoShortcut = "\kira_assets\texture\gpsNoMouse.paa";
@@ -1540,7 +1540,7 @@ class DOSTARA_GENERAL
 			y = ytel + 0.44;
 			w = 0.1; h = (1/25);
 		};
-		
+
 		class marketMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4117;
 			TextureNoShortcut = "\kira_assets\texture\marketNoMouse.paa";
@@ -1564,7 +1564,7 @@ class DOSTARA_GENERAL
 			w = 0.1; h = (1/25);
 		};
 
-		
+
 		class settingMouse : Life_RscButtonKiraMenu06x06 {
 			idc = 4119;
 			TextureNoShortcut = "\kira_assets\texture\settingNoMouse.paa";
@@ -1699,9 +1699,9 @@ class DOSTARA_MESSAGE
 	movingEnabled = true;
 	enableSimulation = true;
 	onLoad = "[] spawn KIRA_fnc_initMsg";
-	
+
 	class controlsBackground
-	{	
+	{
 		class fondEcran : life_RscPicture
 		{
 			colorBackground[] = {0,0,0,0.7};
@@ -1760,7 +1760,7 @@ class DOSTARA_MESSAGE
 			w = 0.348; h = 0.75;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		
+
 		class addConv : Life_RscButtonKiraMenu06x06 {
 			idc = -1;
 			TextureNoShortcut = "\kira_assets\texture\ico_add.paa";
@@ -2031,9 +2031,9 @@ class DOSTARA_REPERTOIRE
 	movingEnabled = true;
 	enableSimulation = true;
 	onLoad = "[] spawn KIRA_fnc_initRepertoire";
-	
+
 	class controlsBackground
-	{	
+	{
 		class fondEcran : life_RscPicture
 		{
 			colorBackground[] = {0,0,0,0.7};
@@ -2093,7 +2093,7 @@ class DOSTARA_REPERTOIRE
 			w = 0.348; h = 0.75;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		
+
 		class addConv : Life_RscButtonKiraMenu06x06 {
 			idc = -1;
 			TextureNoShortcut = "\kira_assets\texture\ico_add.paa";
@@ -2669,9 +2669,9 @@ class DOSTARA_ADDCONV
 	enableSimulation = true;
 	onLoad = "[] spawn KIRA_fnc_initAddConversation;ctrlshow[4903,false]";
 	onUnload = "[] spawn KIRA_fnc_initMsg;";
-	
+
 	class controlsBackground
-	{	
+	{
 		class fondEcran : life_RscPicture{
 			colorBackground[] = {0,0,0,0.7};
 			text = "";
@@ -2729,7 +2729,7 @@ class DOSTARA_ADDCONV
 			w = 0.348; h = 0.833;
 			colorBackground[] = {0,0,0,0.7};
 		};
-		
+
 		class openNoMouse : Life_RscButtonKiraMenu03x03 {
 			idc = 4902;
 			TextureNoShortcut = "\kira_assets\texture\openNoMouse.paa";
@@ -2795,9 +2795,9 @@ class DOSTARA_CONVERSATION
 	enableSimulation = true;
 	onLoad = "[] spawn KIRA_fnc_initConversation";
 	onUnLoad = "xNext = nil;yEcart=nil;[] spawn KIRA_fnc_initMsg;";
-	
+
 	class controlsBackground
-	{	
+	{
 		class fondEcran : life_RscPicture
 		{
 			colorBackground[] = {0,0,0,0.7};
@@ -2857,13 +2857,13 @@ class DOSTARA_CONVERSATION
 			class HScrollbar : HScrollbar {
 				height = 0;
 			};
-			
-			
-			class controls {		
+
+
+			class controls {
 			};
 
 		};
-		
+
 		class editMessage: Life_RscEdit {
 			idc = 4939;
 			x = (xtel + 0.025); y = (ytel + 0.18 + 0.7);
@@ -2894,7 +2894,7 @@ class DOSTARA_CONVERSATION
 			w = 0.348; h = 0.09;
 			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			colorBackground[] = {0,0,0,0.7};
-			
+
 			class controls {
 				class fondEmojis : Life_RscText
 				{
@@ -3111,7 +3111,7 @@ class DOSTARA_CONVERSATION
 			idc = 4923;
 			TextureNoShortcut = "\kira_assets\texture\emoji\sourire.paa";
 			onButtonClick = "ctrlshow[4924,true];ctrlshow[4923,false];";
-			
+
 			x = xtel + 0.34;
 			y = (ytel + 0.18 + 0.7 - 0.05);
 			text = "Banque";
@@ -3244,7 +3244,7 @@ class DOSTARA_CONTRACTNOTAIRE
 		{
 			idc = 6008;
 			text = "";
-			colorBackground[] = {0,0,0,0};	
+			colorBackground[] = {0,0,0,0};
 			colorText[] = {0,0,0,1};
 			shadow = 0;
 			x = xPapier + 0.48;
@@ -3639,7 +3639,7 @@ class DOSTARA_NEWPUBLI{
 		class Title: life_RscStructuredText
 		{
 			idc = -1;
-			text = "<t align='center'> Nouvelle publication </t>"; 
+			text = "<t align='center'> Nouvelle publication </t>";
 			x = 0.075;
 			y = 0.036;
 			w = 0.825;
@@ -3653,7 +3653,7 @@ class DOSTARA_NEWPUBLI{
 		class titleAnnonce: life_RscText
 		{
 			idc = -1;
-			text = "Titre annonce :"; 
+			text = "Titre annonce :";
 			x = 0.1;
 			y = 0.12;
 			w = 0.2;
@@ -3672,7 +3672,7 @@ class DOSTARA_NEWPUBLI{
 		class NomEntreprise: life_RscText
 		{
 			idc = -1;
-			text = "Nom entreprise :"; 
+			text = "Nom entreprise :";
 			x = 0.1;
 			y = 0.2;
 			w = 0.2;
@@ -3691,7 +3691,7 @@ class DOSTARA_NEWPUBLI{
 		class TopPrice: life_RscText
 		{
 			idc = -1;
-			text = "Top prix :"; 
+			text = "Top prix :";
 			x = 0.1;
 			y = 0.28;
 			w = 0.15;
@@ -3709,7 +3709,7 @@ class DOSTARA_NEWPUBLI{
 		class prixSurplus: life_RscText
 		{
 			idc = -1;
-			text = "Prix Surplus :"; 
+			text = "Prix Surplus :";
 			x = 0.1;
 			y = 0.36;
 			w = 0.2;
@@ -3727,7 +3727,7 @@ class DOSTARA_NEWPUBLI{
 		class clrBG: life_RscText
 		{
 			idc = -1;
-			text = "Couleur fond :"; 
+			text = "Couleur fond :";
 			x = 0.1025;
 			y = 0.44;
 			w = 0.1375;
@@ -3754,7 +3754,7 @@ class DOSTARA_NEWPUBLI{
 		class clrFont: life_RscText
 		{
 			idc = -1;
-			text = "Couleur Police :"; 
+			text = "Couleur Police :";
 			x = 0.1025;
 			y = 0.52;
 			w = 0.15;
@@ -3763,7 +3763,7 @@ class DOSTARA_NEWPUBLI{
 		class msg: life_RscText
 		{
 			idc = -1;
-			text = "Message :"; 
+			text = "Message :";
 			x = 0.1;
 			y = 0.6;
 			w = 0.15;
@@ -3784,7 +3784,7 @@ class DOSTARA_NEWPUBLI{
 		class close: life_RscButtonMenu
 		{
 			idc = -1;
-			text = "Fermer"; 
+			text = "Fermer";
 			x = 0.1;
 			y = 0.86;
 			w = 0.1125;
@@ -3810,7 +3810,7 @@ class DOSTARA_ANNONCE{
 	movingEnabled = true;
 	enableSimulation = true;
 	onUnLoad = "xNextAds = nil;yEcartAds=nil";
-	
+
 	class controlsBackground{
 		class fondEcran : life_RscPicture{
 			colorBackground[] = {0,0,0,0.7};
@@ -3868,7 +3868,7 @@ class DOSTARA_ANNONCE{
 			class HScrollbar : HScrollbar {
 			height = 0;
 			};
-			class controls {		
+			class controls {
 			};
 
 		};
@@ -3931,7 +3931,7 @@ class DOSTARA_NEWCONTRACTNOTAIRE
 		class Titre: life_RscText
 		{
 			idc = -1;
-			text = "Nouveau Contrat"; 
+			text = "Nouveau Contrat";
 			x = 0.175;
 			y = 0.14;
 			w = 0.6;
@@ -3943,7 +3943,7 @@ class DOSTARA_NEWCONTRACTNOTAIRE
 		class nomClient: life_RscText
 		{
 			idc = -1;
-			text = "Nom du Client :"; 
+			text = "Nom du Client :";
 			x = 0.1375;
 			y = 0.32;
 			w = 0.15;
@@ -3968,7 +3968,7 @@ class DOSTARA_NEWCONTRACTNOTAIRE
 		class AmountTotal: life_RscText
 		{
 			idc = -1;
-			text = "Montant prix :"; 
+			text = "Montant prix :";
 			x = 0.1375;
 			y = 0.4;
 			w = 0.15;
@@ -3980,7 +3980,7 @@ class DOSTARA_NEWCONTRACTNOTAIRE
 		class description: life_RscText
 		{
 			idc = -1;
-			text = "Description :"; 
+			text = "Description :";
 			x = 0.1375;
 			y = 0.48;
 			w = 0.15;
@@ -4026,7 +4026,7 @@ class DOSTARA_NEWCONTRACTNOTAIRE
 		class ctnToContract: life_RscButtonMenu
 		{
 			idc = -1;
-			text = "Contrat"; 
+			text = "Contrat";
 			onButtonClick = "[ctrlText 5502,ctrlText 5503,ctrlText 5501] call KIRA_fnc_contractNotaire";
 			x = 0.725;
 			y = 0.78;
@@ -4042,9 +4042,9 @@ class DOSTARA_BOURSE
 	movingEnabled = true;
 	enableSimulation = true;
 	onLoad = "[] call KIRA_fnc_initBourse";
-	
+
 	class controlsBackground
-	{	
+	{
 		class fondEcran : life_RscPicture
 		{
 			colorBackground[] = {0,0,0,0.7};
@@ -4159,7 +4159,6 @@ class DOSTARA_BOURSE
 #include "dialog\pInteraction.h"
 #include "dialog\deathScreen.h"
 #include "dialog\vehicleShop.h"
-#include "dialog\vehicleShopCop.h"
 #include "dialog\settings.h"
 #include "dialog\federalReserve.h"
 #include "dialog\fourriere.hpp"
