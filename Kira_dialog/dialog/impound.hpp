@@ -82,7 +82,7 @@ class Life_impound_menu
 		
 		class BuyCar : life_RscButtonMenu 
 		{
-			idc = -1;
+			idc = 2812;
 			text = "$STR_Global_Sell";
 			onButtonClick = "[] call life_fnc_sellGarage;";
 			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));

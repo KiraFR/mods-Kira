@@ -39,7 +39,7 @@ _accountPerso = varMission("AccountBanque");
 		_accountPerso set[_forEachIndex,_account];
 	};
 }foreach _accountPerso;
-if(_receiver)then{
+if(_receiver && !(isNil {number}))then{
 	_numeroSender = param[5,"",[""]];
 	_messages = format["Bonjour,</br>Vous venez de recevoir un virement, le numero %1 a envoyé %2 Dostar sur le compte ayant %3.",_numeroSender,_amount,_numAcc];
 	[_messages,"Dostara Banque"] call KIRA_fnc_receivedMsg;
