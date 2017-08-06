@@ -1172,15 +1172,30 @@ class RscDisplayInventory
 			w = "1 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
-		class licenceStruct: Life_RscStructuredText
+		class Licenses_Menu : Life_RscControlsGroup
 		{
-			idc = 2014;
+			idc = -1;
 			x = xDecale-0.55;
 			y = -0.02;
 			w = 0.275;
 			h = 0.22;
-			sizeEx = 0.04;
-			colorBackground[] = {0,0,0,0.7};
+
+			class HScrollbar : HScrollbar {
+				height = 0;
+			};
+			
+			class Controls
+			{
+				class licenceStruct : Life_RscStructuredText
+				{
+					idc = 2014;
+					sizeEx = 0.020;
+					text = "";
+					x = 0;
+					y = 0;
+					w = 0.27; h = 0.65;
+				};
+			};
 		};
 		class licenseHeader: RscText
 		{
@@ -3255,7 +3270,6 @@ class DOSTARA_CONTRACTNOTAIRE
 	};
 };
 
-
 class DOSTARA_BANK
 {
 	idd = 5000;
@@ -3463,13 +3477,11 @@ class DOSTARA_BANK
 	};
 };
 
-
-class DOSTARA_AJOUTACCREP
-{
+class DOSTARA_AJOUTACCREP{
 	idd = 5020;
 	movingEnabled = true;
 	enableSimulation = true;
-	onLoad = "ctrlSetText[4106,(profilenamespace getvariable ""imageBackground"")];";
+	onLoad = "call KIRA_fnc_initAddRepertCont";
 	onUnload = "";
 
 	class controlsBackground
@@ -3621,6 +3633,7 @@ class DOSTARA_AJOUTACCREP
 		};
 	};
 };
+
 class DOSTARA_NEWPUBLI{
 	idd = 6200;
 	movingEnabled = false;
@@ -3803,8 +3816,6 @@ class DOSTARA_NEWPUBLI{
 	};
 };
 
-
-
 class DOSTARA_ANNONCE{
 	idd = 6100;
 	movingEnabled = true;
@@ -3906,6 +3917,7 @@ class DOSTARA_ANNONCE{
 		};
 	};
 };
+
 class DOSTARA_NEWCONTRACTNOTAIRE
 {
 	idd = 5500;
@@ -4143,6 +4155,141 @@ class DOSTARA_BOURSE
 
 	};
 };
+
+class DOSTARA_CONVERSATIONURG
+{
+	idd = 6900;
+	movingEnabled = true;
+	enableSimulation = true;
+	onUnLoad = "xNext = nil;yEcart=nil;call KIRA_fnc_initUrg;";
+
+	class controlsBackground
+	{
+		class fondEcran : life_RscPicture
+		{
+			colorBackground[] = {0,0,0,0.7};
+			text = "";
+			idc = 4106;
+			x = xtel+0.01; y = ytel+0.049;
+			w = 0.38; h = 0.98;
+		};
+		class fondOpa : Life_RscText
+		{
+			colorBackground[] = {0,0,0,0.4};
+			text = "";
+			idc = -1;
+			x = xtel+0.01; y = ytel+0.049;
+			w = 0.38; h = 0.98;
+		};
+
+		class MainBackground : life_RscPicture{
+			colorBackground[] = {0,0,0,0.5};
+			text = "\kira_assets\texture\BackgroundBlack-app.paa";
+			idc = -1;
+			x = xtel; y = ytel;
+			w = 0.4; h = 1.1;
+			moving = 1;
+		};
+	};
+	class controls {
+
+		class iconMessage : life_RscPicture{
+			idc = -1;
+			colorBackground[] = {0,0,0,0.7};
+			text = "\kira_assets\texture\messageIcon.paa";
+			x = xtel+0.025;
+			y = ytel + 0.128;
+			w = 0.035;
+			h = 0.05;
+		};
+
+		class textIcon: Life_RscText{
+			idc = 6922;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			x = xtel+ 0.06;
+			y = ytel + 0.128;
+			sizeEx = (1/25);
+			w = 0.4;
+			h = (1/25);
+		};
+
+		class ListMessage: Life_RscControlsGroup {
+			idc = 6921;
+			x = (xtel + 0.025); y = (ytel + 0.18);
+			w = 0.36; h = (0.18 + 0.7 - 0.155) - 0.1;
+			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+			colorBackground[] = {1,1,1,0.7};
+
+			class HScrollbar : HScrollbar {
+				height = 0;
+			};
+
+
+			class controls {
+			};
+
+		};
+
+		class editMessage: Life_RscEdit {
+			idc = 6939;
+			x = (xtel + 0.025); y = (ytel + 0.18 + 0.7);
+			w = 0.348; h = 0.133;
+			type = CT_EDIT;
+			style = ST_MULTI;
+			autocomplete = "general";
+			lineSpacing = (1/25);
+			text = "";
+			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+			colorBackground[] = {0,0,0,0.7};
+		};
+		
+		class sendMsg : Life_RscButtonKiraMenu03x04 {
+			idc = 6923;
+			TextureNoShortcut = "\kira_assets\texture\ico_send.paa";
+			onButtonClick = "[] spawn KIRA_fnc_sendMsg";
+
+			x = xtel + 0.34;
+			y = (ytel + 0.18 + 0.7 - 0.05);
+			text = "Banque";
+			w = "0.03";
+			h = "0.045";
+		};
+		class returnMouse : Life_RscButtonKiraMenu04x04 {
+			idc = 4101;
+			TextureNoShortcut = "\kira_assets\texture\returnNoMouse.paa";
+			onButtonClick = "CloseDialog 0";
+			x = xtel + 0.05;
+			y = ytel + 1.025;
+			text = "";
+			w = "0.05";
+			h = "0.07";
+		};
+
+		class homeMouse : Life_RscButtonKiraMenu04x04 {
+			idc = 4103;
+			TextureNoShortcut = "\kira_assets\texture\homeNoMouse.paa";
+			onButtonClick = "CloseDialog 0;[] spawn KIRA_fnc_initSmart;";
+			x = xtel + (0.38/2) - 0.02;
+			y = ytel + 1.022;
+			text = "";
+			w = "0.05";
+			h = "0.07";
+		};
+
+		class powerMouse : Life_RscButtonKiraMenu04x04 {
+			idc = 4105;
+			TextureNoShortcut = "\kira_assets\texture\PowerNoMouse.paa";
+			onButtonClick = "[] spawn KIRA_fnc_powerOFF";
+			x = xtel + 0.38 - (0.38/4);
+			y = ytel + 1.022;
+			text = "";
+			w = "0.05";
+			h = "0.07";
+		};
+	};
+};
+
 #include "dialog\shop_items.hpp"
 #include "dialog\gang.hpp"
 #include "dialog\key_chain.hpp"
