@@ -20,5 +20,5 @@ ctrlSetText[4106,varProfile("imageBackground")];
 	}else{
 	    _prix = (round (_x select 1));
 	};
-  	_bourse lbAdd format["%1 - ( %2$ )",([_virtName] call life_fnc_varToStr),_prix];
+  	_bourse lbAdd format["%1 - %2$",([_virtName] call life_fnc_varToStr),_prix];
 }forEach _bourseObject;

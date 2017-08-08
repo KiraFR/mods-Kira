@@ -4097,7 +4097,7 @@ class DOSTARA_BOURSE
 
 		class textIcon: Life_RscText{
 			idc = 5601;
-			text = "";
+			text = "Bourse en ligne";
 			colorBackground[] = {0,0,0,0};
 			x = xtel+ 0.06;
 			y = ytel + 0.128;

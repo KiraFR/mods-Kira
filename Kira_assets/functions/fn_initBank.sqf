@@ -44,6 +44,6 @@ _reperShow = (_repertoireAcc + _accountPerso);
 } forEach _reperShow;
 
 {
-    _listAccSender lbAdd format["%1 - Montant: %2",_x select 0,_x select 2];
+    _listAccSender lbAdd format["%1 : %2",_x select 0,[_x select 2] call life_fnc_numberText];
     lbSetData [5002,_forEachIndex, str([_x select 1,_x select 2])];
 } forEach _accountPerso;

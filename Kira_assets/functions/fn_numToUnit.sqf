@@ -1,4 +1,3 @@
-#define numberPlayer(num) (num getVariable "phoneNumber")
 #include <macro.h>
 /*
 	File:  fn_numToUnit.sqf
