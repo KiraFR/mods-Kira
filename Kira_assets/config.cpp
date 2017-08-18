@@ -20,6 +20,8 @@ class CfgFunctions
 			class antiHacker;
 			class flicReceived;
 			class getColorContact;
+
+
 			class HBuyVPN;
 			class HCallFlics;
 			class HChanceDetect;
@@ -35,6 +37,18 @@ class CfgFunctions
 			class HScanAnim;
 			class HSelectPlayer;
 			class HShowListNear;
+			class HShowListHelp;
+			class HShowHelp;
+			class HAttackPhone;
+			class HDisablePhone;
+			class HreceivedMsg;
+			class HSend;
+			class HFetchRepert;
+			class HFetchedRepert;
+			class HPing;
+			class HPinged;
+			class HAttackZonePhone;
+
 			class hideCtrl;
 			class select;
 			class selectContact;
