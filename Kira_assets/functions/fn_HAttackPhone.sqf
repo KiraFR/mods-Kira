@@ -17,9 +17,9 @@
 */
 private ["_num","_unit"];
 _type = param[0,0,[0]];
-switch () do { 
+switch (_type) do { 
 	case 0 : { _num = varMission("lockphonenum");}; 
-	case 1 : { _num = param[1,"",[""]]}; 
+	case 1 : { _num = param[1,"",[""]];}; 
 };
 if(isNil "_num")exitWith{};//?? fuck you arma
 _unit = [_num] call KIRA_fnc_numToUnit;
