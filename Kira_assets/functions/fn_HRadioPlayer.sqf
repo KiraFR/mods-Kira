@@ -2,22 +2,22 @@
 /*
 	File:  fn_HRadioPlayer.sqf
 	Auteur: J. `Kira` D.
-	
+
 	Description:
 	plus de radio
-	
+
 	PARAMETRES:
 	1. OBJECT(Hacker)
-	
-	RETURNS: 
-	NONE 
 
-	CALL: 
+	RETURNS:
+	NONE
+
+	CALL:
 	[] spawn KIRA_fnc_HRadioPlayer
 */
 
-private["_pos"];
-_Hacker = _this select 0;
+private["_pos","_Hacker"];
+_Hacker = param[0,objNull,[objNull]];
 
 while{(_Hacker distance player) < KIRA_distance} do {
 	if((player getVariable ["tf_sendingDistanceMultiplicator",1]) != 0) then {

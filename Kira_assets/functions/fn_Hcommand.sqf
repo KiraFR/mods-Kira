@@ -2,19 +2,19 @@
 /*
 	File:  fn_Hcommand.sqf
 	Auteur: J. `Kira` D.
-	
+
 	Description:
 	Ecrire des commandes
-	
+
 	PARAMETRES:
 	1. STRING
-	
-	RETURNS: 
-	NONE 
 
-	CALL: 
+	RETURNS:
+	NONE
+
+	CALL:
 	[STRING] spawn KIRA_fnc_command
-	
+
 	Recensement commande Hacker:
 	- checknear NUMBER: scan dans un rayon NUMBER
 	- listnear: Lister les personnes scanné sous forme de "NUMERO - NOM - NUMEROCOMPTEBANCAIRE - MONTANTCOMPTEBANCAIRE"
@@ -27,7 +27,7 @@
 	- lockaccnumber NUMBER: bloquer compte BANCAIRE pour voler dans atm
 	- unlockaccnumber: debloquer compte BANCAIRE
 	- ping NUMBER: voir si un telephone est allumé
-	- attackzone NUMBER: 
+	- attackzone NUMBER:
 */
 private["_sentence","_listSentence","_commande","_param1"];
 disableSerialization;
@@ -40,8 +40,7 @@ _commande = _listSentence select 0;
 
 switch(_commande) do {
 	case "checknear": {
-		_param1 = _listSentence select 1;
-		if(isNil "_param1")then{
+		if(isNil {_listSentence select 1})then{
 			Terminal_fulltext = Terminal_fulltext + "Aucun paramètre..<br/>";
 		}else{
 			if(!([_param1] call life_fnc_isnumeric)) then {
@@ -62,18 +61,19 @@ switch(_commande) do {
 	case "listhelp": {
 		_handle = [] spawn KIRA_fnc_HScanAnim;
 		waitUntil {scriptDone _handle};
-		[] spawn KIRA_fnc_HShowListHelp;
+		call KIRA_fnc_HShowListHelp;
 	};
 	case "help": {
-		_param1 = _listSentence select 1;
-		if(isNil "_param1")then{
-			Terminal_fulltext = Terminal_fulltext + "Aucun paramètre..<br/>";};
+		if(isNil {_listSentence select 1})then{
+		Terminal_fulltext = Terminal_fulltext + "Aucun paramètre..<br/>";};
+		[(_listSentence select 1)] call KIRA_fnc_HShowHelp;
 	};
 	case "lockphonenum": {
-		_param1 = _listSentence select 1;
-		if(isNil "_param1")then{
+		if(isNil {_listSentence select 1})then{
 			Terminal_fulltext = Terminal_fulltext + "Aucun paramètre..<br/>";
-		}else{setVarMission("lockphonenum",_param1);};
+		}else{
+			setVarMission("lockphonenum",_param1);
+		};
 	};
 	case "attackphone": {
 		_param1 = varMission("lockphonenum");
@@ -82,7 +82,7 @@ switch(_commande) do {
 		}else{
 			_handle = [] spawn KIRA_fnc_HScanAnim;
 			waitUntil {scriptDone _handle};
-			[] spawn KIRA_fnc_HAttackPhone;
+			[0] spawn KIRA_fnc_HAttackPhone;
 		};
 	};
 	case "sendmsg": {
@@ -90,28 +90,38 @@ switch(_commande) do {
 		if(isNil "_param1") then {
 			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
 		}else{
-			_handle = [] spawn KIRA_fnc_HScanAnim;
-			waitUntil {scriptDone _handle};
-			[] spawn KIRA_fnc_HSend;
+			if(isNil {_listSentence select 1} OR isNil {_listSentence select 2})then{
+				Terminal_fulltext = Terminal_fulltext + "Il manque un/plusieurs paramètre(s)..<br/>";
+			}else{
+				_handle = [] spawn KIRA_fnc_HScanAnim;
+				waitUntil {scriptDone _handle};
+				[(_listSentence select 1),(_listSentence select 2)] call KIRA_fnc_HSend;
+			};
 		};
 	};
 	case "fetchrepertoire": {
 		_param1 = varMission("lockphonenum");
 		if(isNil "_param1") then {
-			Terminal_fulltext = Terminal_fulltext + "Aucune numéro de telephone enregistré..<br/>";
+			Terminal_fulltext = Terminal_fulltext + "Aucun numéro de telephone enregistré..<br/>";
 		}else{
 			_handle = [] spawn KIRA_fnc_HScanAnim;
 			waitUntil {scriptDone _handle};
-			[] spawn KIRA_fnc_HFRepert;
+			private _unit = [_param1] call KIRA_fnc_numToUnit;
+			if(isNull _unit)then{
+				Terminal_fulltext = Terminal_fulltext + "Le portable de cette personne est éteint ou n'existe pas..<br/>";
+			}else{
+				[player] remoteExecCall ["KIRA_fnc_HFetchRepert",_unit];
+			};
 		};
 	};
 	case "attackphonenum": {
-		_param1 = _listSentence select 1;
 		if(isNil "_param1") then {
-			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";};
+			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
+		}else{
+			[1,_param1] call KIRA_fnc_HAttackPhone;
+		};
 	};
 	case "lockaccnumber": {
-		_param1 = _listSentence select 1;
 		if(isNil "_param1") then {
 			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
 		}else{
@@ -127,17 +137,27 @@ switch(_commande) do {
 		};
 	};
 	case "ping": {
-		_param1 = _listSentence select 1;
 		if(isNil "_param1") then {
-			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";};
+			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
+		}else{
+			private _unit = [_param1] call KIRA_fnc_numToUnit;
+			if(isNull _unit)then{
+				Terminal_fulltext = Terminal_fulltext + "Le portable de cette personne est éteint ou n'existe pas..<br/>";
+			}else{
+				for "_i" from 0 to 3 do {
+					[player,(_i+1),_param1] remoteExecCall ["KIRA_fnc_HPing",_unit];
+				};
+			};
+		};
 	};
-	case "attackzone": {
-		_param1 = _listSentence select 1;
+	case "attackzone": { // pas fait encore
 		if(isNil "_param1") then {
-			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";};
+			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
+		}else{
+			[_param1] call KIRA_fnc_HAttackZonePhone;
+		};
 	};
 	case "buyvpn": {
-		_param1 = _listSentence select 1;
 		if(isNil "_param1") then {
 			Terminal_fulltext = Terminal_fulltext + "Aucune cible..<br/>";
 		}else{
