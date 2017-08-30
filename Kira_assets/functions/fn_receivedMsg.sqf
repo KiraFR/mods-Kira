@@ -47,7 +47,7 @@ if(!(isNil "_listMsg")) then{
 	_listconversations pushBack _listMsg;
 	setVarProfile("conversations",_listconversations);
 };
-[] spawn KIRA_fnc_notification;
+[0] spawn KIRA_fnc_notification;
 _display = findDisplay 4150;
 if !(isNull _display) then {
 	_target = (conversationTarget select 1);

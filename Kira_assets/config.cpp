@@ -100,6 +100,11 @@ class CfgFunctions
 			class notification;
 			class numToName;
 			class setNonLu;
+			class colorUrg;
+			class markerUrgence;
+			class delMessageUrgence;
+			class receiveMsgUrg;
+			class sendMsgUrg;
 		};
 	};
 };

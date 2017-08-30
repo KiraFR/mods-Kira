@@ -18,7 +18,7 @@
 	NONE
 
 	CALL:
-	[] spawn KIRA_fnc_receivedMsg
+	[] spawn KIRA_fnc_sendMsg
 */
 private["_listMsg","_i","_msg","_unit","_numero","_color"];
 disableSerialization;
@@ -50,7 +50,17 @@ if(!(isNil "_listMsg")) then{
 };
 _color = [_numero] call KIRA_fnc_getColorContact;
 [_msg,1,_color] spawn KIRA_fnc_addMsg;
+
+_sender = switch (conversationTarget select 1) do {
+	case "Police Insulaire" : {west}; 
+	case "S I M" : {independent}; 
+	default {""};
+};
+if(_sender != "")exitWith{
+	sleep 1;
+	[_msg,getPlayerUID player,_sender] call KIRA_fnc_receiveMsgUrg;
+};
+sleep 1;
 _unit = [(conversationTarget select 1)] call KIRA_fnc_numToUnit;
 if(isNull _unit) exitWith{};
-sleep 1;
 [_msg,number] remoteExecCall ["KIRA_fnc_receivedMsg",_unit];
