@@ -1181,13 +1181,25 @@ class RscDisplayInventory
 			h = 0.165057 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
+		class EditAmoutItem: RscEdit
+		{
+			idc = 2010;
+			type = CT_EDIT;
+			text = "";
+			x = "0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2) -  0.11339 * safezoneW";
+			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.192 * safezoneH)";
+			w = 0.11339 * safezoneW
+			h = 0.0220077 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {0,0,0,0.9};
+		};
 		class UseButton: RscButtonMenu
 		{
 			onButtonClick = "[] call life_fnc_useItem;";
 			idc = -1;
 			text = "Utiliser";
 			x = "0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2) -  0.11339 * safezoneW";
-			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.192 * safezoneH)";
+			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.197 * safezoneH) + (0.022 * safezoneH)";
 			w = 0.11339 * safezoneW
 			h = 0.0220077 * safezoneH;
 			colorText[] = {1,1,1,1};
@@ -1199,7 +1211,7 @@ class RscDisplayInventory
 			idc = -1;
 			text = "Supprimer";
 			x = "0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2) -  0.11339 * safezoneW";
-			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.197 * safezoneH) + (0.022 * safezoneH)";
+			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.202 * safezoneH) + (0.022 * safezoneH) + (0.022 * safezoneH)";
 			w = 0.11339 * safezoneW
 			h = 0.0220077 * safezoneH;
 			colorText[] = {1,1,1,1};
@@ -1252,7 +1264,7 @@ class RscDisplayInventory
 			x = "39.15 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
 			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.192 * safezoneH)";
 			w = 0.11339 * safezoneW
-			h = 0.0220077 * safezoneH;
+			h = 0.03 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 		};
 		class foodtext
