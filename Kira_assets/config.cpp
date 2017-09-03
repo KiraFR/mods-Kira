@@ -110,7 +110,6 @@ class CfgFunctions
 			class saveMoney;
 			class rembourser;
 
-
 			class notification;
 			class numToName;
 			class setNonLu;
@@ -119,6 +118,9 @@ class CfgFunctions
 			class delMessageUrgence;
 			class receiveMsgUrg;
 			class sendMsgUrg;
+
+			class InitsendMoneyItem;
+			class sendMoneyItem;
 		};
 	};
 };

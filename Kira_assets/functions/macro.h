@@ -14,11 +14,12 @@
 #define varProfileDft(var1,var2) (profileNamespace getVariable [var1,var2])
 #define varUI(var1) (uiNamespace getVariable var1)
 #define varUIDft(var1,var2) (uiNamespace getVariable [var1,var2])
+#define VarObject(var1,var2,var3) (var1 getVariable [var2,var3])
 
 //setVariable
 #define setVarProfile(var1,var2) (profileNamespace setVariable [var1,var2])
 #define setVarMission(var1,var2) (missionNamespace setVariable [var1,var2])
 #define setVarUI(var1,var2) (uiNamespace setVariable [var1,var2])
-
+#define setVarPublic(var1,var2,var3) (var1 getVariable [var2,var3])
 //Control Macros
 #define getControl(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)

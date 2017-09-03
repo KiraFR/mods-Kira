@@ -156,7 +156,30 @@ class CfgVehicles {
                     statement = "[_target] spawn life_fnc_revivePlayer";
                     exceptions[] = {"isNotSwimming"};
                     priority = 2;
-                }; 
+                };
+                class ACE_GiveItemMoney
+                { 
+                    displayName = "Donner Item / Argent"; 
+                    distance = 2; 
+                    condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'} && {(_target getVariable['ACE_Captives_isSurrendering',false]) OR (_target getVariable['ACE_Captives_isHandcuffed',false])}"; 
+                    statement = ""; 
+                    priority = 2.1; 
+ 
+                    class ACE_GiveItem
+                    { 
+                        displayName = "Donner item"; 
+                        condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'} && {(_target getVariable['ACE_Captives_isSurrendering',false]) OR (_target getVariable['ACE_Captives_isHandcuffed',false])}"; 
+                        statement = "[_target,1] call KIRA_fnc_InitsendMoneyItem"; 
+                        priority = 1; 
+                    }; 
+                    class ACE_GiveMoney
+                    { 
+                        displayName = "Donner argent"; 
+                        condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'} && {(_target getVariable['ACE_Captives_isSurrendering',false]) OR (_target getVariable['ACE_Captives_isHandcuffed',false])}"; 
+                        statement = "[_target,2] call KIRA_fnc_InitsendMoneyItem"; 
+                        priority = 0.8; 
+                    }; 
+                };
                 class ACE_CopInteraction 
                 { 
                     displayName = "Interaction Police"; 

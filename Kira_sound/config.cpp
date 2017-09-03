@@ -179,4 +179,27 @@ class CfgSounds
 		sound[] = {"\Kira_sound\sound\vibreur.ogg", 1, 1, 100};
 		titles[] = {};
 	};
+	class lockVeh{
+		name = "lockVeh";
+		sound[] = {"\Kira_sound\sound\lockVeh.ogg", 0.8, 1, 100};
+		titles[] = {};
+	};
+	class unlockVeh{
+		name = "unlockVeh";
+		sound[] = {"\Kira_sound\sound\unlockVeh.ogg", 0.8, 1, 100};
+		titles[] = {};
+	};
+
+
+	//cop
+	class sirenCop{
+		name = "sirenCop";
+		sound[] = {"\Kira_sound\sound\siren.wss", 1, 1, 100};
+		titles[] = {};
+	};
+	class Priority{
+		name = "Priority";
+		sound[] = {"\Kira_sound\sound\priority.wss", 1, 1, 100};
+		titles[] = {};
+	};
 };

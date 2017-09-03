@@ -17,12 +17,11 @@
 	CALL:
 	[STRING,STRING, ARRAY] call KIRA_fnc_delMessageUrgence
 */
-private["_messages"]; 
-_message = param[0,[],[[]]];
-_marker = _message param[3,"",[""]];
-_id = _message param[0,0,[0]];
-_side = format["messages%1",_receiver];
-_messages = VarObject(Marker_object, _side,[]);
+private _message = param[0,[],[[]]];
+private _marker = _message param[3,"",[""]];
+private _id = _message param[0,0,[0]];
+private _side = format["messages%1",_receiver];
+private _messages = VarObject(Marker_object, _side,[]);
 _messages deleteAt _id;
 _marker remoteExecCall ["deleteMarkerLocal",playerSide];
 setVarPublic(Marker_object,_side,_messages);

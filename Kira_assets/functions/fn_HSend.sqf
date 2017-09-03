@@ -27,10 +27,10 @@ private _unitDest = [_numDest] call KIRA_fnc_numToUnit;
 if(isNull _unit)exitWith{
 	Terminal_fulltext = Terminal_fulltext + "La cible a éteint son téléphone ou n'existe pas.";
 };
-[_numDest,_msg] remoteExecCall ["KIRA_fnc_HreceivedMsg",_unit];
+[_numDest,_msg] remoteExecCall["KIRA_fnc_HreceivedMsg",_unit];
 
 if(isNull _unitDest)exitWith{
 	Terminal_fulltext = Terminal_fulltext + "La personne que vous essayez de joindre a éteint son téléphone ou n'existe pas.";
 };
 
-[_numDest,_msg] remoteExecCall ["KIRA_fnc_receivedMsg",_unitDest];
+[_numDest,_msg] remoteExecCall["KIRA_fnc_receivedMsg",_unitDest];

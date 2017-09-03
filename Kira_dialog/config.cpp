@@ -192,16 +192,6 @@ class RscDisplayInventory
 			w = 0.05; h = 0.06;
 			colorBackground[] = COLOR_HALF_BLACK;
 		};
-		class backgroundVirtual: RscText{
-			idc = -1;
-			text = "";
-			x = xDecale-0.5625;
-			y = -0.1;
-			w = 0.3;
-			h = 1.08;
-			colorBackground[] = {0,0,0,0.7};
-			sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * GUI_GRID_H";
-		};
 	};
 
 	class controls
@@ -1172,13 +1162,69 @@ class RscDisplayInventory
 			w = "1 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
-		class Licenses_Menu : Life_RscControlsGroup
+		class titlevir: RscText
+		{
+			idc = 2009;
+			text = "Items";
+			x = "0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2) -  0.11339 * safezoneW";
+			y = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
+			w = 0.11339 * safezoneW;
+			h = 0.0220077 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.9};
+		};
+		class itemList: RscListBox
+		{
+			idc = 2005;
+			x = "0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2) -  0.11339 * safezoneW";
+			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.0220077 * safezoneH)";
+			w = 0.11339 * safezoneW
+			h = 0.165057 * safezoneH;
+			colorBackground[] = {0,0,0,0.7};
+		};
+		class UseButton: RscButtonMenu
+		{
+			onButtonClick = "[] call life_fnc_useItem;";
+			idc = -1;
+			text = "Utiliser";
+			x = "0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2) -  0.11339 * safezoneW";
+			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.192 * safezoneH)";
+			w = 0.11339 * safezoneW
+			h = 0.0220077 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",9};
+		};
+		class RemoveButton: RscButtonMenu
+		{
+			onButtonClick = "[] call life_fnc_removeItem;";
+			idc = -1;
+			text = "Supprimer";
+			x = "0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2) -  0.11339 * safezoneW";
+			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.197 * safezoneH) + (0.022 * safezoneH)";
+			w = 0.11339 * safezoneW
+			h = 0.0220077 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.9};
+		};
+
+		class titleLicense: RscText
 		{
 			idc = -1;
-			x = xDecale-0.55;
-			y = -0.02;
-			w = 0.275;
-			h = 0.22;
+			text = "Licences";
+			x = "39.15 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
+			y = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
+			w = 0.11339 * safezoneW
+			h = 0.0220077 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.9};
+		};
+
+		class Licenses_Menu: Life_RscControlsGroup
+		{
+			idc = 1064;
+			x = "39.15 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
+			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.0220077 * safezoneH)";
+			w = 0.11339 * safezoneW
+			h = 0.165057 * safezoneH;
+			colorBackground[] = {0,0,0,0};
 
 			class HScrollbar : HScrollbar {
 				height = 0;
@@ -1186,148 +1232,28 @@ class RscDisplayInventory
 			
 			class Controls
 			{
-				class licenceStruct : Life_RscStructuredText
+				class licenceStruct :Life_RscStructuredText
 				{
 					idc = 2014;
-					sizeEx = 0.020;
+					sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9)";
 					text = "";
 					x = 0;
 					y = 0;
 					w = 0.27; h = 0.65;
+					colorBackground[] = {0,0,0,1};
 				};
 			};
 		};
-		class licenseHeader: RscText
-		{
-			idc = -1;
 
-			text = "Licences";
-			x = xDecale-0.55;
-			y = -0.08;
-			w = 0.275;
-			h = 0.04;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-		};
-		class moneySHeader: RscText
+		class permisPoint: RscStructuredText
 		{
-			idc = -1;
+			idc = 1066;
 
-			text = "Argent";
-			x = xDecale-0.55;
-			y = 0.76;
-			w = 0.275;
-			h = 0.04;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-		};
-		class moneyEdit: RscEdit
-		{
-			idc = 2018;
-			text = "1";
-			x = xDecale-0.55;
-			y = 0.82;
-			w = 0.275;
-			h = 0.03;
+			x = "39.15 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
+			y = "1.1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2) + (0.192 * safezoneH)";
+			w = 0.11339 * safezoneW
+			h = 0.0220077 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
-		};
-		class moneyDrop: RscButtonMenu
-		{
-			idc = 2001;
-			onButtonClick = "[] call life_fnc_giveMoney";
-
-			text = "Donner";
-			x = xDecale-0.55;
-			y = 0.9;
-			w = 0.13;
-			h = 0.036;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-		};
-		class itemList: RscListBox
-		{
-			idc = 2005;
-			x = xDecale-0.55;
-			y = 0.26;
-			w = 0.275;
-			h = 0.3;
-			colorBackground[] = {0,0,0,0.7};
-		};
-		class itemEdit: RscEdit
-		{
-			idc = 2010;
-			text = "1";
-			x = xDecale-0.55;
-			y = 0.568;
-			w = 0.275;
-			h = 0.03;
-			colorBackground[] = {0,0,0,0.7};
-		};
-		class DropButton: RscButtonMenu
-		{
-			idc = -1;
-			onButtonClick = "[] call life_fnc_giveItem;";
-
-			text = "Donner";
-			x = xDecale-0.405;
-			y = 0.64;
-			w = 0.13125;
-			h = 0.04;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-		};
-		class UseButton: RscButtonMenu
-		{
-			onButtonClick = "[] call life_fnc_useItem;";
-			idc = -1;
-
-			text = "Utiliser";
-			x = xDecale-0.5475;
-			y = 0.64;
-			w = 0.13125;
-			h = 0.04;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-		};
-		class RemoveButton: RscButtonMenu
-		{
-			onButtonClick = "[] call life_fnc_removeItem;";
-			idc = -1;
-
-			text = "Supprimer";
-			x = xDecale-0.55;
-			y = 0.688;
-			w = 0.13125;
-			h = 0.04;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
-		};
-		class NearPlayers: RscCombo
-		{
-			idc = 2022;
-			x = xDecale-0.55;
-			y = 0.86;
-			w = 0.275;
-			h = 0.03;
-			colorBackground[] = {0,0,0,0.7};
-		};
-		class iNearPlayers: RscCombo
-		{
-			idc = 2023;
-
-			x = xDecale-0.55;
-			y = 0.604;
-			w = 0.275;
-			h = 0.03;
-			colorBackground[] = {0,0,0,0.7};
-		};
-		class titlevir: RscText
-		{
-			idc = 2009;
-			text = "Items";
-			x = xDecale-0.55;
-			y = 0.22;
-			w = 0.275;
-			h = 0.04;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",0.5};
 		};
 		class foodtext
 		{
@@ -4319,3 +4245,4 @@ class DOSTARA_CONVERSATIONURG
 #include "dialog\call.hpp"
 #include "dialog\gestionAccount.hpp"
 #include "dialog\GestionEntreprise2.hpp"
+#include "dialog\sendMI.hpp"
