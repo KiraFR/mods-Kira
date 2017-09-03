@@ -161,21 +161,21 @@ class CfgVehicles {
                 { 
                     displayName = "Donner Item / Argent"; 
                     distance = 2; 
-                    condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'} && {(_target getVariable['ACE_Captives_isSurrendering',false]) OR (_target getVariable['ACE_Captives_isHandcuffed',false])}"; 
+                    condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'}"; 
                     statement = ""; 
                     priority = 2.1; 
  
                     class ACE_GiveItem
                     { 
                         displayName = "Donner item"; 
-                        condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'} && {(_target getVariable['ACE_Captives_isSurrendering',false]) OR (_target getVariable['ACE_Captives_isHandcuffed',false])}"; 
+                        condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'}"; 
                         statement = "[_target,1] call KIRA_fnc_InitsendMoneyItem"; 
                         priority = 1; 
                     }; 
                     class ACE_GiveMoney
                     { 
                         displayName = "Donner argent"; 
-                        condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'} && {(_target getVariable['ACE_Captives_isSurrendering',false]) OR (_target getVariable['ACE_Captives_isHandcuffed',false])}"; 
+                        condition = "alive _target && {isPlayer _target} && {_target isKindOf 'Man'}"; 
                         statement = "[_target,2] call KIRA_fnc_InitsendMoneyItem"; 
                         priority = 0.8; 
                     }; 
